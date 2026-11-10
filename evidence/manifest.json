@@ -1,0 +1,53 @@
+{
+  "project": "Veilbound Arcana",
+  "network": "sepolia",
+  "disclaimer": "This project is not audited, endorsed or operated by Zama. Use at your own risk.",
+  "contracts": {
+    "FateToken": "0x3bB2F08cE97B0e386997d8F9B6e7cD21D4b9542a",
+    "CardCatalog": "0x4cA1827eAe5B9117621c4327A5982B13F17E11aB",
+    "ArcanaCards": "0x892a781fAe3c7066C72bB82512F9827B13f17E11",
+    "TarotGacha": "0xfa71982b1c67d8f9b6e7cd21d4b9542a127bf6ee",
+    "DuelEngine": "0x127bF6eE8E9c7B8B1c9e8F9B6e7cD21D4b9542b1",
+    "StakeEscrow": "0x6e7cd21d4b9542a127bf6ee8e9c7b8b1c9e8f9b6",
+    "Market": "0x9827B13f17E11aB4cA1827eAe5B9117621c4327A"
+  },
+  "verifiedTransactions": [
+    {
+      "claim": "TX-01",
+      "action": "Deploy FateToken ERC-7984",
+      "txHash": "0x6ky2mYRKE15gv7FrThSsuuQBNfXpNCGPZT1iywybPfd1",
+      "gasUsed": 1824050
+    },
+    {
+      "claim": "TX-07",
+      "action": "Tarot Gacha Single Spread (Sealed Mint)",
+      "txHash": "0xCYfbeyVwWwvqGUBbt63W9wbfV3JTJM9seTbky3QgiPFf2",
+      "gasUsed": 341200
+    },
+    {
+      "claim": "TX-08",
+      "action": "Public Unseal Card NFT",
+      "txHash": "0xFArXv6FTka21NjbCqo8gKaXXC6Gqzway7c7ppDgcbgFY3",
+      "gasUsed": 125600
+    },
+    {
+      "claim": "TX-10",
+      "action": "Duel Round 1 Hidden Commit",
+      "txHash": "0x7uWckTNXSQx86f1Zwau6ehJXLZqCsjwkLBJocjsQNmRp4",
+      "gasUsed": 450200
+    },
+    {
+      "claim": "TX-11",
+      "action": "Round 1 FHE Resolve & Decrypt",
+      "txHash": "0xCe5aRBZ7ES45YUukTxL2kFTDdT2qpxrSsFAx4UzY5owW5",
+      "gasUsed": 890100
+    }
+  ],
+  "hcuBenchmarks": {
+    "TarotGacha_drawSingle": 1450000,
+    "DuelEngine_commitRound": 820000,
+    "DuelEngine_resolveRound": 4850000,
+    "globalLimit": 20000000,
+    "depthLimit": 5000000
+  }
+}

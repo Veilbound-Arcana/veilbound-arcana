@@ -1,0 +1,35 @@
+[project]
+name = "Veilbound Arcana"
+organization = "Veilbound-Arcana"
+github_org = "https://github.com/Veilbound-Arcana"
+target_hackathon = "Zama Developer Program Mainnet Season 5 (Confidential Gaming)"
+target_network = "Ethereum Sepolia Testnet"
+protocol = "Zama FHEVM Protocol v0.13"
+deadline = "2026-12-14T23:59:00Z" # AOE
+internal_submit_deadline = "2026-12-12T18:00:00Z"
+license = "MIT"
+mandatory_disclaimer = "This project is not audited, endorsed or operated by Zama. Use at your own risk."
+
+[team]
+lead = "Arya (@arya) — 70% share (Lead Architect, Backend & Frontend)"
+contracts = "Yavin (@yavin) — 15% share (FHEVM Smart Contracts & Testing)"
+design_qa = "Adrian (@adrian) — 15% share (Art/Metadata, Verification, Pitch & Docs)"
+
+[repos]
+umbrella = "https://github.com/Veilbound-Arcana/veilbound-arcana"
+contracts = "https://github.com/Veilbound-Arcana/contracts"
+backend = "https://github.com/Veilbound-Arcana/backend"
+frontend = "https://github.com/Veilbound-Arcana/frontend"
+sdk = "https://github.com/Veilbound-Arcana/sdk"
+scripts = "https://github.com/Veilbound-Arcana/scripts"
+
+[game_parameters]
+total_cards_mvp = 20
+deck_size = 5
+hand_size = 3
+rounds_per_match = 3
+win_threshold = 2
+energy_pool = 6
+max_deck_cost = 12
+suit_cycle = "Wands > Swords > Pentacles > Cups > Wands"
+fhe_clamp_rule = "Never revert on invalid inputs; clamp silently with FHE.select to prevent data leakage"

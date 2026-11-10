@@ -1,0 +1,24 @@
+# Veilbound Arcana — Machine-Readable Architecture Summary
+
+## Overview
+Veilbound Arcana is a confidential Tarot Trading Card Game (TCG) built on Ethereum Sepolia utilizing Zama FHEVM Protocol v0.13. Players draw sealed NFT cards via on-chain encrypted gacha spreads, construct 5-card decks, and engage in 3-round bluff duels where player hands, selected cards, and allocated energy remain strictly confidential until round outcomes are publicly decrypted.
+
+## Mandatory Disclaimer
+This project is not audited, endorsed or operated by Zama. Use at your own risk.
+
+## Key Information
+- Organization: https://github.com/Veilbound-Arcana
+- Network: Sepolia Testnet (Zama FHEVM Coprocessor)
+- Smart Contracts: Solidity 0.8.24 + FHEVM v0.13 + OpenZeppelin Confidential Contracts (ERC-7984) + ERC-721
+- Frontend: Next.js / React, Tailwind CSS, @zama-fhe/react-sdk, wagmi / viem
+- Backend: Node.js / TypeScript, WebSocket Duel Lobby, Automated Practice Bot (FR-20)
+- Team Distribution: Arya (70% - Lead, Backend, Frontend), Yavin (15% - Smart Contracts & Tests), Adrian (15% - Art, QA, Video & Docs)
+
+## Core Contracts
+1. `FateToken` (ERC-7984): Confidential balance token with integrated faucet.
+2. `CardCatalog`: Immutable registry of 20 Tarot card definitions (Minor & Major Arcana).
+3. `ArcanaCards` (ERC-721): NFT card instances supporting Sealed (ciphertext euint8) and Unsealed (plaintext) states.
+4. `TarotGacha`: Encrypted on-chain VRF gacha (Single & 3-Card spread) with encrypted pity counter.
+5. `DuelEngine`: 3-round duel state machine, encrypted hand generation, confidential commit & resolve with HCU clamp protection.
+6. `StakeEscrow`: Optional Ante-mode staking for wagering 1 NFT per match with tier matching.
+7. `Market`: Escrow-backed atomic 1-to-1 card swap.

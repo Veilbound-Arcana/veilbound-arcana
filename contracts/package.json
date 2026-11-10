@@ -1,0 +1,25 @@
+{
+  "name": "@veilbound/contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for Veilbound Arcana (FHEVM v0.13, ERC-7984, ERC-721)",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "lint": "solhint 'contracts/**/*.sol'"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "@types/chai": "^4.3.16",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.14.0",
+    "chai": "^4.4.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0",
+    "hardhat": "^2.22.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

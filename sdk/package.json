@@ -1,0 +1,19 @@
+{
+  "name": "@veilbound/sdk",
+  "version": "1.0.0",
+  "description": "Client SDK for Veilbound Arcana (Typed interfaces, FHE encryption helpers, Battle engine)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/test/*.js",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "ethers": "^6.13.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.14.0"
+  }
+}
