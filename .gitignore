@@ -39,6 +39,9 @@ pnpm-debug.log*
 lerna-debug.log*
 *.log
 
+# Private Engineering Vault (Stored in private repo Veilbound-Arcana/veilbound-vault)
+vault/
+
 # OS Files
 .DS_Store
 Thumbs.db
