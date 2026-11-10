@@ -1,0 +1,40 @@
+{
+  "name": "King of Wands",
+  "description": "Titik puncak kekuatan api yang memimpin pertempuran dengan visi mulia.",
+  "image": "ipfs://bafybeiveilboundarcana/images/4.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/4",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Wands"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 3
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 4
+    },
+    {
+      "trait_type": "Element",
+      "value": "Fire"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

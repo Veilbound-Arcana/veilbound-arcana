@@ -1,0 +1,40 @@
+{
+  "name": "Page of Pentacles",
+  "description": "Pelindung koin tanah yang tekun menanam fondasi kemakmuran.",
+  "image": "ipfs://bafybeiveilboundarcana/images/13.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/13",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Pentacles"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 1
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 2
+    },
+    {
+      "trait_type": "Element",
+      "value": "Earth"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

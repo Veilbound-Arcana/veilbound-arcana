@@ -1,0 +1,40 @@
+{
+  "name": "Queen of Wands",
+  "description": "Penguasa bara agung dengan kharisma membara dan wibawa mutlak.",
+  "image": "ipfs://bafybeiveilboundarcana/images/3.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/3",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Wands"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 2
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 3
+    },
+    {
+      "trait_type": "Element",
+      "value": "Fire"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

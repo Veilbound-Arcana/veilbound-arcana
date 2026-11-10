@@ -1,0 +1,40 @@
+{
+  "name": "Knight of Wands",
+  "description": "Penyerang api cepat yang menerjang tanpa ragu.",
+  "image": "ipfs://bafybeiveilboundarcana/images/2.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/2",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Wands"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 1
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 2
+    },
+    {
+      "trait_type": "Element",
+      "value": "Fire"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

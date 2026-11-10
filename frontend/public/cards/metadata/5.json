@@ -1,0 +1,40 @@
+{
+  "name": "Page of Cups",
+  "description": "Pembawa kabar emosi dan pesan mistis dari kedalaman samudera.",
+  "image": "ipfs://bafybeiveilboundarcana/images/5.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/5",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Cups"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 1
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 2
+    },
+    {
+      "trait_type": "Element",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "I — The Magician",
+  "description": "Pengendali empat elemen penciptaan: Wands, Cups, Swords, Pentacles.",
+  "image": "ipfs://bafybeiveilboundarcana/images/18.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/18",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Major"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "None"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 4
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 5
+    },
+    {
+      "trait_type": "Element",
+      "value": "Omni"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

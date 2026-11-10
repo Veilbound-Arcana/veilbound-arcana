@@ -1,0 +1,40 @@
+{
+  "name": "King of Cups",
+  "description": "Penguasa samudra luas yang menundukkan badai dengan kebijaksanaan.",
+  "image": "ipfs://bafybeiveilboundarcana/images/8.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/8",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Cups"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 3
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 4
+    },
+    {
+      "trait_type": "Element",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

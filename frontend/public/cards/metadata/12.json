@@ -1,0 +1,40 @@
+{
+  "name": "King of Swords",
+  "description": "Penghakiman udara mutlak dengan intelektualitas tak terbantahkan.",
+  "image": "ipfs://bafybeiveilboundarcana/images/12.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/12",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Swords"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 3
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 4
+    },
+    {
+      "trait_type": "Element",
+      "value": "Air"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

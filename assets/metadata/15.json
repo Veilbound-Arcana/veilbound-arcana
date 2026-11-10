@@ -1,0 +1,40 @@
+{
+  "name": "Queen of Pentacles",
+  "description": "Kemakmuran bumi yang memelihara kehidupan dengan tangan dermawan.",
+  "image": "ipfs://bafybeiveilboundarcana/images/15.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/15",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Pentacles"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 2
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 3
+    },
+    {
+      "trait_type": "Element",
+      "value": "Earth"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

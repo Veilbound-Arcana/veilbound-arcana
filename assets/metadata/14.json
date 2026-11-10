@@ -1,0 +1,40 @@
+{
+  "name": "Knight of Pentacles",
+  "description": "Ketahanan benteng batu yang tak tergoyahkan oleh ujian waktu.",
+  "image": "ipfs://bafybeiveilboundarcana/images/14.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/14",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Pentacles"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 1
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 2
+    },
+    {
+      "trait_type": "Element",
+      "value": "Earth"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

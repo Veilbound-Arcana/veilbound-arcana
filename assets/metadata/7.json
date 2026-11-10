@@ -1,0 +1,40 @@
+{
+  "name": "Queen of Cups",
+  "description": "Penguasa kedalaman emosi dan mata air ketenangan batin.",
+  "image": "ipfs://bafybeiveilboundarcana/images/7.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/7",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Cups"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 2
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 3
+    },
+    {
+      "trait_type": "Element",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

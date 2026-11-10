@@ -1,0 +1,40 @@
+{
+  "name": "0 — The Fool",
+  "description": "Permulaan mistis tanpa batas di tepi jurang takdir kosmik.",
+  "image": "ipfs://bafybeiveilboundarcana/images/17.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/17",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Major"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "None"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 4
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 5
+    },
+    {
+      "trait_type": "Element",
+      "value": "Aether"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}

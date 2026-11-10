@@ -1,0 +1,40 @@
+{
+  "name": "Page of Swords",
+  "description": "Pemikir tajam pemula yang mengamati dari balik tabir angin.",
+  "image": "ipfs://bafybeiveilboundarcana/images/9.png",
+  "external_url": "https://veilbound-arcana.vercel.app/cards/9",
+  "attributes": [
+    {
+      "trait_type": "Arcana",
+      "value": "Minor"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Swords"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Cost",
+      "value": 1
+    },
+    {
+      "trait_type": "Base Power",
+      "value": 2
+    },
+    {
+      "trait_type": "Element",
+      "value": "Air"
+    },
+    {
+      "trait_type": "Project",
+      "value": "Veilbound Arcana"
+    },
+    {
+      "trait_type": "Disclaimer",
+      "value": "Not audited by Zama. Use at your own risk."
+    }
+  ]
+}
