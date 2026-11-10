@@ -25,6 +25,9 @@ jobs:
       - name: Run Claims & KPI Verification
         run: node scripts/verify-claims.mjs
 
+      - name: Run Match Simulator
+        run: node scripts/simulate-match.mjs
+
   contracts-test:
     name: Contracts Unit Tests (Hardhat)
     runs-on: ubuntu-latest
@@ -39,11 +42,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
-          cache-dependency-path: contracts/package.json
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Compile Contracts
         run: npx hardhat compile

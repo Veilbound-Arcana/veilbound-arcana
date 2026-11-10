@@ -69,15 +69,16 @@ describe("DuelEngine & ArcanaCards Lifecycle", function () {
     await duelEngine.connect(playerA).createMatch();
     await duelEngine.connect(playerB).joinMatch(1);
 
-    // Mint 5 Legendary cards (cost 4 each -> 5 * 4 = 20 > 12)
+    // Mint 5 Legendary cards with defIds [17, 17, 18, 18, 19] (all cost 4 -> total 20 > 12)
     const handle = ethers.keccak256(ethers.toUtf8Bytes("test"));
-    for (let i = 2; i <= 6; i++) {
+    const defs = [17, 17, 18, 18, 19];
+    for (let i = 1; i <= 5; i++) {
       await arcanaCards.mintSealed(playerA.address, handle);
-      await arcanaCards.connect(playerA).unseal(i, 17); // Cost 4
+      await arcanaCards.connect(playerA).unseal(i, defs[i - 1]);
     }
 
     await expect(
-      duelEngine.connect(playerA).lockDeck(1, [2, 3, 4, 5, 6])
-    ).to.be.revertedWith("DuelEngine: Max 2 duplicates exceeded");
+      duelEngine.connect(playerA).lockDeck(1, [1, 2, 3, 4, 5])
+    ).to.be.revertedWith("DuelEngine: Total deck cost exceeds 12");
   });
 });
