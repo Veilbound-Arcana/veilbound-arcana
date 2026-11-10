@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@veilbound/sdk": "*",
+    "@veilbound/sdk": "file:../sdk",
     "ethers": "^6.13.0",
     "framer-motion": "^11.2.10",
     "lucide-react": "^0.383.0",

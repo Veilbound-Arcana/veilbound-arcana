@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { GachaRitual } from "@/components/GachaRitual";
-import { DuelArena } from "@/components/DuelArena";
-import { DeckBuilder } from "@/components/DeckBuilder";
+import { GachaRitual3D } from "@/components/GachaRitual3D";
+import { DuelArena3D } from "@/components/DuelArena3D";
+import { DeckBuilder3D } from "@/components/DeckBuilder3D";
 import { VerifyPage } from "@/components/VerifyPage";
 
 export default function Home() {
@@ -59,9 +59,9 @@ export default function Home() {
 
       {/* Dynamic View */}
       <div>
-        {activeTab === "gacha" && <GachaRitual />}
-        {activeTab === "deck" && <DeckBuilder />}
-        {activeTab === "duel" && <DuelArena />}
+        {activeTab === "gacha" && <GachaRitual3D />}
+        {activeTab === "deck" && <DeckBuilder3D />}
+        {activeTab === "duel" && <DuelArena3D />}
         {activeTab === "verify" && <VerifyPage />}
       </div>
     </div>
