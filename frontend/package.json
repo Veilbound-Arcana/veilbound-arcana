@@ -4,9 +4,9 @@
   "description": "Next.js / React Frontend for Veilbound Arcana (Confidential Session, Framer Motion)",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0 -p 3000",
     "lint": "next lint"
   },
   "dependencies": {

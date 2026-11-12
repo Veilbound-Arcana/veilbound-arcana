@@ -328,7 +328,7 @@ eventWatcher.onEvent((event) => {
 const pruneTimer = setInterval(() => roomManager.pruneStale(), 10 * 60 * 1000);
 
 const PORT = config.port;
-server.listen(PORT, async () => {
+server.listen(PORT, "0.0.0.0", async () => {
   console.log(`[Veilbound Backend] Service running on http://localhost:${PORT}`);
   console.log(`[Practice Bot (FR-20)] Standby at address: ${practiceBot.botAddress}`);
   console.log(`[Disclaimer] ${DISCLAIMER}`);
