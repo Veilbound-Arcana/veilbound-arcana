@@ -16,9 +16,14 @@
   - Interlocking Ring 2: **Verdant** (weak to Umbra) → **Umbra** (weak to Lumen) → **Lumen** (weak to Aether) → **Aether** (weak to Verdant).
   - Matches cross-ring are neutral; weakness confers `+20` damage.
 - **Rarity Ladder:** Custom geometric glyphs:
-  - **Rune I–IV** (Common to Uncommon)
-  - **Moon I–III** (Rare, Foil shader)
-  - **Veil** (Crowned Full-Art Immersive with dynamic breathing motion)
+  - **Rune I–IV** (Common to Uncommon) — Clean sacred geometry, rune marks, and calibrated basic abilities.
+  - **Moon I–III** (Rare, Foil shader) — Radiant celestial stardust, reactive dynamic light sheen (`--mx`, `--my`), and stage evolution powers.
+  - **Veil** (Crowned Full-Art Immersive) — Crowned full-art frames, animated rotating mandala halos, particle corona, dynamic rainbow foil reflection, and game-altering abilities.
+- **100 NFT Card Archetypes & Cosmic Lore:**
+  - **12 Canonical Showcase Cards** (`c-001`–`c-012`): Calibration anchors for battle engine tests and starter decks.
+  - **22 Major Arcana Spirits** (`c-013`–`c-034`): Archetypes inspired by Tarot Major Arcana (The Magician, High Priestess, Wheel of Fortune, Chronos/Death, Astral Star, Judgement, The Universe).
+  - **66 Minor Arcana & Astrological Spirits** (`c-035`–`c-100`): Astrological houses, constellations, and elemental arcana (Wands, Cups, Swords, Pentacles translated into Ember, Tide, Volt, and Iron).
+  - Every card features calibrated **HP** (50–240), **Power** (20–180), **Aspect affinities**, **Unique Skill Trees**, and **Expanded Lore**.
 - **Deterministic Math:** Every draw and combat event is driven by a seeded 32-bit PRNG (`mulberry32` in `src/game/rng.ts`).
 - **Zero Third-Party Assets:**
   - 100% procedural SVG art via `ProceduralArt.tsx` (overridable via `/public/art/{cardId}.webp`).
