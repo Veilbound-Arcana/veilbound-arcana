@@ -9,7 +9,7 @@ import "../cards/CardCatalog.sol";
 /**
  * @title StakeEscrow
  * @notice Optional Ante-mode staking escrow for wagering 1 NFT per duel with tier matching.
- * @dev Disclaimer: This project is not audited, endorsed or operated by Zama. Use at your own risk.
+ * @dev Disclaimer: This project is not audited, endorsed or operated by any third party. Use at your own risk.
  */
 contract StakeEscrow is Ownable, IERC721Receiver {
     ArcanaCards public immutable arcanaCards;
