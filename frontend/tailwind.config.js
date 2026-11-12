@@ -1,18 +1,36 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
       fontFamily: {
-        serif: ["Cinzel", "Georgia", "serif"],
+        display: ["Cinzel", "serif"],
+        ui: ["Nunito", "sans-serif"],
+      },
+      colors: {
+        ink: {
+          DEFAULT: "var(--ink)",
+          2: "var(--ink-2)",
+          3: "var(--ink-3)",
+        },
+        violet: {
+          DEFAULT: "var(--violet)",
+        },
+        gold: {
+          DEFAULT: "var(--gold)",
+        },
+        tab: {
+          active: "var(--tab-active)",
+        },
+      },
+      borderRadius: {
+        sm: "var(--r-sm)",
+        md: "var(--r-md)",
+        lg: "var(--r-lg)",
+        pill: "var(--r-pill)",
+      },
+      boxShadow: {
+        card: "var(--shadow)",
       },
     },
   },
