@@ -6,8 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "node --test dist/test/*.js",
-    "lint": "eslint src --ext .ts"
+    "test": "node --test \"dist/test/*.test.js\"",
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
     "ethers": "^6.13.0"

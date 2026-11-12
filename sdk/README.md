@@ -1,6 +1,6 @@
 # @veilbound/sdk
 
-> **Mandatory Disclaimer:** *This project is not audited, endorsed or operated by Zama. Use at your own risk.*
+> **Mandatory Disclaimer:** *This project is experimental confidential software. Use at your own risk.*
 
 Official client SDK for Veilbound Arcana, providing:
 - Typed data models for cards, suits, and match lifecycle states
