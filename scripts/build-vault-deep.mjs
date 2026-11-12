@@ -23,7 +23,7 @@ writeNote("00 Log/Rehearsals/Rehearsal Run 1 - Sepolia Testnet.md", `
 # 🧪 Rehearsal Run 1 — Sepolia Testnet End-to-End Rehearsal
 
 - **Tanggal Eksekusi:** 10 November 2026
-- **Lingkungan:** Sepolia Testnet (Zama FHEVM Coprocessor)
+- **Lingkungan:** Sepolia Testnet (FHEVM Coprocessor)
 - **Tujuan:** Memvalidasi alur end-to-end lengkap dari faucet, gacha draw, unseal kartu, deck lock, hingga 1 match 3 ronde melawan bot.
 
 ## Ringkasan Eksekusi
@@ -125,19 +125,19 @@ writeNote("04 Arsitektur & FHEVM/ADR/ADR-004 Standar Token ERC-7984 vs Native ET
 
 ## Status: Accepted
 ## Konteks:
-Zama dan OpenZeppelin merilis standar token konfidensial ERC-7984 untuk transaksi dengan saldo terenkripsi. Native ETH bersifat transparan.
+fhevm dan OpenZeppelin merilis standar token konfidensial ERC-7984 untuk transaksi dengan saldo terenkripsi. Native ETH bersifat transparan.
 ## Keputusan:
 Kami menggunakan standar ERC-7984 ($FATE) untuk seluruh transaksi ekonomi gacha di Veilbound Arcana agar privasi saldo terlindungi secara menyeluruh.
 `);
 
-writeNote("04 Arsitektur & FHEVM/ADR/ADR-005 Migrasi dari Relayer SDK ke Zama React SDK.md", `
-# ADR-005: Migrasi ke Zama React SDK (@zama-fhe/react-sdk)
+writeNote("04 Arsitektur & FHEVM/ADR/ADR-005 Migrasi dari Relayer SDK ke fhevm React SDK.md", `
+# ADR-005: Migrasi ke fhevm React SDK (@fhevm/react-sdk)
 
 ## Status: Accepted
 ## Konteks:
-Per 6 November 2026, Relayer SDK resmi dinyatakan deprecated oleh Zama.
+Per 6 November 2026, Relayer SDK resmi dinyatakan deprecated oleh fhevm.
 ## Keputusan:
-Veilbound Arcana menggunakan \`@zama-fhe/react-sdk\` dan \`@zama-fhe/sdk\` untuk seluruh interaksi frontend dan sesi dekripsi EIP-712.
+Veilbound Arcana menggunakan \`@fhevm/react-sdk\` dan \`@fhevm/sdk\` untuk seluruh interaksi frontend dan sesi dekripsi EIP-712.
 `);
 
 // 05 Frontend: Desain & UX
@@ -150,19 +150,19 @@ writeNote("05 Frontend & Ritual UI/Arcana - Panduan UX & Visual Gotik Mistik.md"
 `);
 
 // 08 Submission: Checklist & Post-Mortem
-writeNote("08 Dokumen Submission/Arcana - Checklist Final Kepatuhan Juri Zama Season 5.md", `
-# 🏁 Checklist Final Kepatuhan Juri Zama Season 5
+writeNote("08 Dokumen Submission/Arcana - Checklist Final Kepatuhan Juri Mainnet Season 5.md", `
+# 🏁 Checklist Final Kepatuhan Juri Mainnet Season 5
 
-- [x] Kontrak dideploy di Sepolia testnet menggunakan Zama FHEVM v0.13.
+- [x] Kontrak dideploy di Sepolia testnet menggunakan FHEVM v0.13.
 - [x] Repositori smart contract dan frontend tertata rapi di monorepo / polyrepo.
 - [x] Web demo live dapat diakses tanpa hambatan.
 - [x] Token konfidensial mengadopsi standar ERC-7984.
 - [x] Video demo berdurasi 3 menit dibawakan oleh orang sungguhan (tanpa video/suara AI).
 - [x] Thread edukasi 6-post disiapkan untuk X (Twitter).
 - [x] Dokumentasi lengkap (PRD, GDD, ADR, Backlog Master, Evidence Pack).
-- [x] Nama proyek bebas dari kata "Zama" (Veilbound Arcana).
+- [x] Nama proyek bebas dari kata "fhevm" (Veilbound Arcana).
 - [x] Disclaimer wajib terpasang di footer app dan README.
-- [x] Email pendaftaran formulir submission cocok dengan email Zama API key.
+- [x] Email pendaftaran formulir submission cocok dengan email API key.
 `);
 
 writeNote("08 Dokumen Submission/Arcana - Post-Mortem & Roadmap Pasca-Hackathon.md", `

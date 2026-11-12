@@ -25,9 +25,9 @@ ensureDir(vaultRoot);
 writeNote("Arcana Hub.md", `
 # 🔮 Veilbound Arcana — Central Knowledge Vault (Hub)
 
-> **Mandatory Disclaimer:** *This project is not audited, endorsed or operated by Zama. Use at your own risk.*
+> **Mandatory Disclaimer:** *This project is not audited, endorsed or operated by any third party. Use at your own risk.*
 
-Selamat datang di repositori kebenaran desain, arsitektur, dan eksekusi teknik **Veilbound Arcana** untuk kompetisi **Zama Developer Program Mainnet Season 5 (Confidential Gaming)** di Ethereum Sepolia.
+Selamat datang di repositori kebenaran desain, arsitektur, dan eksekusi teknik **Veilbound Arcana** untuk kompetisi **Developer Program Mainnet Season 5 (Confidential Gaming)** di Ethereum Sepolia.
 
 ---
 
@@ -69,14 +69,14 @@ Selamat datang di repositori kebenaran desain, arsitektur, dan eksekusi teknik *
   - [[04 Arsitektur & FHEVM/ADR/ADR-002 Alur 2-Langkah Gacha (Bayar, Encrypted Draw, Unseal)|ADR-002: Alur 2-Langkah Gacha]]
   - [[04 Arsitektur & FHEVM/ADR/ADR-003 Permutasi Tangan Terenkripsi vs Deck Publik|ADR-003: Permutasi Tangan Terenkripsi vs Deck Publik]]
   - [[04 Arsitektur & FHEVM/ADR/ADR-004 Standar Token ERC-7984 vs Native ETH|ADR-004: Standar Token ERC-7984 vs Native ETH]]
-  - [[04 Arsitektur & FHEVM/ADR/ADR-005 Migrasi dari Relayer SDK ke Zama React SDK|ADR-005: Migrasi ke Zama React SDK]]
+  - [[04 Arsitektur & FHEVM/ADR/ADR-005 Migrasi dari Relayer SDK ke fhevm React SDK|ADR-005: Migrasi ke fhevm React SDK]]
 
 ### [[05 Frontend & Ritual UI]]
 - [[05 Frontend & Ritual UI/Arcana - Panduan UX & Visual Gotik Mistik|Panduan UX & Tema Visual Gotik Mistik]]
 - [[05 Frontend & Ritual UI/Arcana - Desain Ritual Gacha & 3D Flip Framer Motion|Desain Ritual Gacha & 3D Flip Card]]
 - [[05 Frontend & Ritual UI/Arcana - Desain Arena Duel & Confidential Hand View|Desain Arena Duel & Tangan Rahasia]]
 - [[05 Frontend & Ritual UI/Arcana - Desain Deck Builder & Rule Validations|Desain Deck Builder & Validasi Aturan]]
-- [[05 Frontend & Ritual UI/Arcana - Integrasi Zama React SDK & 1-Signature Session|Integrasi Zama React SDK & 1-Signature Session]]
+- [[05 Frontend & Ritual UI/Arcana - Integrasi fhevm React SDK & 1-Signature Session|Integrasi fhevm React SDK & 1-Signature Session]]
 
 ### [[06 Backend & Practice Bot]]
 - [[06 Backend & Practice Bot/Arcana - Spesifikasi WebSocket & REST API Lobby|Spesifikasi WebSocket & REST API Lobby]]
@@ -92,7 +92,7 @@ Selamat datang di repositori kebenaran desain, arsitektur, dan eksekusi teknik *
 - [[08 Dokumen Submission/Arcana - Video Pitch Script 3 Menit (Real Human)|Script Video Pitch 3 Menit (Wajah & Suara Asli)]]
 - [[08 Dokumen Submission/Arcana - Shotlist Video & Storyboard|Shotlist Video & Storyboard]]
 - [[08 Dokumen Submission/Arcana - Thread X (Twitter) 6-Post Launch|Thread X (Twitter) 6-Post Launch Hackathon]]
-- [[08 Dokumen Submission/Arcana - Checklist Final Kepatuhan Juri Zama Season 5|Checklist Final Kepatuhan Juri Zama Season 5]]
+- [[08 Dokumen Submission/Arcana - Checklist Final Kepatuhan Juri Mainnet Season 5|Checklist Final Kepatuhan Juri Mainnet Season 5]]
 - [[08 Dokumen Submission/Arcana - Post-Mortem & Roadmap Pasca-Hackathon|Post-Mortem & Roadmap Pasca-Hackathon]]
 
 ### [[09 Backlog & Tim]]
@@ -125,7 +125,7 @@ Dokumen log ini bersifat **append-only**. Setiap sesi kerja wajib mencatat penca
     - \`veilbound-arcana\` (Umbrella meta-repo)
     - \`contracts\` (Solidity FHEVM v0.13)
     - \`backend\` (WebSocket lobby & Practice Bot FR-20)
-    - \`frontend\` (Next.js & Zama React SDK)
+    - \`frontend\` (Next.js & fhevm React SDK)
     - \`sdk\` (@veilbound/sdk)
     - \`scripts\` (deployer, HCU profiler, demo replay)
     - \`veilbound-vault\` (Obsidian Central Knowledge Base)
@@ -138,7 +138,7 @@ Dokumen log ini bersifat **append-only**. Setiap sesi kerja wajib mencatat penca
   - Claims check lulus: \`npm run verify:thesis\` (Output 4/4 claims verified).
   - Git commit hash lokal: \`04c5f8e\` (polyrepo initial) & \`b95c125\` (assets & CI).
 - **Decisions:**
-  - Seluruh smart contract FHEVM menggunakan Zama FHEVM v0.13 dan OpenZeppelin Confidential Contracts.
+  - Seluruh smart contract FHEVM menggunakan FHEVM v0.13 dan OpenZeppelin Confidential Contracts.
   - Alur gacha menggunakan pola 2-langkah (bayar & roll tersegel, unseal melalui publikasi dekripsi terverifikasi).
 - **Next Steps:**
   - Selesaikan kompilasi Hardhat dan unit test FHE mock untuk M1-04 dan M1-05.
@@ -257,7 +257,7 @@ writeNote("04 Arsitektur & FHEVM/ADR/ADR-001 Desain Zero-Revert Clamp Guard (FHE
 ## Konteks
 Pada smart contract EVM konvensional, transaksi yang menerima parameter tidak sah (seperti pemain menawar energi melebihi sisa energi yang dimiliki, atau memilih slot kartu yang tidak ada di tangan) biasanya akan memicu \`revert("Invalid energy bid")\`.
 
-Namun, pada Zama FHEVM, nilai energi dan slot kartu berada dalam bentuk ciphertext (\`euint8\`). Jika smart contract melakukan \`require()\` atau percabangan \`revert\` berdasarkan nilai terenkripsi:
+Namun, pada FHEVM, nilai energi dan slot kartu berada dalam bentuk ciphertext (\`euint8\`). Jika smart contract melakukan \`require()\` atau percabangan \`revert\` berdasarkan nilai terenkripsi:
 1. **Revert membocorkan informasi rahasia:** Pengamat blok explorer dapat melakukan binary search untuk menebak nilai rahasia berdasarkan transaksi mana yang sukses dan mana yang gagal.
 2. **HCU & Execution Hazard:** FHEVM tidak mengizinkan percabangan kondisional publik berdasarkan ciphertext tanpa dekripsi terlebih dahulu.
 
@@ -315,15 +315,15 @@ Kami memisahkan siklus hidup penarikan gacha menjadi 2 langkah terpisah:
 writeNote("08 Dokumen Submission/Arcana - Video Pitch Script 3 Menit (Real Human).md", `
 # 🎬 Script Video Pitch 3 Menit — Veilbound Arcana
 
-> **Peraturan Wajib Zama Season 5:** Video demo wajib berdurasi maksimal 3 menit dan dipresentasikan oleh **orang sungguhan (wajah & suara asli manusia)**. Penggunaan avatar AI atau suara sintetis AI akan langsung mendiskualifikasi submission.
+> **Peraturan Wajib Mainnet Season 5:** Video demo wajib berdurasi maksimal 3 menit dan dipresentasikan oleh **orang sungguhan (wajah & suara asli manusia)**. Penggunaan avatar AI atau suara sintetis AI akan langsung mendiskualifikasi submission.
 
 ---
 
 ### Segment 1: Hook Masalah On-Chain Gaming (0:00 – 0:30)
 - **Visual:** Kamera menampilkan wajah presenter (Adrian / Arya), kemudian cut ke layar explorer Sepolia dengan transaksi kartu transparan.
 - **Presenter (Bicara):**
-  > "Halo juri Zama Season 5! Game kartu on-chain saat ini memiliki masalah fatal: transparansi mutlak. Saat Anda menarik gacha, bot bisa membatalkan transaksi bila hasilnya jelek atau men-snipe kartu langka. Dan saat bertarung, tangan dan langkah Anda terlihat di mempool, membunuh esensi bluffing.
-  > Kami mempersembahkan **Veilbound Arcana** — confidential Tarot TCG pertama di Sepolia yang ditenagai oleh Zama FHEVM Protocol v0.13."
+  > "Halo juri Mainnet Season 5! Game kartu on-chain saat ini memiliki masalah fatal: transparansi mutlak. Saat Anda menarik gacha, bot bisa membatalkan transaksi bila hasilnya jelek atau men-snipe kartu langka. Dan saat bertarung, tangan dan langkah Anda terlihat di mempool, membunuh esensi bluffing.
+  > Kami mempersembahkan **Veilbound Arcana** — confidential Tarot TCG pertama di Sepolia yang ditenagai oleh FHEVM Protocol v0.13."
 
 ### Segment 2: Ritual Gacha & Unseal (0:30 – 1:15)
 - **Visual:** Screen recording aplikasi Veilbound Arcana. Menghubungkan wallet, menandatangani sesi dekripsi 1 kali, menekan tombol *Draw Single Spread*. Kartu membalik dengan animasi 3D Framer Motion, status beralih dari *Sealed* ke *Unsealed*.
@@ -355,14 +355,14 @@ writeNote("08 Dokumen Submission/Arcana - Video Pitch Script 3 Menit (Real Human
 writeNote("08 Dokumen Submission/Arcana - Thread X (Twitter) 6-Post Launch.md", `
 # 🧵 Thread X (Twitter) 6-Post Launch — Veilbound Arcana
 
-Draft postingan resmi untuk publikasi submission Zama Developer Program Season 5:
+Draft postingan resmi untuk publikasi submission Developer Program Season 5:
 
 ---
 
 ### Tweet 1: Hook & Pengumuman Utama
 🔮 What if Tarot TCG met Fully Homomorphic Encryption?
 
-Introducing **Veilbound Arcana** — the first confidential Tarot card battler powered by @zama_fhe FHEVM on Sepolia!
+Introducing **Veilbound Arcana** — the first confidential Tarot card battler powered by @fhevm_protocol FHEVM on Sepolia!
 
 🃏 On-chain encrypted gacha spreads
 🤫 Hidden commit-reveal bluff duels
@@ -419,8 +419,8 @@ Every draw and duel resolution is auditable on our cryptographic Verify Page.
 📂 Polyrepo Organization: https://github.com/Veilbound-Arcana
 🎥 3-Min Demo Video: [LINK]
 
-Built for Zama Mainnet Season 5.
-Disclaimer: Not audited, endorsed or operated by Zama. Use at your own risk.
+Built for fhevm Mainnet Season 5.
+Disclaimer: Not audited, endorsed or operated by any third party. Use at your own risk.
 `);
 
 // -----------------------------------------------------------------------------
@@ -429,7 +429,7 @@ Disclaimer: Not audited, endorsed or operated by Zama. Use at your own risk.
 writeNote("09 Backlog & Tim/Arcana - Pembagian Tim & Kompensasi (70 Arya, 15 Yavin, 15 Adrian).md", `
 # 👥 Pembagian Tim, RACI & Alokasi Kompensasi
 
-Dokumen kesepakatan internal tim pengembang Veilbound Arcana untuk kompetisi Zama Season 5.
+Dokumen kesepakatan internal tim pengembang Veilbound Arcana untuk kompetisi Mainnet Season 5.
 
 ---
 
@@ -461,7 +461,7 @@ Total hadiah kompetisi: hingga **5.000 cUSDT**.
 | **Backend WebSocket Lobby & Match Room** | **A / R** | I | C |
 | **Automated Practice Bot AI (FR-20)** | **A / R** | I | C |
 | **Frontend UI (Gacha 3D Flip, Duel Arena)**| **A / R** | C | C |
-| **Frontend Zama React SDK Integration** | **A / R** | C | I |
+| **Frontend fhevm React SDK Integration** | **A / R** | C | I |
 | **Kurasi 20 Aset Seni Tarot & IPFS** | A | I | **R** |
 | **Metadata JSON Generator & Upload** | A | I | **R** |
 | **Halaman Verify & Evidence Manifest** | A | C | **R** |
@@ -526,7 +526,7 @@ Setiap baris mencantumkan kode ID, modul, deskripsi pekerjaan, pemilik (@arya, @
 | **M2-02** | Contract | Implementasi final \`TarotGacha.sol\` Single Spread dengan FHE random roll | \`@yavin · L4\` | Must | PLANNED |
 | **M2-03** | Contract | Validasi unseal publik via verifikasi cryptographic proof di kontrak | \`@yavin · L4\` | Must | PLANNED |
 | **M2-04** | Contract | Benchmarking konsumsi HCU untuk Single Spread draw (< 2.000.000 HCU) | \`@yavin · L2\` | Must | PLANNED |
-| **M2-05** | SDK | Modul enkripsi input bukti Zama (\`createEncryptedInput\`) di SDK | \`@arya · L3\` | Must | PLANNED |
+| **M2-05** | SDK | Modul enkripsi input bukti fhevm (\`createEncryptedInput\`) di SDK | \`@arya · L3\` | Must | PLANNED |
 | **M2-06** | SDK | Pembungkus panggilan kontrak \`drawSingle\` dan \`unseal\` di SDK | \`@arya · L2\` | Must | PLANNED |
 | **M2-07** | Frontend | Integrasi wagmi / viem dan deteksi salah jaringan Sepolia (FR-01) | \`@arya · L2\` | Must | PLANNED |
 | **M2-08** | Frontend | Implementasi 1-Signature EIP-712 Decryption Session (FR-02) | \`@arya · L3\` | Must | PLANNED |
@@ -590,7 +590,7 @@ Setiap baris mencantumkan kode ID, modul, deskripsi pekerjaan, pemilik (@arya, @
 | **M5-05** | Media | Editing video demo dengan layout kartu, audio jernih, dan subtitle | \`@adrian · L3\` | Must | PLANNED |
 | **M5-06** | Media | Penulisan dan penjadwalan Thread X 6-post launch hackathon | \`@adrian · L2\` | Must | PLANNED |
 | **M5-07** | Docs | Finalisasi README di semua repo: alamat kontrak, live demo, dan disclaimer | \`@arya · L2\` | Must | PLANNED |
-| **M5-08** | QA | Dry-run pengisian formulir submission Zama Season 5 (verifikasi email API) | \`@arya · L2\` | Must | PLANNED |
+| **M5-08** | QA | Dry-run pengisian formulir submission Mainnet Season 5 (verifikasi email API) | \`@arya · L2\` | Must | PLANNED |
 | **M5-09** | Submit | **Eksekusi Submission Resmi (12 Desember 2026)** | \`@arya · L1\` | Must | PLANNED |
 | **M5-10** | Standby | Masa darurat bug fixing pra-deadline resmi (13–14 Desember 2026) | All | Must | PLANNED |
 `);
@@ -611,7 +611,7 @@ Jadwal kerja tim mengikuti 5 sprint terstruktur menuju tenggat submission resmi 
 - **Standup Status:** 100% On Track.
 
 ## Sprint 2: Ekonomi Token & Gacha (17–23 Nov 2026)
-- **Fokus:** FateToken ERC-7984, NFT ArcanaCards Sealed/Unsealed, TarotGacha Single Spread on-chain, integrasi Zama React SDK.
+- **Fokus:** FateToken ERC-7984, NFT ArcanaCards Sealed/Unsealed, TarotGacha Single Spread on-chain, integrasi fhevm React SDK.
 - **DoD:** Pengguna baru dapat mengklaim faucet, menarik kartu tersegel, dan melakukan Unseal di Sepolia testnet.
 
 ## Sprint 3: Duel Arena & Practice Bot AI (24–30 Nov 2026)
@@ -624,7 +624,7 @@ Jadwal kerja tim mengikuti 5 sprint terstruktur menuju tenggat submission resmi 
 
 ## Sprint 5: Freeze, Pitch Video & Final Submission (8–12 Des 2026)
 - **Fokus:** Feature Freeze (8 Des), perekaman video demo 3 menit oleh orang sungguhan, thread X, final audit disclaimer, dan eksekusi submit (12 Des).
-- **DoD:** Formulir submission Zama Season 5 terkirim dengan konfirmasi email yang valid.
+- **DoD:** Formulir submission Mainnet Season 5 terkirim dengan konfirmasi email yang valid.
 `);
 
 console.log("Vault files built successfully!");

@@ -27,7 +27,7 @@ writeNote("01 Konsep & Gameplay/Arcana - Visi Masalah & Solusi.md", `
 ## 1. Visi Proyek
 Veilbound Arcana lahir untuk menjawab satu paradoks besar dalam Web3 Gaming: **Bagaimana menciptakan game strategi kartu yang adil dan memiliki kepemilikan nyata (NFT) tanpa menghancurkan mekanik bluffing akibat sifat blockchain yang transparan?**
 
-Kami menggabungkan estetika mistisisme Tarot tradisional dengan teknologi komputasi kriptografi mutakhir: **Fully Homomorphic Encryption (FHE)** melalui protokol **Zama FHEVM** di jaringan Ethereum Sepolia.
+Kami menggabungkan estetika mistisisme Tarot tradisional dengan teknologi komputasi kriptografi mutakhir: **Fully Homomorphic Encryption (FHE)** melalui protokol **FHEVM** di jaringan Ethereum Sepolia.
 
 ---
 
@@ -110,7 +110,7 @@ writeNote("04 Arsitektur & FHEVM/Arcana - Analisis Anggaran HCU & Batas Devnet S
 # ⚡ Analisis Anggaran HCU & Batas Devnet Sepolia
 
 ## 1. Definisi HCU (Homomorphic Computation Units)
-HCU adalah satuan pengukuran gas khusus yang digunakan oleh Zama FHEVM coprocessor untuk mengukur kompleksitas komputasi kriptografi homomorfik.
+HCU adalah satuan pengukuran gas khusus yang digunakan oleh FHEVM coprocessor untuk mengukur kompleksitas komputasi kriptografi homomorfik.
 
 Pada testnet Sepolia, batas eksekusi ditetapkan:
 - **Global HCU Limit per Transaksi:** 20.000.000 HCU
@@ -168,7 +168,7 @@ writeNote("07 Verifikasi & Evidence Pack/Arcana - Checklist KPI Hackathon (22 KP
 
 | No | Kategori | Parameter KPI | Target Spek | Metode Pengujian | Status |
 | :-: | :--- | :--- | :---: | :--- | :---: |
-| 1 | Kepatuhan | Nama proyek bebas kata "Zama" | Veilbound Arcana | Audit teks dokumen | ✅ PASS |
+| 1 | Kepatuhan | Nama proyek bebas kata "fhevm" | Veilbound Arcana | Audit teks dokumen | ✅ PASS |
 | 2 | Kepatuhan | Disclaimer wajib terpasang | Banner & Footer | Audit UI & README | ✅ PASS |
 | 3 | Kepatuhan | Jaringan Sepolia FHEVM | Chain ID 11155111 | Hardhat Network | ✅ PASS |
 | 4 | Token | FateToken confidential balance | ERC-7984 standard | FateToken.sol | ✅ PASS |
@@ -205,7 +205,7 @@ writeNote("08 Dokumen Submission/Arcana - Shotlist Video & Storyboard.md", `
 | **03** | 0:35 - 1:10 | Screen Recording UI | Menghubungkan wallet, claim faucet $FATE, ritual Tarot Spread flip 3D | Memperlihatkan gacha terenkripsi dan unseal kartu NFT. |
 | **04** | 1:10 - 2:05 | Screen Recording UI | Masuk Ruang Duel vs Practice Bot, commit kartu slot 1 + energi 2 | Memperlihatkan hands rahasia, kalkulasi suit cycle, dan zero-revert clamp. |
 | **05** | 2:05 - 2:35 | Screen Recording UI | Membuka Halaman Verify, memeriksa proof on-chain dan mode Ante Staking | Membuktikan transparansi audit dan odds kontrak tanpa kebocoran tangan. |
-| **06** | 2:35 - 3:00 | Talking Head + Slide Link | Presenter kembali ke kamera, grafis link demo web dan GitHub org | Penutup, ucapan terima kasih kepada Zama team, ajakan mencoba demo. |
+| **06** | 2:35 - 3:00 | Talking Head + Slide Link | Presenter kembali ke kamera, grafis link demo web dan GitHub org | Penutup, ucapan terima kasih kepada ecosystem team, ajakan mencoba demo. |
 `);
 
 console.log("All Extra In-Depth Vault Documents Generated Successfully!");
