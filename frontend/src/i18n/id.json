@@ -1,0 +1,125 @@
+{
+  "app": {
+    "name": "Veilbound Arcana",
+    "credits": "Veilbound Arcana adalah karya orisinal dan tidak terafiliasi dengan game kartu lainnya.",
+    "level": "Tingkat {level}",
+    "loading": "Menyelaraskan dengan Tabir...",
+    "tapToContinue": "Ketuk untuk lanjut",
+    "skip": "Lewati",
+    "back": "Kembali",
+    "close": "Tutup",
+    "confirm": "Konfirmasi",
+    "cancel": "Batal",
+    "claim": "Klaim",
+    "claimed": "Diklaim",
+    "locked": "Terkunci",
+    "new": "BARU",
+    "all": "Semua",
+    "ownedOnly": "Dimiliki",
+    "searchPlaceholder": "Cari nama atau nomor..."
+  },
+  "nav": {
+    "home": "Beranda",
+    "archive": "Arsip",
+    "friends": "Teman",
+    "battle": "Laga",
+    "menu": "Menu"
+  },
+  "home": {
+    "openPack": "Buka Amplop",
+    "vigilAllowance": "Lilin Lilin",
+    "nextCandle": "Lilin berikutnya dalam {time}",
+    "ready": "Siap dibuka",
+    "vigilsCount": "Vigil ({count})",
+    "omenDraw": "Tilik Omen",
+    "omenReady": "Tersedia",
+    "omenCooldown": "Besok",
+    "news": "Kabar Tabir"
+  },
+  "pack": {
+    "tearHint": "Geser jarimu melintasi segel lilin.",
+    "firstCard": "Tabir tersibak.",
+    "packSummary": "Kartu Terbuka",
+    "openAnother": "Buka lagi",
+    "done": "Selesai",
+    "dropRates": "Peluang Penarikan",
+    "dropRateDesc": "Transparansi peluang setiap slot kartu."
+  },
+  "archive": {
+    "title": "Arsip",
+    "folioTile": "Folio",
+    "shrineTile": "Altar",
+    "spreadsTile": "Dek",
+    "empty": "Belum ada gema kartu. Buka amplop untuk memulai.",
+    "cardsCount": "{count} kartu",
+    "setFilter": "Seri",
+    "aspectFilter": "Aspek",
+    "rarityFilter": "Kelangkaan",
+    "sort": "Urutkan"
+  },
+  "cardDetail": {
+    "vitality": "Daya Hidup",
+    "retreat": "Mundur",
+    "weakness": "Kelemahan",
+    "abilities": "Keahlian",
+    "immersive": "Tampilan Imersif",
+    "ownedCount": "Dimiliki: {count}"
+  },
+  "spreads": {
+    "title": "Dek Kartu",
+    "newSpread": "Susunan Baru",
+    "valid": "Susunan Sah (20/20)",
+    "invalid": "Membutuhkan 20 kartu, maks 2 salinan, min 1 Dasar.",
+    "autoFill": "Isi Otomatis",
+    "save": "Simpan Dek",
+    "rename": "Ubah Nama"
+  },
+  "battle": {
+    "lobby": "Kuil Pertarungan",
+    "solo": "Ujian Solo",
+    "versus": "Lawan Teman",
+    "ranked": "Jenjang Peringkat",
+    "selectSpread": "Pilih Dek",
+    "findingMatch": "Mencari sesama Warden...",
+    "start": "Para Warden, mulailah.",
+    "opponentThinking": "Lawan sedang merenung...",
+    "attachAether": "Sematkan Aether",
+    "attack": "Serang",
+    "retreat": "Mundur",
+    "endTurn": "Akhiri Giliran",
+    "ko": "Terlepas.",
+    "win": "Tabir tetap kukuh.",
+    "loss": "Tabir merekah. Coba lagi?",
+    "points": "Poin: {a} - {b}"
+  },
+  "social": {
+    "friends": "Serikat Warden",
+    "friendCode": "Kode Warden: {code}",
+    "addFriend": "Tambah via Kode",
+    "trade": "Bursa Arcana",
+    "proposeTrade": "Ajukan Tukar",
+    "tradeFee": "Biaya: {amount} Echoes",
+    "tradeSuccess": "Pertukaran selesai."
+  },
+  "locks": {
+    "folio": "Capai tingkat 5 untuk membuka Folio.",
+    "shrine": "Capai tingkat 8 untuk membuka Altar."
+  },
+  "settings": {
+    "title": "Pengaturan Kuil",
+    "language": "Bahasa",
+    "musicVolume": "Volume Musik",
+    "sfxVolume": "Efek Suara",
+    "reducedMotion": "Kurangi Gerakan",
+    "resetSave": "Atur Ulang Profil",
+    "resetWarning": "Hapus seluruh kemajuan dan simpanan?",
+    "version": "Versi 1.0.0"
+  },
+  "shop": {
+    "title": "Perbendaharaan Arcana",
+    "shards": "Pecahan Tabir",
+    "echoExchange": "Tukar Echo",
+    "buyPack": "Beli Amplop ({cost} Pecahan)",
+    "demoNotice": "Khusus simulasi demo. Tanpa mata uang riil."
+  }
+}

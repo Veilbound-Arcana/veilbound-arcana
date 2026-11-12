@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-top: #EEF2FB;
+  --bg-bottom: #DDE8F6;
+  --panel: rgba(255, 255, 255, 0.7);
+  --ink: #2A3142;
+  --ink-2: #667089;
+  --ink-3: #A4ADC2;
+  --tab-active: #2F3750;
+  --violet: #7B5CF0;
+  --gold: #F2C14E;
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+  --shadow: 0 8px 24px rgba(30, 40, 80, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-ui: 220ms;
+  --t-flip: 450ms;
+  --t-reveal: 750ms;
+  --t-rare: 1500ms;
+  --card-ratio: 5 / 7;
+  --rainbow-hairline: linear-gradient(90deg, #ff7aa8, #ffd36e, #8be28b, #6cc7ff, #b58bff);
+  --new-gradient: linear-gradient(135deg, #D94FA0, #8B5CF6);
+  --reveal-gradient: linear-gradient(180deg, #8A86E8 0%, #B7B9F4 50%, #D3E6F7 100%);
+  --aspect-ember: #F26B3A;
+  --aspect-tide: #3B9DF2;
+  --aspect-verdant: #5CBF4A;
+  --aspect-volt: #F2C21B;
+  --aspect-umbra: #6B4FA0;
+  --aspect-lumen: #F4E7A1;
+  --aspect-iron: #8C96A5;
+  --aspect-aether: #5DD6C8;
+
+  --mx: 0.5;
+  --my: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-ui: 0ms;
+    --t-flip: 0ms;
+    --t-reveal: 0ms;
+    --t-rare: 0ms;
+  }
+}
+
+.rainbow-hairline {
+  background: var(--rainbow-hairline);
+  height: 2px;
+}
+
+.bg-cool-mist {
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+}
+
+.glass-panel {
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow);
+}

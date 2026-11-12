@@ -1,0 +1,125 @@
+{
+  "app": {
+    "name": "Veilbound Arcana",
+    "credits": "Veilbound Arcana is an original game and is not affiliated with any other trading-card game.",
+    "level": "Lv. {level}",
+    "loading": "Attuning to the Veil...",
+    "tapToContinue": "Tap to continue",
+    "skip": "Skip",
+    "back": "Back",
+    "close": "Close",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "claim": "Claim",
+    "claimed": "Claimed",
+    "locked": "Locked",
+    "new": "NEW",
+    "all": "All",
+    "ownedOnly": "Owned",
+    "searchPlaceholder": "Search by name or number..."
+  },
+  "nav": {
+    "home": "Home",
+    "archive": "Archive",
+    "friends": "Friends",
+    "battle": "Battle",
+    "menu": "Menu"
+  },
+  "home": {
+    "openPack": "Open Pack",
+    "vigilAllowance": "Vigil Candle",
+    "nextCandle": "Next candle in {time}",
+    "ready": "Ready to tear",
+    "vigilsCount": "Vigils ({count})",
+    "omenDraw": "Omen Draw",
+    "omenReady": "Available",
+    "omenCooldown": "Tomorrow",
+    "news": "News"
+  },
+  "pack": {
+    "tearHint": "Draw your thumb across the seal.",
+    "firstCard": "The Veil parts.",
+    "packSummary": "Drawn Arcana",
+    "openAnother": "Open another",
+    "done": "Done",
+    "dropRates": "Drop Rates",
+    "dropRateDesc": "Transparent odds per card slot."
+  },
+  "archive": {
+    "title": "Archive",
+    "folioTile": "Folio",
+    "shrineTile": "Shrine",
+    "spreadsTile": "Spreads",
+    "empty": "No echoes here yet. Open a pack to begin.",
+    "cardsCount": "{count} cards",
+    "setFilter": "Sets",
+    "aspectFilter": "Aspects",
+    "rarityFilter": "Rarities",
+    "sort": "Sort"
+  },
+  "cardDetail": {
+    "vitality": "Vitality",
+    "retreat": "Retreat",
+    "weakness": "Weakness",
+    "abilities": "Abilities",
+    "immersive": "Immersive View",
+    "ownedCount": "Owned: {count}"
+  },
+  "spreads": {
+    "title": "Spreads",
+    "newSpread": "New Spread",
+    "valid": "Spread Valid (20/20)",
+    "invalid": "Requires 20 cards, max 2 duplicates, min 1 Basic.",
+    "autoFill": "Auto-Fill",
+    "save": "Save Spread",
+    "rename": "Rename Spread"
+  },
+  "battle": {
+    "lobby": "Battle Sanctuary",
+    "solo": "Solo Trial",
+    "versus": "Versus Friend",
+    "ranked": "Ranked Ladder",
+    "selectSpread": "Choose Spread",
+    "findingMatch": "Searching for a worthy Warden...",
+    "start": "Wardens, begin.",
+    "opponentThinking": "Opponent is meditating...",
+    "attachAether": "Attach Aether",
+    "attack": "Attack",
+    "retreat": "Retreat",
+    "endTurn": "End Turn",
+    "ko": "Unbound.",
+    "win": "The Veil holds.",
+    "loss": "The Veil frays. Try again?",
+    "points": "Points: {a} - {b}"
+  },
+  "social": {
+    "friends": "Wardens Guild",
+    "friendCode": "Your Warden Code: {code}",
+    "addFriend": "Add by Code",
+    "trade": "Arcana Exchange",
+    "proposeTrade": "Propose Trade",
+    "tradeFee": "Fee: {amount} Echoes",
+    "tradeSuccess": "Exchange complete."
+  },
+  "locks": {
+    "folio": "Reach level 5 to open the Folio.",
+    "shrine": "Reach level 8 to open the Shrine."
+  },
+  "settings": {
+    "title": "Sanctuary Settings",
+    "language": "Language",
+    "musicVolume": "Music Volume",
+    "sfxVolume": "Sound Effects",
+    "reducedMotion": "Reduced Motion",
+    "resetSave": "Reset Profile",
+    "resetWarning": "Reset all progress and echoes?",
+    "version": "Version 1.0.0"
+  },
+  "shop": {
+    "title": "Arcana Treasury",
+    "shards": "Veil Shards",
+    "echoExchange": "Echo Exchange",
+    "buyPack": "Acquire Pack ({cost} Shards)",
+    "demoNotice": "Demo transaction only. No real money."
+  }
+}
