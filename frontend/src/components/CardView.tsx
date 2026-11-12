@@ -32,8 +32,9 @@ export const CardView: React.FC<CardViewProps> = ({
     ? CONCEPT.ASPECT_COLORS[card.aspect]
     : "#8C96A5";
 
-  const isFoil =
-    card.rarity.startsWith("moon") || card.rarity === "veil" || card.immersive;
+  const isMoon = card.rarity.startsWith("moon");
+  const isVeil = card.rarity === "veil" || !!card.immersive;
+  const isFoil = isMoon || isVeil;
 
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!interactive || !cardRef.current) return;
@@ -71,10 +72,10 @@ export const CardView: React.FC<CardViewProps> = ({
       onPointerMove={handlePointerMove}
       className={`relative aspect-[5/7] rounded-xl overflow-hidden bg-slate-950 text-ink shadow-card select-none flex flex-col justify-between transition-transform ${
         interactive ? "active:scale-[0.98] cursor-pointer" : ""
-      } ${className}`}
+      } ${isVeil ? "ring-1 ring-amber-400/60 shadow-[0_0_15px_rgba(242,193,78,0.25)]" : ""} ${className}`}
       style={{
-        borderColor: aspectColor,
-        borderWidth: "2px",
+        borderColor: isVeil ? "#F2C14E" : aspectColor,
+        borderWidth: isVeil ? "2.5px" : "2px",
       }}
     >
       {/* Outer Aspect Gradient Rim */}
@@ -85,28 +86,44 @@ export const CardView: React.FC<CardViewProps> = ({
         }}
       />
 
-      {/* NEW Tag Pill (Overlaps top-left by ~8px) */}
+      {/* NEW Tag Pill */}
       {isNew && (
         <div className="absolute -top-1 -left-1 z-30 px-2 py-0.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-ui font-extrabold text-[9px] tracking-wider shadow-md uppercase">
           NEW
         </div>
       )}
 
-      {/* Top Header Zone: Name, Aspect Glyph, Vitality */}
-      <div className="relative z-10 px-2 pt-1.5 pb-0.5 flex items-center justify-between bg-gradient-to-b from-slate-900/90 to-transparent">
+      {/* Top Header Zone: Name, Aspect Glyph, Power & HP */}
+      <div className="relative z-10 px-2 pt-1.5 pb-0.5 flex items-center justify-between bg-gradient-to-b from-slate-900/95 to-transparent">
         <div className="flex items-center gap-1 min-w-0">
           <AspectGlyph aspect={card.aspect} size={15} />
-          <span className="font-display font-bold text-[11px] sm:text-xs text-white truncate tracking-wide">
-            {card.name}
-          </span>
+          <div className="min-w-0">
+            <span className="font-display font-bold text-[11px] sm:text-xs text-white truncate tracking-wide block leading-tight">
+              {card.name}
+            </span>
+            {card.tarotArchetype && (
+              <span className="text-[8px] font-mono text-amber-300/80 truncate block leading-none">
+                {card.tarotArchetype}
+              </span>
+            )}
+          </div>
         </div>
 
-        {card.vitality !== undefined && (
-          <div className="flex items-center gap-0.5 shrink-0 text-amber-300 font-ui font-extrabold text-[11px] tabular-nums">
-            <span className="text-[8px] text-slate-400 font-semibold">HP</span>
-            <span>{card.vitality}</span>
-          </div>
-        )}
+        {/* Vitality (HP) & Power (PWR) */}
+        <div className="flex items-center gap-1.5 shrink-0 tabular-nums">
+          {card.power !== undefined && (
+            <div className="flex items-center gap-0.5 text-rose-400 font-ui font-extrabold text-[10px]">
+              <span className="text-[7px] text-slate-400 font-semibold">PWR</span>
+              <span>{card.power}</span>
+            </div>
+          )}
+          {card.vitality !== undefined && (
+            <div className="flex items-center gap-0.5 text-amber-300 font-ui font-extrabold text-[11px]">
+              <span className="text-[7px] text-slate-400 font-semibold">HP</span>
+              <span>{card.vitality}</span>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Arched Art Window */}
@@ -115,15 +132,28 @@ export const CardView: React.FC<CardViewProps> = ({
           cardId={card.id}
           name={card.name}
           aspect={card.aspect}
+          rarity={card.rarity}
+          tarotArchetype={card.tarotArchetype}
           className="w-full h-full"
         />
 
-        {/* Foil Shimmer Overlay for Moon & Veil Tiers */}
+        {/* Dynamic Holographic Foil Shader for Moon & Veil Tiers */}
         {isFoil && (
           <div
-            className="absolute inset-0 pointer-events-none mix-blend-color-dodge opacity-40 transition-opacity"
+            className="absolute inset-0 pointer-events-none mix-blend-color-dodge transition-opacity"
             style={{
-              background: `radial-gradient(circle at calc(var(--mx, 0.5) * 100%) calc(var(--my, 0.5) * 100%), rgba(255,255,255,0.8) 0%, transparent 60%)`,
+              opacity: isVeil ? 0.55 : 0.4,
+              background: `radial-gradient(circle at calc(var(--mx, 0.5) * 100%) calc(var(--my, 0.5) * 100%), rgba(255,255,255,0.9) 0%, rgba(255,200,240,0.5) 20%, rgba(180,220,255,0.4) 40%, transparent 65%)`,
+            }}
+          />
+        )}
+
+        {/* Prismatic Rainbow Sheen on Veil Crowned Cards */}
+        {isVeil && (
+          <div
+            className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
+            style={{
+              background: `linear-gradient(calc(var(--mx, 0.5) * 360deg), #FF7AA8, #FFD36E, #8BE28B, #6CC7FF, #B58BFF)`,
             }}
           />
         )}
@@ -133,7 +163,7 @@ export const CardView: React.FC<CardViewProps> = ({
       {!compact && (
         <div className="relative z-10 px-2 py-1 bg-slate-900/95 border-t border-white/10 flex flex-col gap-0.5">
           {card.abilities && card.abilities.length > 0 ? (
-            card.abilities.map((ab, idx) => (
+            card.abilities.slice(0, 2).map((ab, idx) => (
               <div key={idx} className="flex items-start justify-between text-[10px] leading-tight">
                 <div className="flex items-center gap-1 font-bold text-white truncate">
                   <div className="flex gap-0.5">
@@ -152,7 +182,7 @@ export const CardView: React.FC<CardViewProps> = ({
             ))
           ) : (
             <p className="text-[9px] text-slate-300 italic truncate leading-tight">
-              {card.flavor || "Bound within the twilight Veil."}
+              {card.flavor || card.description || "Bound within the twilight Veil."}
             </p>
           )}
         </div>
