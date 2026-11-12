@@ -48,3 +48,10 @@ All notable changes to **Veilbound Arcana** are documented here in conventional 
 - `feat(p7)`: Implement `S17Shop` with candle kindles, pack bundles, and Mulberry32 drop disclosures.
 - `feat(p7)`: Implement `S00Tutorial` 7-step guided onboarding ritual.
 - `docs(p7)`: Complete `PARITY.md`, `ORIGINALITY.md`, `DECISIONS.md`, `ASSETS.md`, `KNOWN_GAPS.md`, `CHANGELOG.md`, and `README.md`.
+
+#### NFT Expansion: 100 Tarot & Cosmic Arcana Cards
+- `feat(cards)`: Generate 100 unique NFT cards featuring Tarot Major Arcana (`c-013`–`c-034`) and Minor Arcana / Astrological Spirits (`c-035`–`c-100`) alongside 12 canonical showcase cards (`c-001`–`c-012`).
+- `feat(game)`: Extend card model with `power` rating (20–180), `vitality` HP (50–240), `tarotArchetype`, and narrative `description`.
+- `feat(art)`: Implement tiered procedural SVG art styles with animated rotating sacred geometry halos, stardust particles, and aspect coloring.
+- `feat(ui)`: Implement dynamic pointer-tracked radial holographic sheen for Moon cards and animated rainbow foil reflection for Veil crowned cards in `CardView.tsx`.
+- `feat(detail)`: Display tarot archetypes, power indicators, and expanded lore narrative in `S07CardDetail.tsx` and full-art Immersive mode.
