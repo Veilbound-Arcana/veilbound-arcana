@@ -44,12 +44,15 @@ export interface Card {
   evolvesFrom?: string;
   aspect?: Aspect;
   vitality?: number;
+  power?: number;
   crowned?: boolean;
   abilities?: Ability[];
   weakness?: Aspect;
   retreat?: number;
   retreatCost?: number;
   flavor?: string;
+  description?: string;
+  tarotArchetype?: string;
   artist?: string;
   rarity: Rarity;
   immersive?: boolean;
