@@ -1,8 +1,8 @@
 # Veilbound Arcana — Smart Contracts
 
-> **Mandatory Disclaimer:** *This project is not audited, endorsed or operated by Zama. Use at your own risk.*
+> **Mandatory Disclaimer:** *This project is not audited, endorsed or operated by any third party. Use at your own risk.*
 
-Smart contract suite for Veilbound Arcana, designed for Zama FHEVM v0.13 on Ethereum Sepolia testnet.
+Smart contract suite for Veilbound Arcana, designed for FHEVM v0.13 on Ethereum Sepolia testnet.
 
 ## Contract Architecture
 
