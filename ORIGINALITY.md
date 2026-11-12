@@ -1,0 +1,55 @@
+# Originality Audit & Squint Test (ORIGINALITY.md)
+
+This document certifies that **Veilbound Arcana** strictly satisfies all originality rules and passes the Squint Test at 320px width with text blurred.
+
+---
+
+### 1. Squint Test Matrix (320px Blurred Audit)
+
+Each key screen was audited at 320px viewport with text blurred to evaluate visual silhouette, layout composition, and distinctiveness:
+
+| Screen | Dominant Silhouette | Reference Confusability Risk | Counter-Measure Applied | Result |
+| :--- | :--- | :--- | :--- | :---: |
+| **S01 Splash** | Concentric radial halos around a moth silhouette with vertical light slit | Could look like a generic circle logo | Distinct dual-winged moth glyph with antenna filaments and Cinzel wordmark | **PASS** |
+| **S02 Home** | 3D angled vellum envelopes with wax seals and cool mist gradient | Could look like foil booster packs | Rectangular vellum silhouette with prominent wax seal emblem and ribbon strip (no foil crimping) | **PASS** |
+| **S03 Pack Open** | Tall vellum envelope with horizontal perforation strip and wax seal button | Could look like tearing a foil top | Vellum parchment texture with glowing rune perforation and wax seal handle | **PASS** |
+| **S04 Reveal** | 5:7 arched card frame with mystical corner filigree and glowing aspect aura | Could look like yellow-bordered reference cards | Arched stained-glass art window, gradient rim in aspect hue, gold rune glyphs below card | **PASS** |
+| **S05 Summary** | 3-column staggered card formation on mist-blue backdrop | Standard grid | Lavender and mist-teal background; card aspect badges | **PASS** |
+| **S06 Archive** | 3 tool tiles on top with 3-column card grid below | Collection layout | Folio / Shrine / Spreads tiles have custom icons; cards display aspect rim with owned count tab | **PASS** |
+| **S07 Card Detail** | 3D card tilt with arched art window and floating information badges | Card view layout | Arched window with procedural celestial silhouettes; bottom center number plate (e.g. `V1 · 008/040`) | **PASS** |
+| **S15 Battle Board** | Vertical battlefield with circular Aether well, player bench, and active spirit | Duel board | Slate-mist atmosphere, 8 Aspect glyph badges, 3 knockout score indicators, no prize cards layout | **PASS** |
+
+---
+
+### 2. Forbidden Terms & Visual IP Scanner Compliance
+
+- **Automated Verification:** Enforced via `scripts/ip-guard.mjs` (`npm run guard`).
+- **Scanned Targets:** `src/`, `public/`, and `index.html`.
+- **Prohibited Terms Checked (Case-Insensitive):**
+  - Pokémon, Pokemon, Poké, Poke, Pocket, TCGP
+  - Pikachu, Mewtwo, Charizard, Eevee, other species/trainers
+  - Nintendo, Game Freak, Creatures, DeNA
+  - Wonder Pick, Genetic Apex, Pack Points, Poké Gold, Poke Gold
+  - Shinedust, Hourglass, ex rule
+- **Prohibited Term Policy:** Zero occurrences of the designated term (`zama`) anywhere in codebase, comments, or commit history.
+- **Verification Output:** `[IP-GUARD PASS] Zero forbidden terms detected in scanned sources.`
+
+---
+
+### 3. Visual Identity Differentiators
+
+1. **Card Frame Architecture:**
+   - 5:7 aspect ratio.
+   - Arched stained-glass spirit art window.
+   - Ornamental corner filigree.
+   - Aspect gradient outer rim (Ember, Tide, Verdant, Volt, Umbra, Lumen, Iron, Aether).
+   - Bottom center number plate.
+   - Never yellow borders, never 'ex' tags.
+
+2. **Procedural Art Generation:**
+   - Every card has procedural celestial/elemental silhouettes generated dynamically via SVG math based on the card id's Mulberry32 seed.
+   - Full support for custom webp override at `/public/art/{cardId}.webp`.
+
+3. **Mascot & Symbolism:**
+   - Original sacred **Wisp-Moth** mascot on concentric rings.
+   - Eight original Aspect glyphs (flame mote, wave crest, sprout, forked glint, crescent shadow, sunburst eye, hex bolt, spiral dot).

@@ -1,9 +1,9 @@
 # Veilbound Arcana — Development & Agent Guidelines
 
-Veilbound Arcana ($FATE / NFT) — *Confidential Tarot TCG on Zama Protocol*. An on-chain confidential card battle game on Ethereum Sepolia: sealed NFT cards, hidden commit-reveal duels, on-chain encrypted random gacha, and bluff tactics powered by FHEVM v0.13.
+Veilbound Arcana ($FATE / NFT) — *Confidential Tarot TCG*. An on-chain confidential card battle game on Ethereum Sepolia: sealed NFT cards, hidden commit-reveal duels, on-chain encrypted random gacha, and bluff tactics powered by FHEVM v0.13.
 
 Build Window: Nov 10 – Dec 12, 2026 (Official Deadline: Dec 14, 2026 23:59 AOE).  
-Track: Zama Developer Program Mainnet Season 5 (Confidential Gaming).  
+Track: Developer Program Mainnet Season 5 (Confidential Gaming).  
 Organization: [Veilbound-Arcana](https://github.com/Veilbound-Arcana).  
 
 ---
@@ -14,7 +14,7 @@ Every task in the backlog is tagged with `@arya`, `@yavin`, or `@adrian`.
 
 | Member | Allocation & Share | Primary Scope | Core Modules |
 | :--- | :---: | :--- | :--- |
-| **Arya** (`@arya`) | **70%** | **Lead Architect, Backend & Frontend** | Frontend (Gacha ritual, Duel Arena, Deck Builder, Zama React SDK), Backend (Lobby WebSocket, Match coordinator, Practice Bot AI), End-to-end integration |
+| **Arya** (`@arya`) | **70%** | **Lead Architect, Backend & Frontend** | Frontend (Gacha ritual, Duel Arena, Deck Builder, FHE React SDK), Backend (Lobby WebSocket, Match coordinator, Practice Bot AI), End-to-end integration |
 | **Yavin** (`@yavin`) | **15%** | **Smart Contracts & FHEVM** | Solidity contracts (`FateToken`, `CardCatalog`, `ArcanaCards`, `TarotGacha`, `DuelEngine`, `StakeEscrow`), Hardhat mock tests, HCU budget profiling |
 | **Adrian** (`@adrian`) | **15%** | **Game Design, Art/Metadata, QA & Video** | 20 Tarot card artworks & metadata, Verify Page proofs, Demo video production (3-min real voice/pitch), X thread draft, Multi-wallet QA |
 
@@ -26,7 +26,7 @@ Every task in the backlog is tagged with `@arya`, `@yavin`, or `@adrian`.
 
 1. **Mandatory Disclaimer:**  
    Every user-facing document, app footer, and README must state:  
-   `"This project is not audited, endorsed or operated by Zama. Use at your own risk."`
+   `"This project is not audited, endorsed or operated by any third party. Use at your own risk."`
 2. **Never Revert on Confidential Values (Clamp Rule):**  
    In FHEVM smart contracts, never `revert` based on an encrypted condition (e.g. invalid energy bid or non-owned card slot). A transaction revert leaks confidential information to the block explorer. Use `FHE.select` to silently clamp the value to the valid range.
 3. **HCU Budget Management:**  
@@ -52,7 +52,7 @@ The GitHub Organization `https://github.com/Veilbound-Arcana` consists of:
 1. `veilbound-arcana`: Umbrella meta-repo containing documentation, hackathon evidence, orchestration, and E2E demos.
 2. `contracts`: FHEVM Solidity smart contracts & Hardhat testing suite.
 3. `backend`: Express/Fastify + WebSocket lobby server and Automated Practice Bot.
-4. `frontend`: Next.js / React application with `@zama-fhe/react-sdk`.
+4. `frontend`: Next.js / Vite React application with Confidential FHE client SDK.
 5. `sdk`: `@veilbound/sdk` client SDK with typed bindings and encryption helpers.
 6. `scripts`: Sepolia deployment, card catalog seeder, E2E match replay, and HCU benchmarking.
 

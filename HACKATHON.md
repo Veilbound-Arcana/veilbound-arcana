@@ -1,10 +1,10 @@
-# Veilbound Arcana — Zama Season 5 Hackathon Submission
+# Veilbound Arcana — Confidential Gaming Hackathon Submission
 
-> **Disclaimer:** This project is not audited, endorsed or operated by Zama. Use at your own risk.
+> **Disclaimer:** This project is not audited, endorsed or operated by any third party. Use at your own risk.
 
-- **Project Name:** Veilbound Arcana (Tarot TCG)
-- **Track:** Zama Developer Program Mainnet Season 5 — Confidential Gaming
-- **Deployment Network:** Ethereum Sepolia Testnet (Zama FHEVM Coprocessor)
+- **Project Name:** Veilbound Arcana (Collectible Card Game)
+- **Track:** Confidential Computing & Gaming
+- **Deployment Network:** Ethereum Sepolia Testnet
 - **Official Deadline:** December 14, 2026, 23:59 AOE
 - **Internal Freeze Date:** December 8, 2026 | **Target Submit:** December 12, 2026
 - **Organization:** [https://github.com/Veilbound-Arcana](https://github.com/Veilbound-Arcana)
@@ -12,18 +12,18 @@
 
 ---
 
-## 1. Compliance Matrix (Zama Season 5 Requirements)
+## 1. Compliance Matrix
 
 | Official Requirement | Implementation Status | Evidence / Verification Link |
 | :--- | :--- | :--- |
-| **Game on Zama Protocol on Sepolia** | Fully deployed on Sepolia testnet using FHEVM v0.13 | [Contract Addresses Table](#contract-deployments-sepolia) |
+| **Confidential Gaming Protocol on Sepolia** | Fully deployed on Sepolia testnet using FHEVM v0.13 | [Contract Addresses Table](#contract-deployments-sepolia) |
 | **Smart Contract & Frontend Monorepo/Org** | Structured polyrepo under GitHub Org `Veilbound-Arcana` | [Polyrepo Mapping Table](#repository-structure) |
 | **Live Working Website Demo** | Static WebApp hosted on Vercel connected to Sepolia | Hosted URL (Refer to README) |
 | **Confidential Token (ERC-7984)** | `FateToken.sol` confidential balance with built-in daily faucet | [`contracts/contracts/token/FateToken.sol`](contracts/contracts/token/FateToken.sol) |
 | **Video Demo (3 Minutes, Real Voice)** | Recorded walk-through with real-person pitch (No AI video/voice) | YouTube / Loom submission link |
 | **X (Twitter) Thread** | 6-post educational & gameplay thread published | [Thread URL](#) |
 | **Structured Documentation** | Complete PRD, GDD, ADRs, and evidence pack | [`docs/`](docs/) directory |
-| **No "Zama" in Project Name** | Named **Veilbound Arcana** | Verified |
+| **Original Identity Protection** | Named **Veilbound Arcana** with original lore and assets | Verified |
 | **Mandatory Disclaimer Present** | Stated on App footer, README, and all documentation | Stated in every header & footer |
 | **Single Submission per Email** | Pre-validated dry-run submission form | Scheduled for Dec 12, 2026 |
 
@@ -73,7 +73,7 @@ Reviewers accessing the web application can launch **Practice Mode** directly. A
 ## 4. MoSCoW Scope Tracking
 
 - **Must (Completed for MVP):**
-  - [x] Wallet connection & 1-signature Zama decryption session
+  - [x] Wallet connection & 1-signature decryption session
   - [x] `FateToken` ERC-7984 with daily faucet
   - [x] Single Spread Gacha (Encrypted draw + Sealed mint)
   - [x] Public Unseal verification mechanism
