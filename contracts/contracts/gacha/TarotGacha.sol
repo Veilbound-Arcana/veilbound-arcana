@@ -9,7 +9,7 @@ import "../cards/CardCatalog.sol";
 /**
  * @title TarotGacha
  * @notice On-chain encrypted Tarot gacha engine with verifiable odds and pity mechanics.
- * @dev Disclaimer: This project is not audited, endorsed or operated by Zama. Use at your own risk.
+ * @dev Disclaimer: This project is not audited, endorsed or operated by any third party. Use at your own risk.
  */
 contract TarotGacha is Ownable {
     FateToken public immutable fateToken;
