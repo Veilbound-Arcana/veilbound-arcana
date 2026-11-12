@@ -23,7 +23,7 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
 
 console.log("\n=======================================================");
 console.log("  🔮 VEILBOUND ARCANA — OFFLINE MATCH REPLAY ENGINE");
-console.log("  Zama Developer Program Mainnet Season 5 (Sepolia)");
+console.log("  Developer Program Mainnet Season 5 (Sepolia)");
 console.log("=======================================================\n");
 
 console.log(`[DISCLAIMER] ${manifest.disclaimer}\n`);

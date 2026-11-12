@@ -1,6 +1,6 @@
 /**
  * Veilbound Arcana — HCU (Homomorphic Computation Units) Profiler
- * Compares expected cryptographic operation costs with Zama Sepolia devnet limits.
+ * Compares expected cryptographic operation costs with fhevm Sepolia devnet limits.
  */
 
 const SEPOLIA_LIMITS = {
@@ -32,7 +32,7 @@ const BENCHMARKS = [
 ];
 
 console.log("\n=======================================================");
-console.log("  ⚡ ZAMA FHEVM HCU CONSUMPTION PROFILING REPORT");
+console.log("  ⚡ FHEVM HCU CONSUMPTION PROFILING REPORT");
 console.log("=======================================================\n");
 
 BENCHMARKS.forEach((item) => {
@@ -42,6 +42,6 @@ BENCHMARKS.forEach((item) => {
   console.log(`• ${item.operation}`);
   console.log(`  - Global HCU : ${item.estimatedHCU.toLocaleString()} / 20M (${globalPct}%)`);
   console.log(`  - Depth HCU  : ${item.depthHCU.toLocaleString()} / 5M (${depthPct}%)`);
-  console.log(`  - Status     : SAFE (Well within Zama coprocessor constraints)`);
+  console.log(`  - Status     : SAFE (Well within FHE coprocessor constraints)`);
   console.log("");
 });

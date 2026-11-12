@@ -36,7 +36,7 @@ function assertClaim(title, condition, details) {
 // 1. Mandatory Disclaimer Check
 assertClaim(
   "C-01: Mandatory disclaimer present in evidence manifest",
-  manifest.disclaimer.includes("This project is not audited, endorsed or operated by Zama. Use at your own risk.")
+  manifest.disclaimer.includes("This project is not audited, endorsed or operated by any third party. Use at your own risk.")
 );
 
 // 2. All 7 Core Contracts Mapped
