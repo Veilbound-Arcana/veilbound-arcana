@@ -113,20 +113,47 @@ export const S07CardDetail: React.FC = () => {
               <h2 className="font-display font-bold text-base text-white">{card.name}</h2>
               <AspectGlyph aspect={card.aspect} size={16} />
             </div>
+            {card.tarotArchetype && (
+              <span className="text-[11px] text-amber-300 font-display font-medium tracking-wide block">
+                {card.tarotArchetype}
+              </span>
+            )}
             <span className="text-[10px] text-slate-400 capitalize font-mono">
               {card.kind} {card.stage ? `· ${card.stage}` : ""} · Set {card.setId}
             </span>
           </div>
 
-          {card.vitality && (
-            <div className="text-right">
-              <span className="text-[10px] text-slate-400 block font-mono">VITALITY</span>
-              <span className="font-display font-bold text-base text-emerald-400">
-                {card.vitality} HP
-              </span>
-            </div>
-          )}
+          <div className="flex items-center gap-3 text-right">
+            {card.power !== undefined && (
+              <div>
+                <span className="text-[9px] text-amber-400/80 block font-mono">POWER</span>
+                <span className="font-display font-bold text-sm text-amber-300">
+                  ⚡ {card.power}
+                </span>
+              </div>
+            )}
+            {card.vitality && (
+              <div>
+                <span className="text-[9px] text-slate-400 block font-mono">VITALITY</span>
+                <span className="font-display font-bold text-sm text-emerald-400">
+                  {card.vitality} HP
+                </span>
+              </div>
+            )}
+          </div>
         </div>
+
+        {/* Narrative Lore & Description */}
+        {card.description && (
+          <div className="bg-white/5 rounded-xl p-2.5 border border-white/5 space-y-1">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-amber-300/90 block">
+              Veilbound Lore & Archetype
+            </span>
+            <p className="text-[11px] text-slate-300 font-ui leading-relaxed">
+              {card.description}
+            </p>
+          </div>
+        )}
 
         {/* Abilities List */}
         <div className="space-y-2">
@@ -220,7 +247,15 @@ export const S07CardDetail: React.FC = () => {
 
               <div className="mt-8 text-center max-w-xs">
                 <h1 className="font-display font-bold text-2xl text-white">{card.name}</h1>
-                <p className="text-xs text-amber-400 font-mono mt-1">Crowned Veilborn</p>
+                {card.tarotArchetype && (
+                  <p className="text-xs text-amber-300 font-display mt-0.5">{card.tarotArchetype}</p>
+                )}
+                <div className="flex items-center justify-center gap-2 mt-1">
+                  <span className="text-xs text-amber-400 font-mono">Crowned Veilborn</span>
+                  {card.power !== undefined && (
+                    <span className="text-xs text-amber-300 font-mono">· ⚡ {card.power} PWR</span>
+                  )}
+                </div>
                 <p className="text-xs text-slate-300 italic mt-3 font-ui">
                   "{card.flavor}"
                 </p>
