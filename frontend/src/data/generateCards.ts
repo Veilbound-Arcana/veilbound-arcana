@@ -1,23 +1,30 @@
 import { Card, Aspect, Rarity } from "@/game/types";
 import { CONCEPT } from "@/app/concept.config";
-import { mulberry32 } from "@/game/rng";
 
+/**
+ * 12 Canonical Showcase Cards (c-001 to c-012)
+ * Strictly calibrated for engine rules tests, starter decks, and early tutorials.
+ */
 export const SHOWCASE_CARDS: Card[] = [
   {
     id: "c-001",
     number: 1,
     setId: "V1",
     name: "Emberwick",
+    tarotArchetype: "0 · The Spark of the Fool",
     kind: "veilborn",
     stage: "basic",
     aspect: "ember",
     vitality: 60,
+    power: 20,
     rarity: "rune1",
     retreat: 1,
+    retreatCost: 1,
     weakness: "tide",
     abilities: [
       { name: "Kindle Spark", cost: ["ember"], damage: 20, text: "Deals 20 damage." },
     ],
+    description: "A playful spirit born from the dying embers of a sacred bonfire. Guides wanderers who are unafraid of stepping into the unknown.",
     flavor: "Born from smoldering wick and whispered vows.",
     artist: "A. Vance",
   },
@@ -26,16 +33,20 @@ export const SHOWCASE_CARDS: Card[] = [
     number: 2,
     setId: "V1",
     name: "Tidecaller Wren",
+    tarotArchetype: "I · The Magician's Familiar",
     kind: "veilborn",
     stage: "basic",
     aspect: "tide",
     vitality: 60,
+    power: 20,
     rarity: "rune2",
     retreat: 1,
+    retreatCost: 1,
     weakness: "volt",
     abilities: [
       { name: "Swell Chirp", cost: ["tide"], damage: 20, text: "Deals 20 damage." },
     ],
+    description: "An aquatic avian whose melodic chirps stir the coastal shallows, channeling tidal currents with its iridescent wings.",
     flavor: "Its dawn song pulls gentle currents ashore.",
     artist: "E. Lin",
   },
@@ -44,16 +55,20 @@ export const SHOWCASE_CARDS: Card[] = [
     number: 3,
     setId: "V1",
     name: "Mossbarrow Hare",
+    tarotArchetype: "II · The Sylvan Oracle",
     kind: "veilborn",
     stage: "basic",
     aspect: "verdant",
     vitality: 50,
+    power: 10,
     rarity: "rune1",
     retreat: 1,
+    retreatCost: 1,
     weakness: "umbra",
     abilities: [
       { name: "Root Burrow", cost: ["verdant"], damage: 10, text: "Heals 10 on hit." },
     ],
+    description: "A nimble creature burrowing through ancient burial mounds, guarding forgotten memories buried beneath blooming clover.",
     flavor: "Burrows beneath ancient mounds where memory sleeps.",
     artist: "M. Thorne",
   },
@@ -62,17 +77,21 @@ export const SHOWCASE_CARDS: Card[] = [
     number: 4,
     setId: "V1",
     name: "Static Finch",
+    tarotArchetype: "VII · Spark of the Chariot",
     kind: "veilborn",
     stage: "basic",
     aspect: "volt",
-    vitality: 50,
+    vitality: 60,
+    power: 30,
     rarity: "rune2",
     retreat: 1,
+    retreatCost: 1,
     weakness: "iron",
     abilities: [
-      { name: "Flash Peck", cost: ["volt"], damage: 30, text: "Sharp 30 damage opener." },
+      { name: "Flash Peck", cost: ["volt"], damage: 30, text: "Strikes with high velocity electricity." },
     ],
-    flavor: "Feathers snap with ozone before summer tempests.",
+    description: "Crackling with storm energy, this lightning finch darts between thunderheads to strike with surgical electrostatic precision.",
+    flavor: "A flash across the sky, then silence in the storm.",
     artist: "S. Kova",
   },
   {
@@ -80,124 +99,150 @@ export const SHOWCASE_CARDS: Card[] = [
     number: 5,
     setId: "V1",
     name: "Hollowbell Fox",
+    tarotArchetype: "IX · The Lantern Fox",
     kind: "veilborn",
     stage: "stage1",
     aspect: "umbra",
     vitality: 80,
+    power: 40,
     rarity: "moon1",
     retreat: 1,
+    retreatCost: 1,
     weakness: "lumen",
     abilities: [
       {
-        name: "Somber Chime",
-        cost: ["umbra", "aether"],
+        name: "Slumber Chiming",
+        cost: ["umbra"],
         damage: 40,
-        text: "Deals 40 damage and puts target into Slumber.",
+        text: "Puts the defender to Slumber.",
         effect: { type: "status", status: "slumber" },
       },
     ],
-    flavor: "Tolls a brass bell heard only in twilight dreams.",
-    artist: "A. Vance",
+    description: "Carrying a bronze bell salvaged from a submerged shrine, its rhythmic chiming lulls weary spirits into restful hypnosis.",
+    flavor: "Its toll echoes longer than memory.",
+    artist: "H. Gale",
   },
   {
     id: "c-006",
     number: 6,
     setId: "V1",
     name: "Gleamstag",
+    tarotArchetype: "XVII · The Guiding Star",
     kind: "veilborn",
     stage: "stage1",
     aspect: "lumen",
     vitality: 90,
+    power: 40,
     rarity: "moon2",
-    retreat: 2,
+    retreat: 1,
+    retreatCost: 1,
     weakness: "aether",
     abilities: [
       {
-        name: "Lustrous Dawn",
-        cost: ["lumen", "aether"],
-        damage: 30,
-        text: "Deals 30 damage and heals 30 to a benched ally.",
-        effect: { type: "heal", amount: 30 },
+        name: "Radiant Balm",
+        cost: ["lumen"],
+        damage: 40,
+        text: "Heal 20 vitality from this Veilborn.",
+        effect: { type: "heal", amount: 20 },
       },
     ],
-    flavor: "Its luminous antlers light lost pilgrims safely home.",
-    artist: "H. Gale",
+    description: "A noble cervid whose crystal antlers catch starlight and focus it into restorative warmth for wounded companions.",
+    flavor: "Antlers of morning frost, heart of noon.",
+    artist: "A. Vance",
   },
   {
     id: "c-007",
     number: 7,
     setId: "V1",
     name: "Ironquill",
+    tarotArchetype: "IV · The Basalt Scribe",
     kind: "veilborn",
     stage: "basic",
     aspect: "iron",
-    vitality: 100,
+    vitality: 80,
+    power: 30,
     rarity: "rune3",
     retreat: 2,
+    retreatCost: 2,
     weakness: "ember",
     abilities: [
-      { name: "Fortified Strike", cost: ["iron", "aether"], damage: 40, text: "Solid 40 damage." },
+      { name: "Iron Feather", cost: ["iron"], damage: 30, text: "Deals 30 damage." },
     ],
-    flavor: "Plumage hardened by centuries of temple vigil.",
-    artist: "M. Thorne",
+    description: "An armored avian construct with feathers honed like obsidian blades. Heavily plated and deliberate in every movement.",
+    flavor: "Heavy wings that carve the air like chisels.",
+    artist: "C. Moros",
   },
   {
     id: "c-008",
     number: 8,
     setId: "V1",
     name: "Mourning Leviathan",
+    tarotArchetype: "X · The Abyssal Wheel",
     kind: "veilborn",
     stage: "stage2",
     aspect: "tide",
     vitality: 140,
+    power: 90,
     crowned: true,
     rarity: "veil",
     immersive: true,
-    retreat: 3,
+    retreat: 2,
+    retreatCost: 2,
     weakness: "volt",
     abilities: [
       {
-        name: "Tide of Sorrow",
-        cost: ["tide", "tide", "aether"],
-        damage: 80,
-        text: "Massive 80 damage. Awards 2 points on KO.",
+        name: "Abyssal Wake",
+        cost: ["tide", "tide"],
+        damage: 90,
+        text: "A crushing surge of oceanic weight.",
       },
     ],
-    flavor: "The sea remembers what the shoreline forgot.",
-    artist: "C. Moros",
+    description: "An ancient sea leviathan crowned with living coral reef formations. Knocking it unbound grants 2 victory points.",
+    flavor: "It carries the weight of drowned ages in its wake.",
+    artist: "E. Lin",
   },
   {
     id: "c-009",
     number: 9,
     setId: "V1",
     name: "Marrow Queen",
+    tarotArchetype: "III · The Earth Sovereign",
     kind: "veilborn",
     stage: "stage2",
     aspect: "verdant",
-    vitality: 120,
+    vitality: 130,
+    power: 70,
     crowned: true,
     rarity: "moon3",
     retreat: 2,
+    retreatCost: 2,
     weakness: "umbra",
     abilities: [
       {
-        name: "Spore Thorns",
-        cost: ["verdant", "aether"],
-        damage: 50,
-        text: "Deals 50 damage and 20 to one benched enemy.",
+        name: "Mycelial Pulse",
+        cost: ["verdant", "verdant"],
+        damage: 70,
+        text: "Deals 70 damage and 20 damage to one benched spirit.",
         effect: { type: "benchDamage", amount: 20 },
       },
     ],
-    flavor: "Her root-throne cradles the bones of forgotten kings.",
-    artist: "S. Kova",
+    description: "The sovereign mother of subterranean root systems, speaking through thousands of interconnected mycorrhizal threads.",
+    flavor: "Flesh frays, bone endures; the soil remembers.",
+    artist: "M. Thorne",
   },
   {
     id: "c-010",
     number: 10,
     setId: "V1",
     name: "Warden Isolde",
+    tarotArchetype: "V · The Hierophant's Grace",
     kind: "ally",
+    stage: "basic",
     rarity: "rune4",
+    vitality: 80,
+    power: 30,
+    retreat: 1,
+    retreatCost: 1,
     abilities: [
       {
         name: "Veil Mend",
@@ -206,6 +251,7 @@ export const SHOWCASE_CARDS: Card[] = [
         effect: { type: "heal", amount: 30 },
       },
     ],
+    description: "A legendary First Dawn Warden who mapped the boundary of the misty Veil to save lost wanderers.",
     flavor: "‘Hold fast to the thread; dawn is near.’",
     artist: "E. Lin",
   },
@@ -214,11 +260,18 @@ export const SHOWCASE_CARDS: Card[] = [
     number: 11,
     setId: "V1",
     name: "Cracked Compass",
+    tarotArchetype: "XII · The Suspended Needle",
     kind: "tool",
+    stage: "basic",
     rarity: "rune2",
+    vitality: 70,
+    power: 20,
+    retreat: 0,
+    retreatCost: 0,
     abilities: [
       { name: "Wayward Needle", cost: [], text: "Reduces retreat cost by 1." },
     ],
+    description: "An antique navigational tool whose fractured crystal dial responds to emotional resonance rather than magnetic poles.",
     flavor: "Its needle spins toward truth, not north.",
     artist: "H. Gale",
   },
@@ -227,14 +280,17 @@ export const SHOWCASE_CARDS: Card[] = [
     number: 12,
     setId: "V1",
     name: "Veilhearth Sentinel",
+    tarotArchetype: "XIX · The Solar Warden",
     kind: "veilborn",
     stage: "stage2",
     aspect: "ember",
     vitality: 130,
+    power: 60,
     crowned: true,
     rarity: "veil",
     immersive: true,
     retreat: 2,
+    retreatCost: 2,
     weakness: "tide",
     abilities: [
       {
@@ -245,83 +301,532 @@ export const SHOWCASE_CARDS: Card[] = [
         effect: { type: "status", status: "wither" },
       },
     ],
+    description: "An eternal fiery guardian standing watch where the warm hearth meets the boundless, frozen void of space.",
     flavor: "Standing guard where hearthfire meets the infinite cold.",
     artist: "C. Moros",
   },
 ];
 
-const PREFIXES = [
-  "Mist", "Gloom", "Solar", "Dusk", "Frost", "Glint", "Cinder", "Briar",
-  "Rune", "Hallow", "Storm", "Shimmer", "Vesper", "Sylvan", "Abyss", "Zephyr"
+/**
+ * 22 Major Arcana Cards (c-013 through c-034)
+ */
+interface MajorCardTemplate {
+  name: string;
+  archetype: string;
+  aspect: Aspect;
+  kind: "veilborn" | "ally" | "tool";
+  stage: "basic" | "stage1" | "stage2";
+  crowned?: boolean;
+  rarity: Rarity;
+  vitality: number;
+  power: number;
+  abilityName: string;
+  abilityText: string;
+  description: string;
+  flavor: string;
+}
+
+const MAJOR_ARCANA_CATALOG: MajorCardTemplate[] = [
+  {
+    archetype: "0 · The Fool",
+    name: "The Threshold Wanderer",
+    aspect: "aether",
+    kind: "veilborn",
+    stage: "basic",
+    rarity: "rune1",
+    vitality: 65,
+    power: 25,
+    abilityName: "Leap of Faith",
+    abilityText: "Deals 25 damage; draw 1 card if coin lands heads.",
+    description: "The innocent traveler standing on the precipice between reality and the vast unknown. Unbound by fear.",
+    flavor: "Every journey through the Veil begins with a step into nothingness.",
+  },
+  {
+    archetype: "I · The Magician",
+    name: "Astral Spellweaver",
+    aspect: "lumen",
+    kind: "veilborn",
+    stage: "basic",
+    rarity: "rune2",
+    vitality: 70,
+    power: 35,
+    abilityName: "Prismatic Surge",
+    abilityText: "Channels ethereal light to deal 35 damage.",
+    description: "Master of elemental forces who bridges heaven and earth, weaving raw Aether into tangible magical manifestations.",
+    flavor: "As above the celestial vault, so below in the mortal soul.",
+  },
+  {
+    archetype: "II · The High Priestess",
+    name: "Lunar Oracle",
+    aspect: "umbra",
+    kind: "veilborn",
+    stage: "stage1",
+    rarity: "moon1",
+    vitality: 110,
+    power: 70,
+    abilityName: "Veil of Intuition",
+    abilityText: "Deals 70 damage and puts the target to Slumber.",
+    description: "Guardian of the subconscious sanctuary and hidden mysteries that lie beyond the mortal threshold.",
+    flavor: "Silence holds truths that spoken words only obscure.",
+  },
+  {
+    archetype: "III · The Empress",
+    name: "Sylvan Life-Mother",
+    aspect: "verdant",
+    kind: "veilborn",
+    stage: "stage2",
+    rarity: "moon2",
+    vitality: 150,
+    power: 95,
+    abilityName: "Verdant Blossom",
+    abilityText: "Deals 95 damage and restores 30 vitality to all benched allies.",
+    description: "The fertile spirit of nature and unconditional creation, nourishing the soil wherever her hem touches.",
+    flavor: "From patient decay blooms the splendor of eternal spring.",
+  },
+  {
+    archetype: "IV · The Emperor",
+    name: "Iron Sovereign",
+    aspect: "iron",
+    kind: "veilborn",
+    stage: "stage2",
+    rarity: "moon2",
+    vitality: 160,
+    power: 100,
+    abilityName: "Bulwark Decree",
+    abilityText: "Deals 100 damage and hardens armor against the next strike.",
+    description: "Embodiment of unyielding order and temporal structure, sitting upon a basalt throne carved into the bedrock.",
+    flavor: "Authority without stone is but dust in the tempest.",
+  },
+  {
+    archetype: "V · The Hierophant",
+    name: "Keeper of Sacred Runes",
+    aspect: "iron",
+    kind: "veilborn",
+    stage: "stage1",
+    rarity: "moon1",
+    vitality: 120,
+    power: 75,
+    abilityName: "Chant of Dogma",
+    abilityText: "Deals 75 damage and seals opponent's retreat for one turn.",
+    description: "The ritualistic bridge connecting arcane ancient tradition to current generations of Wardens.",
+    flavor: "Tradition is the anchor that holds reality steady in the mist.",
+  },
+  {
+    archetype: "VI · The Lovers",
+    name: "Twin Constellations",
+    aspect: "aether",
+    kind: "veilborn",
+    stage: "basic",
+    rarity: "rune3",
+    vitality: 80,
+    power: 50,
+    abilityName: "Harmonic Bond",
+    abilityText: "Deals 50 damage; heals 20 vitality to your active companion.",
+    description: "Dual spirits tethered across space by a silver strand of cosmic resonance.",
+    flavor: "Divided by stars, bound forever by fate.",
+  },
+  {
+    archetype: "VII · The Chariot",
+    name: "Aurora Juggernaut",
+    aspect: "volt",
+    kind: "veilborn",
+    stage: "stage1",
+    rarity: "moon1",
+    vitality: 130,
+    power: 80,
+    abilityName: "Thunderous Drive",
+    abilityText: "Charges with lightning velocity, dealing 80 damage.",
+    description: "Steered by unwavering willpower, harnessing opposing beasts of light and shadow.",
+    flavor: "Triumph belongs to the Warden who commands their own inner turmoil.",
+  },
+  {
+    archetype: "VIII · Strength",
+    name: "Ashen Beast Tamer",
+    aspect: "ember",
+    kind: "veilborn",
+    stage: "stage1",
+    rarity: "moon2",
+    vitality: 140,
+    power: 90,
+    abilityName: "Gentle Dominance",
+    abilityText: "Subdues the opponent's spirit, dealing 90 damage.",
+    description: "True fortitude demonstrated through tranquil spiritual mastery over inner passions.",
+    flavor: "A gentle hand calms the lion that claws could never conquer.",
+  },
+  {
+    archetype: "IX · The Hermit",
+    name: "Lantern Seeker",
+    aspect: "lumen",
+    kind: "veilborn",
+    stage: "basic",
+    rarity: "rune4",
+    vitality: 90,
+    power: 60,
+    abilityName: "Inner Beacon",
+    abilityText: "Illuminates hidden cards and deals 60 damage.",
+    description: "A contemplative wanderer traversing craggy peaks with a solitary lantern carrying wisdom.",
+    flavor: "In solitary darkness, the true beacon shines brightest.",
+  },
+  {
+    archetype: "X · Wheel of Fortune",
+    name: "Ouroboros Loom",
+    aspect: "aether",
+    kind: "veilborn",
+    stage: "stage2",
+    crowned: true,
+    rarity: "veil",
+    vitality: 210,
+    power: 160,
+    abilityName: "Chrono Rupture",
+    abilityText: "Alters destiny; deals 160 colossal damage and forces opponent card discard.",
+    description: "The perpetual cosmic mechanism that rotates kings to beggars and awakens dormant gods.",
+    flavor: "The wheel turns eternally, respecting neither crown nor shroud.",
+  },
+  {
+    archetype: "XI · Justice",
+    name: "Arbiter of Scales",
+    aspect: "iron",
+    kind: "veilborn",
+    stage: "stage2",
+    rarity: "moon3",
+    vitality: 170,
+    power: 115,
+    abilityName: "Equilibrium Blade",
+    abilityText: "Strikes with perfect balance, dealing 115 damage.",
+    description: "Impartial judge seated between pillars of truth and consequence, wielding an upright blade.",
+    flavor: "The scales measure not intentions, but the weight of actions done.",
+  },
+  {
+    archetype: "XII · The Hanged Man",
+    name: "Suspended Mystic",
+    aspect: "umbra",
+    kind: "veilborn",
+    stage: "stage1",
+    rarity: "moon1",
+    vitality: 120,
+    power: 70,
+    abilityName: "Inverted Vision",
+    abilityText: "Sacrifices 10 vitality to inflict 70 piercing damage.",
+    description: "Suspended by one foot from the World Tree, smiling serenely as a radiant nimbus crowns his head.",
+    flavor: "To perceive truth, one must surrender the illusion of control.",
+  },
+  {
+    archetype: "XIII · Death",
+    name: "Warden of Rebirth",
+    aspect: "umbra",
+    kind: "veilborn",
+    stage: "stage2",
+    crowned: true,
+    rarity: "veil",
+    vitality: 220,
+    power: 170,
+    abilityName: "Astral Rebirth",
+    abilityText: "Cleanses the battlefield with 170 damage; revives fallen basic ally.",
+    description: "The dark knight astride a pale steed, carrying a black banner with the white rose of transformation.",
+    flavor: "Every ending is but the fertile soil of an unimaginable genesis.",
+  },
+  {
+    archetype: "XIV · Temperance",
+    name: "Alchemical Harmonizer",
+    aspect: "tide",
+    kind: "veilborn",
+    stage: "stage1",
+    rarity: "moon2",
+    vitality: 140,
+    power: 85,
+    abilityName: "Essence Blending",
+    abilityText: "Blends fire and water to heal 40 vitality while dealing 85 damage.",
+    description: "An angelic presence pouring the liquid essence of life continuously between two chalices.",
+    flavor: "True alchemy lies in the tranquil synthesis of opposing fires.",
+  },
+  {
+    archetype: "XV · The Devil",
+    name: "Abyssal Puppeteer",
+    aspect: "umbra",
+    kind: "veilborn",
+    stage: "stage2",
+    rarity: "moon3",
+    vitality: 180,
+    power: 130,
+    abilityName: "Chains of Bondage",
+    abilityText: "Deals 130 damage and afflicts opponent with severe Wither.",
+    description: "A horned chimera perched upon an altar of desire, enslaving souls with loose golden chains.",
+    flavor: "The heaviest shackles are the ones forged by our own unexamined desires.",
+  },
+  {
+    archetype: "XVI · The Tower",
+    name: "Shattered Spire",
+    aspect: "ember",
+    kind: "veilborn",
+    stage: "stage2",
+    rarity: "moon3",
+    vitality: 175,
+    power: 125,
+    abilityName: "Cataclysmic Collapse",
+    abilityText: "Lightning shatters the battlement, dealing 125 damage and 20 to bench.",
+    description: "A monolithic tower struck by celestial lightning, casting arrogant crowns into the abyss.",
+    flavor: "When pride builds the fortress, lightning is the architect of release.",
+  },
+  {
+    archetype: "XVII · The Star",
+    name: "Celestial Guide",
+    aspect: "lumen",
+    kind: "veilborn",
+    stage: "stage1",
+    rarity: "moon2",
+    vitality: 135,
+    power: 90,
+    abilityName: "Guiding Light",
+    abilityText: "Deals 90 damage and reveals next 2 cards from deck.",
+    description: "A maiden pouring cosmic waters into river and soil beneath an eight-pointed star of hope.",
+    flavor: "Even in the darkest twilight, hope pours eternally from the heavens.",
+  },
+  {
+    archetype: "XVIII · The Moon",
+    name: "Eclipse Chimera",
+    aspect: "umbra",
+    kind: "veilborn",
+    stage: "stage2",
+    crowned: true,
+    rarity: "veil",
+    vitality: 200,
+    power: 150,
+    abilityName: "Nightmare Phantasm",
+    abilityText: "Summons spectral illusions, dealing 150 damage and confusing foe.",
+    description: "A silver crescent framed by barking jackals and a deep abyssal pool.",
+    flavor: "Beware the deceptive moonlight where illusions wear the mask of truth.",
+  },
+  {
+    archetype: "XIX · The Sun",
+    name: "Solar Colossus",
+    aspect: "ember",
+    kind: "veilborn",
+    stage: "stage2",
+    crowned: true,
+    rarity: "veil",
+    vitality: 230,
+    power: 175,
+    abilityName: "Supernova Flare",
+    abilityText: "Releases radiant dawn energy, dealing 175 damage and burning bench.",
+    description: "A radiant child riding a white steed beneath a triumphant golden sun.",
+    flavor: "Dawn rises unconditionally; darkness vanishes in blinding splendor.",
+  },
+  {
+    archetype: "XX · Judgement",
+    name: "Astral Resonance",
+    aspect: "volt",
+    kind: "veilborn",
+    stage: "stage2",
+    crowned: true,
+    rarity: "veil",
+    vitality: 215,
+    power: 165,
+    abilityName: "Gabriel's Call",
+    abilityText: "Calls forth awakening thunder dealing 165 damage.",
+    description: "An archangel blowing the golden horn from celestial clouds, summoning souls from sleep.",
+    flavor: "Hear the call of destiny; sleep no longer in the fog of yesterday.",
+  },
+  {
+    archetype: "XXI · The World",
+    name: "Cosmic Crown Dancer",
+    aspect: "aether",
+    kind: "veilborn",
+    stage: "stage2",
+    crowned: true,
+    rarity: "veil",
+    vitality: 240,
+    power: 180,
+    abilityName: "Cosmic Omnipresence",
+    abilityText: "Deals 180 colossal damage; complete harmony ends all negative status.",
+    description: "A triumphant dancer suspended within a laurel wreath, crowned with cosmic wisdom.",
+    flavor: "The journey concludes where it began, crowned with the wisdom of all realms.",
+  },
 ];
 
-const SUFFIXES = [
-  "hound", "talon", "weaver", "stride", "mantle", "drake", "specter", "moth",
-  "root", "whisper", "hart", "gargoyle", "panther", "vane", "strider", "serpent"
+/**
+ * 66 Minor Arcana & Astrological Spirits catalog (c-035 through c-100)
+ */
+interface MinorCardTemplate {
+  name: string;
+  archetype: string;
+  aspect: Aspect;
+  kind: "veilborn" | "ally" | "tool";
+  stage: "basic" | "stage1" | "stage2";
+  crowned?: boolean;
+  rarity: Rarity;
+  vitality: number;
+  power: number;
+  abilityName: string;
+  abilityText: string;
+  description: string;
+  flavor: string;
+}
+
+const MINOR_CATALOG: MinorCardTemplate[] = [
+  // --- EMBERS SUIT (Wands / Creative Passion) ---
+  { name: "Ace of Embers", archetype: "Minor · Ace of Embers", aspect: "ember", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 60, power: 25, abilityName: "Spark Burst", abilityText: "Deals 25 fire damage.", description: "A primordial sprout of flame bursting forth from rowan wood.", flavor: "The spark holds the furnace of stars." },
+  { name: "Two of Embers", archetype: "Minor · Two of Embers", aspect: "ember", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 65, power: 30, abilityName: "Horizon Survey", abilityText: "Deals 30 fire damage.", description: "A warden holding a blazing globe from ramparts.", flavor: "The world is wide for fire in the eyes." },
+  { name: "Three of Embers", archetype: "Minor · Three of Embers", aspect: "ember", kind: "veilborn", stage: "basic", rarity: "rune2", vitality: 70, power: 35, abilityName: "Voyage Beacon", abilityText: "Deals 35 fire damage.", description: "Ships sailing into gilded sunrises guided by beacon flames.", flavor: "Venture where warm currents summon your ships." },
+  { name: "Four of Embers", archetype: "Minor · Four of Embers", aspect: "ember", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 85, power: 45, abilityName: "Arbor Hearth", abilityText: "Deals 45 damage.", description: "A celebratory arbor hung with ember flower festoons.", flavor: "Rejoice in the sanctuary of courage." },
+  { name: "Five of Embers", archetype: "Minor · Five of Embers", aspect: "ember", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 85, power: 50, abilityName: "Chaos Clashing", abilityText: "Deals 50 fire damage.", description: "Five wild spirits clashing in competitive duel.", flavor: "Conflict is the whetstone of spirit." },
+  { name: "Six of Embers", archetype: "Minor · Six of Embers", aspect: "ember", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 95, power: 60, abilityName: "Triumphant March", abilityText: "Deals 60 fire damage.", description: "A horseman crowned with golden laurel riding through cheering throngs.", flavor: "Victory crowns persistence." },
+  { name: "Seven of Embers", archetype: "Minor · Seven of Embers", aspect: "ember", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 100, power: 65, abilityName: "Ridge Defense", abilityText: "Deals 65 damage.", description: "A guardian holding the mountain pass against encroaching shades.", flavor: "Stand firm against the tempest." },
+  { name: "Eight of Embers", archetype: "Minor · Eight of Embers", aspect: "ember", kind: "veilborn", stage: "basic", rarity: "rune3", vitality: 75, power: 55, abilityName: "Rapid Volley", abilityText: "Deals 55 swift damage.", description: "Eight burning spears hurtling through azure skies.", flavor: "Swift as thought, true as iron." },
+  { name: "Nine of Embers", archetype: "Minor · Nine of Embers", aspect: "ember", kind: "veilborn", stage: "stage2", rarity: "rune4", vitality: 120, power: 75, abilityName: "Unyielding Stance", abilityText: "Deals 75 damage.", description: "A bandaged defender leaning upon his last staff.", flavor: "Wounded yet unyielding." },
+  { name: "Ten of Embers", archetype: "Minor · Ten of Embers", aspect: "ember", kind: "veilborn", stage: "stage2", rarity: "rune4", vitality: 125, power: 80, abilityName: "Crushing Load", abilityText: "Deals 80 heavy damage.", description: "A warden carrying ten blazing logs toward sanctuary gates.", flavor: "The sanctuary is near." },
+  { name: "Page of Embers", archetype: "Court · Page of Embers", aspect: "ember", kind: "veilborn", stage: "basic", rarity: "rune2", vitality: 65, power: 35, abilityName: "Curious Spark", abilityText: "Deals 35 damage.", description: "A youthful messenger bearing news of distant fiery portents.", flavor: "Curiosity lights the torch." },
+  { name: "Knight of Embers", archetype: "Court · Knight of Embers", aspect: "ember", kind: "veilborn", stage: "stage1", rarity: "moon1", vitality: 120, power: 75, abilityName: "Furnace Charge", abilityText: "Deals 75 damage in charge.", description: "A knight in furnace brass galloping across dunes.", flavor: "Boldness sweeps aside fear." },
+  { name: "Queen of Embers", archetype: "Court · Queen of Embers", aspect: "ember", kind: "veilborn", stage: "stage2", rarity: "moon2", vitality: 155, power: 105, abilityName: "Crown of Petals", abilityText: "Deals 105 damage.", description: "A majestic queen crowned with sunflowers holding an ember scepter.", flavor: "Warmth commands true devotion." },
+  { name: "King of Embers", archetype: "Court · King of Embers", aspect: "ember", kind: "veilborn", stage: "stage2", rarity: "moon3", vitality: 175, power: 125, abilityName: "Inferno Decree", abilityText: "Deals 125 colossal fire damage.", description: "A passionate monarch seated on a lion-carved throne.", flavor: "Mastery commands the flame." },
+
+  // --- TIDES SUIT (Cups / Water / Intuition & Dreams) ---
+  { name: "Ace of Tides", archetype: "Minor · Ace of Tides", aspect: "tide", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 60, power: 25, abilityName: "Spring Cascade", abilityText: "Deals 25 water damage.", description: "A chalice overflowing with living healing waters.", flavor: "Love overflows the vessel." },
+  { name: "Two of Tides", archetype: "Minor · Two of Tides", aspect: "tide", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 65, power: 30, abilityName: "Harmonic Toast", abilityText: "Deals 30 damage.", description: "Two spirits exchanging cups beneath the winged caduceus.", flavor: "Hearts agree, storms turn to dew." },
+  { name: "Three of Tides", archetype: "Minor · Three of Tides", aspect: "tide", kind: "veilborn", stage: "basic", rarity: "rune2", vitality: 70, power: 35, abilityName: "Tide Maiden Dance", abilityText: "Deals 35 damage.", description: "Ocean maidens dancing in tidepools raising crystal goblets.", flavor: "Joy multiplies when shared." },
+  { name: "Four of Tides", archetype: "Minor · Four of Tides", aspect: "tide", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 80, power: 45, abilityName: "Willow Solitude", abilityText: "Deals 45 water damage.", description: "A seated spirit arms folded ignoring offered celestial cups.", flavor: "What you seek is already offered." },
+  { name: "Five of Tides", archetype: "Minor · Five of Tides", aspect: "tide", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 85, power: 50, abilityName: "Grief Dissolve", abilityText: "Deals 50 damage.", description: "A figure mourning three spilled cups, two standing behind.", flavor: "Drink from what remains." },
+  { name: "Six of Tides", archetype: "Minor · Six of Tides", aspect: "tide", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 95, power: 60, abilityName: "Childhood Bloom", abilityText: "Deals 60 damage.", description: "Children offering cups filled with white flowers in courtyard.", flavor: "Memories are sweet fragrance." },
+  { name: "Seven of Tides", archetype: "Minor · Seven of Tides", aspect: "tide", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 100, power: 65, abilityName: "Nebula Dreams", abilityText: "Deals 65 damage.", description: "Seven floating cups bearing jewels and dragons in mist.", flavor: "Not all that glimmers holds water." },
+  { name: "Eight of Tides", archetype: "Minor · Eight of Tides", aspect: "tide", kind: "veilborn", stage: "stage2", rarity: "rune4", vitality: 115, power: 70, abilityName: "Mountain Pilgrim", abilityText: "Deals 70 damage.", description: "A pilgrim walking toward barren mountain moonscapes.", flavor: "Seek the sublime beyond." },
+  { name: "Nine of Tides", archetype: "Minor · Nine of Tides", aspect: "tide", kind: "veilborn", stage: "stage2", rarity: "rune4", vitality: 125, power: 75, abilityName: "Warden's Toast", abilityText: "Deals 75 damage.", description: "A contented warden seated before nine golden chalices.", flavor: "Contentment is the greatest treasure." },
+  { name: "Ten of Tides", archetype: "Minor · Ten of Tides", aspect: "tide", kind: "veilborn", stage: "stage2", rarity: "moon1", vitality: 135, power: 80, abilityName: "Ocean Covenant", abilityText: "Deals 80 water damage.", description: "A family gazing up at a rainbow of ten glowing chalices.", flavor: "Peace settles on the home." },
+  { name: "Page of Tides", archetype: "Court · Page of Tides", aspect: "tide", kind: "veilborn", stage: "basic", rarity: "rune2", vitality: 65, power: 35, abilityName: "Glinting Minnow", abilityText: "Deals 35 damage.", description: "An apprentice holding a chalice with a golden fish.", flavor: "Playfulness invites inspiration." },
+  { name: "Knight of Tides", archetype: "Court · Knight of Tides", aspect: "tide", kind: "veilborn", stage: "stage1", rarity: "moon1", vitality: 125, power: 80, abilityName: "River Crossing", abilityText: "Deals 80 damage.", description: "A romantic knight riding a slow steed across river shallows.", flavor: "Follow the dream across oceans." },
+  { name: "Queen of Tides", archetype: "Court · Queen of Tides", aspect: "tide", kind: "veilborn", stage: "stage2", rarity: "moon2", vitality: 150, power: 100, abilityName: "Coral Vision", abilityText: "Deals 100 water damage.", description: "A visionary queen gazing into an ornate covered chalice.", flavor: "She commands the deep tides." },
+  { name: "King of Tides", archetype: "Court · King of Tides", aspect: "tide", kind: "veilborn", stage: "stage2", rarity: "moon3", vitality: 170, power: 120, abilityName: "Monarch of Depth", abilityText: "Deals 120 damage.", description: "A calm sovereign seated on a throne floating upon stormy seas.", flavor: "He who masters emotion rules seas." },
+
+  // --- IRON SUIT (Swords / Air / Intellect & Law) ---
+  { name: "Ace of Iron", archetype: "Minor · Ace of Iron", aspect: "iron", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 65, power: 30, abilityName: "Clean Cleave", abilityText: "Deals 30 iron damage.", description: "A hand emerging from a stormcloud grasping an upright blade.", flavor: "Truth cuts clean where lies fester." },
+  { name: "Two of Iron", archetype: "Minor · Two of Iron", aspect: "iron", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 70, power: 35, abilityName: "Crossed Steel", abilityText: "Deals 35 damage.", description: "A blindfolded warden holding two crossed broadswords.", flavor: "Let the mind decide." },
+  { name: "Three of Iron", archetype: "Minor · Three of Iron", aspect: "iron", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 80, power: 50, abilityName: "Heart Piercer", abilityText: "Deals 50 damage.", description: "A heart pierced by three iron rapiers beneath storm clouds.", flavor: "Pain sculpts empathy." },
+  { name: "Four of Iron", archetype: "Minor · Four of Iron", aspect: "iron", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 90, power: 45, abilityName: "Sepulcher Rest", abilityText: "Deals 45 damage.", description: "A knight resting hands in prayer beneath suspended swords.", flavor: "Rest the blade for tomorrow." },
+  { name: "Five of Iron", archetype: "Minor · Five of Iron", aspect: "iron", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 90, power: 55, abilityName: "Scavenged Edge", abilityText: "Deals 55 damage.", description: "A warrior collecting scattered swords from defeated foes.", flavor: "A bitter victory is defeat." },
+  { name: "Six of Iron", archetype: "Minor · Six of Iron", aspect: "iron", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 95, power: 60, abilityName: "Quiet Passage", abilityText: "Deals 60 damage.", description: "A ferryman poling across calm waters carrying six swords.", flavor: "Journey toward peaceful havens." },
+  { name: "Seven of Iron", archetype: "Minor · Seven of Iron", aspect: "iron", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 90, power: 65, abilityName: "Midnight Infiltration", abilityText: "Deals 65 damage.", description: "A rogue tiptoeing away from military tents with five swords.", flavor: "Wit outmaneuvers heavy armor." },
+  { name: "Eight of Iron", archetype: "Minor · Eight of Iron", aspect: "iron", kind: "veilborn", stage: "stage2", rarity: "rune4", vitality: 110, power: 70, abilityName: "Unshackled Mind", abilityText: "Deals 70 damage.", description: "A bound maiden encircled by swords, her feet free to step.", flavor: "The prison doors are unlocked." },
+  { name: "Nine of Iron", archetype: "Minor · Nine of Iron", aspect: "iron", kind: "veilborn", stage: "stage2", rarity: "rune4", vitality: 120, power: 75, abilityName: "Midnight Vigils", abilityText: "Deals 75 damage.", description: "A soul weeping in bed beneath nine mounted iron swords.", flavor: "Monsters bred by worry perish in dawn." },
+  { name: "Ten of Iron", archetype: "Minor · Ten of Iron", aspect: "iron", kind: "veilborn", stage: "stage2", rarity: "moon1", vitality: 130, power: 85, abilityName: "Dawn of the Fallen", abilityText: "Deals 85 damage.", description: "A fallen figure beneath ten swords as golden dawn breaks.", flavor: "Nothing remains but resurrection." },
+  { name: "Page of Iron", archetype: "Court · Page of Iron", aspect: "iron", kind: "veilborn", stage: "basic", rarity: "rune2", vitality: 65, power: 40, abilityName: "Keen Watch", abilityText: "Deals 40 damage.", description: "An alert youth holding a broadsword on windy plains.", flavor: "Clear minds spot storms." },
+  { name: "Knight of Iron", archetype: "Court · Knight of Iron", aspect: "iron", kind: "veilborn", stage: "stage1", rarity: "moon1", vitality: 125, power: 85, abilityName: "Storm Gallop", abilityText: "Deals 85 damage.", description: "A knight in plate charging recklessly with drawn sword.", flavor: "Charge like the north wind." },
+  { name: "Queen of Iron", archetype: "Court · Queen of Iron", aspect: "iron", kind: "veilborn", stage: "stage2", rarity: "moon2", vitality: 155, power: 110, abilityName: "Sovereign Razor", abilityText: "Deals 110 damage.", description: "An austere queen on a cloud throne holding an upright sword.", flavor: "Her gaze pierces falsehood." },
+  { name: "King of Iron", archetype: "Court · King of Iron", aspect: "iron", kind: "veilborn", stage: "stage2", rarity: "moon3", vitality: 175, power: 130, abilityName: "Iron Verdict", abilityText: "Deals 130 damage.", description: "A wise monarch holding an upright blade with winged seraphs.", flavor: "Intellect commands the storm." },
+
+  // --- VERDANT SUIT (Pentacles / Earth / Material Manifestation) ---
+  { name: "Ace of Verdant", archetype: "Minor · Ace of Verdant", aspect: "verdant", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 65, power: 25, abilityName: "Fertile Seed", abilityText: "Deals 25 damage.", description: "A hand holding an emerald coin over a walled garden.", flavor: "Every forest slept inside a seed." },
+  { name: "Two of Verdant", archetype: "Minor · Two of Verdant", aspect: "verdant", kind: "veilborn", stage: "basic", rarity: "rune1", vitality: 70, power: 30, abilityName: "Infinity Loop", abilityText: "Deals 30 damage.", description: "A dancer balancing two disks inside an infinity symbol.", flavor: "Adaptability turns turbulence into dance." },
+  { name: "Three of Verdant", archetype: "Minor · Three of Verdant", aspect: "verdant", kind: "veilborn", stage: "basic", rarity: "rune2", vitality: 75, power: 35, abilityName: "Guild Arch", abilityText: "Deals 35 damage.", description: "A craftsman carving archways in an abbey with architects.", flavor: "Skill forges enduring stone." },
+  { name: "Four of Verdant", archetype: "Minor · Four of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 95, power: 45, abilityName: "Hoarded Chest", abilityText: "Deals 45 damage.", description: "A crowned figure holding tightly to four coins.", flavor: "A clenched fist receives nothing." },
+  { name: "Five of Verdant", archetype: "Minor · Five of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage1", rarity: "rune2", vitality: 85, power: 50, abilityName: "Snowdrifts", abilityText: "Deals 50 damage.", description: "Weary travelers trudging past a stained-glass sanctuary.", flavor: "Step out of the cold." },
+  { name: "Six of Verdant", archetype: "Minor · Six of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 100, power: 60, abilityName: "Charity Scales", abilityText: "Deals 60 damage.", description: "A merchant measuring coins into scales for the needy.", flavor: "Wealth shared is power sanctified." },
+  { name: "Seven of Verdant", archetype: "Minor · Seven of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage1", rarity: "rune3", vitality: 105, power: 65, abilityName: "Patient Vineyard", abilityText: "Deals 65 damage.", description: "A gardener leaning on his hoe assessing the ripe vines.", flavor: "Patience ripens sweet fruit." },
+  { name: "Eight of Verdant", archetype: "Minor · Eight of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage2", rarity: "rune4", vitality: 120, power: 75, abilityName: "Chiseled Rune", abilityText: "Deals 75 damage.", description: "An artisan carving runes onto eight emerald tablets.", flavor: "Dedication turns stone into art." },
+  { name: "Nine of Verdant", archetype: "Minor · Nine of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage2", rarity: "moon1", vitality: 135, power: 85, abilityName: "Falconer's Glade", abilityText: "Deals 85 damage.", description: "A lady in a vineyard with hooded falcon on her arm.", flavor: "Grace born of solitary discipline." },
+  { name: "Ten of Verdant", archetype: "Minor · Ten of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage2", rarity: "moon2", vitality: 155, power: 105, abilityName: "Manor Bastion", abilityText: "Deals 105 damage.", description: "Generations gathered under an ancient family crest.", flavor: "True legacy endures." },
+  { name: "Page of Verdant", archetype: "Court · Page of Verdant", aspect: "verdant", kind: "veilborn", stage: "basic", rarity: "rune2", vitality: 65, power: 35, abilityName: "Sprout Guardian", abilityText: "Deals 35 damage.", description: "A studious youth inspecting a golden pentacle in hands.", flavor: "Study the ground beneath your feet." },
+  { name: "Knight of Verdant", archetype: "Court · Knight of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage1", rarity: "moon1", vitality: 130, power: 80, abilityName: "Heavy Draft", abilityText: "Deals 80 damage.", description: "A patient knight on a draft horse surveying tilled fields.", flavor: "Persistence outlasts bravado." },
+  { name: "Queen of Verdant", archetype: "Court · Queen of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage2", rarity: "moon2", vitality: 160, power: 110, abilityName: "Forest Throne", abilityText: "Deals 110 damage.", description: "A queen on a throne holding an emerald coin in flowers.", flavor: "Nature provides abundantly." },
+  { name: "King of Verdant", archetype: "Court · King of Verdant", aspect: "verdant", kind: "veilborn", stage: "stage2", rarity: "moon3", vitality: 180, power: 130, abilityName: "Bountiful Scepter", abilityText: "Deals 130 damage.", description: "A sovereign surrounded by bull emblems and lush vines.", flavor: "Mastery over earth yields bounty." },
+
+  // --- CELESTIAL BEASTS & ASTRAL SPIRITS ---
+  { name: "Chrono Sphinx", archetype: "Mythic · Chrono Sphinx", aspect: "aether", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 215, power: 165, abilityName: "Riddle of Aeons", abilityText: "Deals 165 temporal damage and freezes turn.", description: "An ancient celestial chimera guarding the gateways of time, testing mortals with cosmological paradoxes.", flavor: "Answer the riddle of the stars, or remain frozen in today." },
+  { name: "Leviathan of the Deep", archetype: "Mythic · Leviathan", aspect: "tide", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 235, power: 170, abilityName: "Tidal Cataclysm", abilityText: "Deals 170 damage and floods both benches.", description: "A primordial leviathan sleeping under the abyssal ocean floor whose awakening shifts continents.", flavor: "The deep sea remembers when stars first fell." },
+  { name: "Phoenix of Dawn", archetype: "Mythic · Phoenix", aspect: "ember", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 205, power: 160, abilityName: "Rebirth Pyre", abilityText: "Deals 160 damage; upon KO revives with 50 HP.", description: "A glorious bird woven from pure solar plasma, dying in a blinding conflagration to emerge anew.", flavor: "Death is merely the cradle of my next dawn." },
+  { name: "Void Drake", archetype: "Mythic · Void Drake", aspect: "umbra", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 225, power: 175, abilityName: "Black Hole Breath", abilityText: "Deals 175 cosmic damage and absorbs energy.", description: "An ancient astral dragon whose scales are formed from collapsed neutron stars and gravity wells.", flavor: "Even light surrenders to the hunger of the void." },
+  { name: "Ophiuchus Serpent", archetype: "Constellation · Ophiuchus", aspect: "aether", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 220, power: 170, abilityName: "Serpent Constellation", abilityText: "Deals 170 cosmic damage and binds opponent.", description: "The thirteenth celestial constellation whose sacred coils hold the fabric of space-time together.", flavor: "In the coil of the serpent, eternity sleeps." },
+  { name: "Pegasus of the Aurora", archetype: "Constellation · Pegasus", aspect: "volt", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 210, power: 160, abilityName: "Aurora Hoof", abilityText: "Deals 160 electric damage from the stratosphere.", description: "A winged stallion blazing with northern lights, galloping along atmospheric magnetic corridors.", flavor: "Fly where wings touch the edge of the sky." },
+  { name: "Cygnus Star-Swan", archetype: "Constellation · Cygnus", aspect: "lumen", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 200, power: 155, abilityName: "Milky Way Plume", abilityText: "Deals 155 radiant damage across the arena.", description: "A majestic swan navigating the cosmic river of the Milky Way, scattering diamond stardust.", flavor: "Cross the celestial river without leaving a ripple." },
+  { name: "Draco Sky-Serpent", archetype: "Constellation · Draco", aspect: "iron", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 230, power: 165, abilityName: "Iron Constellation", abilityText: "Deals 165 crushing iron damage.", description: "The circumpolar dragon wrapped eternally around the northern pole star.", flavor: "The northern star never wanders, nor does the dragon sleep." },
+  { name: "Ursa Behemoth", archetype: "Constellation · Ursa", aspect: "verdant", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 240, power: 170, abilityName: "Great Bear Roar", abilityText: "Deals 170 earth-shattering damage.", description: "The titanic celestial bear whose claws carved the ancient valleys of the mortal realm.", flavor: "Earth remembers the footsteps of the great bear." },
+  { name: "Aquila Thunderbolt", archetype: "Constellation · Aquila", aspect: "volt", kind: "veilborn", stage: "stage2", crowned: true, rarity: "veil", vitality: 205, power: 160, abilityName: "Zeus's Talon", abilityText: "Deals 160 lightning damage.", description: "The soaring celestial eagle that carries divine thunderbolts across the cosmic firmament.", flavor: "The sky bows when the eagle descends." },
 ];
 
-const ARTISTS = ["A. Vance", "E. Lin", "M. Thorne", "S. Kova", "H. Gale", "C. Moros"];
+/**
+ * Builds exactly 100 unique Tarot and Cosmic NFT cards across sets V1, V2, and V3
+ */
+export function generate100Cards(): Card[] {
+  const cards: Card[] = [];
 
-export function generateAllCards(): Card[] {
-  const cards: Card[] = [...SHOWCASE_CARDS];
-  const rng = mulberry32(0x5a17e0);
+  // 1. Add 12 Canonical Showcase Cards (c-001 through c-012)
+  cards.push(...SHOWCASE_CARDS);
 
-  const aspects: Aspect[] = [
-    "ember", "tide", "verdant", "volt", "umbra", "lumen", "iron", "aether"
-  ];
-  const rarities: Rarity[] = [
-    "rune1", "rune1", "rune2", "rune2", "rune3", "rune4", "moon1", "moon2"
-  ];
+  // 2. Add 22 Major Arcana Cards (c-013 through c-034)
+  MAJOR_ARCANA_CATALOG.forEach((def, index) => {
+    const idNum = 13 + index;
+    const setId = idNum <= 40 ? "V1" : idNum <= 70 ? "V2" : "V3";
 
-  const setIds = ["V1", "V2", "V3"] as const;
+    cards.push({
+      id: `c-${String(idNum).padStart(3, "0")}`,
+      number: idNum,
+      setId,
+      name: def.name,
+      tarotArchetype: def.archetype,
+      kind: def.kind,
+      stage: def.stage,
+      aspect: def.aspect,
+      vitality: def.vitality,
+      power: def.power,
+      crowned: def.crowned || def.rarity === "veil",
+      rarity: def.rarity,
+      immersive: def.rarity === "veil",
+      retreat: def.stage === "stage2" ? 2 : 1,
+      retreatCost: def.stage === "stage2" ? 2 : 1,
+      weakness: CONCEPT.ASPECTS[(CONCEPT.ASPECTS.indexOf(def.aspect) + 1) % 8],
+      abilities: [
+        {
+          name: def.abilityName,
+          cost: [def.aspect],
+          damage: def.power,
+          text: def.abilityText,
+        },
+      ],
+      description: def.description,
+      flavor: def.flavor,
+      artist: "Arcana Loom",
+    });
+  });
 
-  let globalId = 13;
+  // 3. Add 66 Minor Arcana & Astrological Spirits (c-035 through c-100)
+  MINOR_CATALOG.forEach((tmpl, index) => {
+    const idNum = 35 + index;
+    if (idNum > 100) return;
 
-  for (const setId of setIds) {
-    const existingInSet = cards.filter((c) => c.setId === setId).length;
-    const toGenerate = 40 - existingInSet;
+    const setId = idNum <= 40 ? "V1" : idNum <= 70 ? "V2" : "V3";
 
-    for (let i = 0; i < toGenerate; i++) {
-      const aspect = aspects[Math.floor(rng() * aspects.length)];
-      const rarity = rarities[Math.floor(rng() * rarities.length)];
-      const prefix = PREFIXES[Math.floor(rng() * PREFIXES.length)];
-      const suffix = SUFFIXES[Math.floor(rng() * SUFFIXES.length)];
-      const name = `${prefix}${suffix}`;
-      const vitality = 50 + Math.floor(rng() * 6) * 10;
-      const damage = 20 + Math.floor(rng() * 5) * 10;
-
-      cards.push({
-        id: `c-${String(globalId).padStart(3, "0")}`,
-        number: existingInSet + i + 1,
-        setId,
-        name,
-        kind: "veilborn",
-        stage: "basic",
-        aspect,
-        vitality,
-        rarity,
-        retreat: 1 + Math.floor(rng() * 2),
-        weakness: CONCEPT.ASPECTS[(CONCEPT.ASPECTS.indexOf(aspect) + 1) % 8],
-        abilities: [
-          {
-            name: `${prefix} Strike`,
-            cost: [aspect],
-            damage,
-            text: `Strikes with the power of ${aspect}.`,
-          },
-        ],
-        flavor: "Whispering through the boundary of the unformed world.",
-        artist: ARTISTS[Math.floor(rng() * ARTISTS.length)],
-      });
-
-      globalId++;
-    }
-  }
+    cards.push({
+      id: `c-${String(idNum).padStart(3, "0")}`,
+      number: idNum,
+      setId,
+      name: tmpl.name,
+      tarotArchetype: tmpl.archetype,
+      kind: tmpl.kind,
+      stage: tmpl.stage,
+      aspect: tmpl.aspect,
+      vitality: tmpl.vitality,
+      power: tmpl.power,
+      crowned: tmpl.crowned || tmpl.rarity === "veil",
+      rarity: tmpl.rarity,
+      immersive: tmpl.rarity === "veil",
+      retreat: tmpl.stage === "stage2" ? 2 : 1,
+      retreatCost: tmpl.stage === "stage2" ? 2 : 1,
+      weakness: CONCEPT.ASPECTS[(CONCEPT.ASPECTS.indexOf(tmpl.aspect) + 1) % 8],
+      abilities: [
+        {
+          name: tmpl.abilityName,
+          cost: [tmpl.aspect],
+          damage: tmpl.power,
+          text: tmpl.abilityText,
+        },
+      ],
+      description: tmpl.description,
+      flavor: tmpl.flavor,
+      artist: "Arcana Loom",
+    });
+  });
 
   return cards;
 }
 
-export const ALL_CARDS: Card[] = generateAllCards();
+export const ALL_CARDS: Card[] = generate100Cards();
 export const CARD_MAP: Record<string, Card> = Object.fromEntries(
   ALL_CARDS.map((c) => [c.id, c])
 );
