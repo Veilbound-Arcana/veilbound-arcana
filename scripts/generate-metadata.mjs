@@ -57,7 +57,7 @@ CARDS.forEach((card) => {
       { trait_type: "Base Power", value: card.power },
       { trait_type: "Element", value: card.element },
       { trait_type: "Project", value: "Veilbound Arcana" },
-      { trait_type: "Disclaimer", value: "Not audited by Zama. Use at your own risk." }
+      { trait_type: "Disclaimer", value: "Confidential protocol. Use at your own risk." }
     ]
   };
 
