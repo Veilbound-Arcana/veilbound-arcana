@@ -9,7 +9,7 @@ import "./CardCatalog.sol";
  * @title ArcanaCards
  * @notice ERC-721 NFT contract representing Tarot cards with Sealed and Unsealed lifecycle states.
  * @dev Sealed cards hold confidential identities and cannot be transferred until unsealed by the owner.
- * Disclaimer: This project is not audited, endorsed or operated by Zama. Use at your own risk.
+ * Disclaimer: This project is not audited, endorsed or operated by any third party. Use at your own risk.
  */
 contract ArcanaCards is ERC721, Ownable {
     struct CardInstance {
