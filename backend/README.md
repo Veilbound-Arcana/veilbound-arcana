@@ -1,6 +1,6 @@
 # Veilbound Arcana — Backend Game Service
 
-> **Mandatory Disclaimer:** *This project is not audited, endorsed or operated by Zama. Use at your own risk.*
+> **Mandatory Disclaimer:** *This project is experimental confidential software. Use at your own risk.*
 
 Backend service providing real-time game coordination, lobby matchmaking, and an automated Practice Bot (FR-20) for judges.
 
