@@ -9,7 +9,7 @@ import "../cards/CardCatalog.sol";
  * @title DuelEngine
  * @notice 3-round confidential Tarot card duel state machine with FHE power resolution.
  * @dev Enforces the zero-revert clamp rule on confidential commitments to prevent data leakage.
- * Disclaimer: This project is not audited, endorsed or operated by Zama. Use at your own risk.
+ * Disclaimer: This project is not audited, endorsed or operated by any third party. Use at your own risk.
  */
 contract DuelEngine is Ownable {
     enum MatchState { Created, Joined, InProgress, Finished, Forfeited }
