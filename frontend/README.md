@@ -1,6 +1,6 @@
 # Veilbound Arcana — Frontend Web Application
 
-> **Mandatory Disclaimer:** *This project is not audited, endorsed or operated by Zama. Use at your own risk.*
+> **Mandatory Disclaimer:** *This project is experimental confidential software. Use at your own risk.*
 
 Next.js / React Web Application for Veilbound Arcana featuring:
 - **1-Signature Decryption Session:** Sign once to decrypt sealed cards and private hands locally.
