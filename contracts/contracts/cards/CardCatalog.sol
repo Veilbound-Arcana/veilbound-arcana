@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 /**
  * @title CardCatalog
  * @notice Immutable catalog containing official definitions for Veilbound Arcana's 20 MVP Tarot cards.
- * @dev Disclaimer: This project is not audited, endorsed or operated by Zama. Use at your own risk.
+ * @dev Disclaimer: This project is not audited, endorsed or operated by any third party. Use at your own risk.
  */
 contract CardCatalog {
     enum Suit { None, Wands, Cups, Swords, Pentacles }
