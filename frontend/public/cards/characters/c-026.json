@@ -1,0 +1,29 @@
+{
+  "card_id": "c-026",
+  "name": "Warden of Rebirth",
+  "aspect": "umbra",
+  "rarity": "veil",
+  "character": {
+    "title": "Umbra Ranger",
+    "class": "ranger",
+    "class_label": "Ranger",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "longbow",
+    "scene": "umbralCrypt",
+    "palette": {
+      "primary": "#6B4FA0",
+      "secondary": "#8854D0",
+      "accent": "#F2C14E",
+      "glow": "#9B6DFF"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-026.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

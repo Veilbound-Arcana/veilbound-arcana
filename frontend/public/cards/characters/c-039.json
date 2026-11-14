@@ -1,0 +1,29 @@
+{
+  "card_id": "c-039",
+  "name": "Five of Embers",
+  "aspect": "ember",
+  "rarity": "rune2",
+  "character": {
+    "title": "Ember Assassin",
+    "class": "assassin",
+    "class_label": "Assassin",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "twin daggers",
+    "scene": "emberfield",
+    "palette": {
+      "primary": "#F26B3A",
+      "secondary": "#FF9F43",
+      "accent": "#FFD36E",
+      "glow": "#FF7A3D"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-039.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

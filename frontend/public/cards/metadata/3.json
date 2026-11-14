@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Guardian"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Combat Ready"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "tower shield & hammer"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "thornGrove"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-003.svg",
+  "character": {
+    "title": "Verdant Guardian",
+    "class": "guardian",
+    "class_label": "Guardian",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "tower shield & hammer",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D7F79B",
+      "glow": "#7ED957"
+    },
+    "crowned": false
+  }
 }

@@ -1,3 +1,5 @@
+import type { CharacterDescriptor } from "../art/character/characterEngine";
+
 export type Aspect =
   | "ember"
   | "tide"
@@ -56,6 +58,8 @@ export interface Card {
   artist?: string;
   rarity: Rarity;
   immersive?: boolean;
+  /** Original character illustration bound to this card. */
+  character?: CharacterDescriptor;
 }
 
 export interface SetDef {

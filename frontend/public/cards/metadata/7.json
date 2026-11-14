@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Mystic"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Channeling"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "spirit lantern"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "ironBastion"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-007.svg",
+  "character": {
+    "title": "Iron Mystic",
+    "class": "mystic",
+    "class_label": "Mystic",
+    "pose": "cast",
+    "pose_label": "Channeling",
+    "weapon": "spirit lantern",
+    "scene": "ironBastion",
+    "palette": {
+      "primary": "#8C96A5",
+      "secondary": "#A5B1C2",
+      "accent": "#E8EDF5",
+      "glow": "#C3CCDA"
+    },
+    "crowned": false
+  }
 }

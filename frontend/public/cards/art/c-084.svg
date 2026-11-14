@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560" role="img" aria-label="Verdant Blade Dancer">
+  <defs>
+    <linearGradient id="va-bg-c084" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#0A0714"></stop>
+      <stop offset="55%" stop-color="#150F28"></stop>
+      <stop offset="100%" stop-color="#5CBF4A" stop-opacity="0.55"></stop>
+    </linearGradient>
+    <radialGradient id="va-halo-c084" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#7ED957" stop-opacity="0.55"></stop>
+      <stop offset="60%" stop-color="#7ED957" stop-opacity="0.12"></stop>
+      <stop offset="100%" stop-color="#7ED957" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="va-orb-c084" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="45%" stop-color="#D7F79B"></stop>
+      <stop offset="100%" stop-color="#5CBF4A"></stop>
+    </radialGradient>
+    <filter id="va-glow-c084" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"></feGaussianBlur>
+      <feComposite in="SourceGraphic" in2="b" operator="over"></feComposite>
+    </filter>
+    <radialGradient id="va-vignette-c084" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"></stop>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"></stop>
+    </radialGradient>
+    <style>
+        @keyframes vaBreathe { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes vaAura { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+        @keyframes vaSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes vaSlash { 0% { stroke-dashoffset: 260; opacity: 0; } 25% { opacity: .95; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+        .va-breathe { animation: vaBreathe 3.4s ease-in-out infinite; transform-origin: 200px 470px; }
+        .va-aura { animation: vaAura 2.8s ease-in-out infinite; }
+        .va-spin { animation: vaSpin 14s linear infinite; transform-origin: center; transform-box: fill-box; }
+        .va-slash { stroke-dasharray: 260; animation: vaSlash 2.6s ease-out infinite; }
+      </style>
+  </defs>
+
+  <rect x="0" y="0" width="400" height="560" fill="url(#va-bg-c084)"></rect><ellipse cx="200" cy="330" rx="210" ry="150" fill="url(#va-halo-c084)" class="va-aura"></ellipse><polygon points="0,560 0,470 60,440 120,468 200,436 290,470 400,444 400,560" fill="#0E1A12"></polygon><path d="M361.98 480 C 347.98 433.36 377.98 414.71 365.98 386.72"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M11.55 480 C -2.45 409 27.55 380.6 15.55 338"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M146.05 480 C 132.05 407.12 162.05 377.96 150.05 334.23"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M96.27 480 C 82.27 425.04 112.27 403.06 100.27 370.09"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M280.2 480 C 266.2 405.96 296.2 376.35 284.2 331.93"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M92.84 480 C 78.84 420.16 108.84 396.22 96.84 360.31"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M315.45 480 C 301.45 422.82 331.45 399.95 319.45 365.64"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M73.22 480 C 59.22 444.03 89.22 429.64 77.22 408.06"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><path d="M82.8 480 C 68.8 444.32 98.8 430.04 86.8 408.63"  stroke="#10AC84" stroke-width="4" fill="none" opacity="0.55"></path><circle cx="385" cy="164" r="0.93" fill="#D7F79B" opacity="0.77"></circle><circle cx="253" cy="255" r="1.35" fill="#D7F79B" opacity="0.53"></circle><circle cx="20" cy="453" r="0.69" fill="#D7F79B" opacity="0.76"></circle><circle cx="160" cy="405" r="0.62" fill="#D7F79B" opacity="0.56"></circle><circle cx="395" cy="191" r="2.76" fill="#D7F79B" opacity="0.43"></circle><circle cx="62" cy="23" r="1.56" fill="#D7F79B" opacity="0.71"></circle><circle cx="198" cy="58" r="1.1" fill="#D7F79B" opacity="0.68"></circle><circle cx="367" cy="248" r="0.98" fill="#D7F79B" opacity="0.33"></circle><circle cx="367" cy="20" r="2.79" fill="#D7F79B" opacity="0.51"></circle><circle cx="49" cy="543" r="1.75" fill="#D7F79B" opacity="0.64"></circle><circle cx="111" cy="291" r="1.37" fill="#D7F79B" opacity="0.34"></circle><circle cx="50" cy="534" r="2.17" fill="#D7F79B" opacity="0.55"></circle><circle cx="214" cy="441" r="0.79" fill="#D7F79B" opacity="0.47"></circle><circle cx="151" cy="59" r="1.8" fill="#D7F79B" opacity="0.51"></circle><circle cx="285" cy="498" r="2.16" fill="#D7F79B" opacity="0.42"></circle><circle cx="70" cy="483" r="1.48" fill="#D7F79B" opacity="0.44"></circle><circle cx="370" cy="23" r="0.98" fill="#D7F79B" opacity="0.49"></circle><circle cx="290" cy="275" r="2.49" fill="#D7F79B" opacity="0.57"></circle><circle cx="156" cy="494" r="0.7" fill="#D7F79B" opacity="0.72"></circle><circle cx="152" cy="481" r="1.62" fill="#D7F79B" opacity="0.55"></circle><circle cx="123" cy="488" r="1.67" fill="#D7F79B" opacity="0.33"></circle><circle cx="95" cy="474" r="1.61" fill="#D7F79B" opacity="0.49"></circle><circle cx="53" cy="267" r="1.57" fill="#D7F79B" opacity="0.49"></circle><circle cx="321" cy="302" r="0.61" fill="#D7F79B" opacity="0.57"></circle><circle cx="140" cy="70" r="2.24" fill="#D7F79B" opacity="0.37"></circle><circle cx="388" cy="125" r="1.22" fill="#D7F79B" opacity="0.77"></circle>
+
+  <ellipse cx="200" cy="486" rx="114.4" ry="20" fill="#05030A" opacity="0.55"></ellipse>
+
+  <g class="va-breathe" transform="translate(200 470) scale(0.96) translate(-200 -470)">
+    <circle cx="200" cy="330" r="120" fill="#7ED957" opacity="0.12" class="va-aura"></circle>
+    <path d="M 159.19 234 C 117.19 360 131.19 446 153.19 486 L 200 473.2 L 246.81 486 C 268.81 446 282.81 360 240.81 234 Z" fill="#1E1730" opacity="0.9"></path>
+    <g transform="rotate(-3 200 356)"><line x1="185.42" y1="356" x2="179.45" y2="474" stroke="#241B33" stroke-width="23.65" stroke-linecap="round"></line><line x1="214.58" y1="356" x2="220.55" y2="474" stroke="#241B33" stroke-width="23.65" stroke-linecap="round"></line><ellipse cx="179.45" cy="476" rx="17.74" ry="9.93" fill="#10AC84"></ellipse><ellipse cx="220.55" cy="476" rx="17.74" ry="9.93" fill="#10AC84"></ellipse><path d="M 163.19 240 Q 200 222 236.81 240 L 226.5 356 Q 200 370 173.5 356 Z" fill="#5CBF4A"></path><path d="M 169.82 252 Q 200 238 230.18 252 L 218.4 292 L 181.6 292 Z" fill="#10AC84" opacity="0.92"></path><line x1="200" y1="256" x2="200" y2="288" stroke="#D7F79B" stroke-width="2.4" stroke-linecap="round" opacity="0.85"></line><rect x="173.5" y="344" width="53" height="12" rx="5" fill="#241B33"></rect><circle cx="200" cy="350" r="5" fill="#D7F79B"></circle><line x1="163.19" y1="250" x2="123.19" y2="306" stroke="#5CBF4A" stroke-width="20.34" stroke-linecap="round"></line><line x1="236.81" y1="250" x2="276.81" y2="306" stroke="#5CBF4A" stroke-width="20.34" stroke-linecap="round"></line><circle cx="123.19" cy="306" r="13.01" fill="#F0D9C4"></circle><circle cx="276.81" cy="306" r="13.01" fill="#F0D9C4"></circle><ellipse cx="163.19" cy="248" rx="21.28" ry="14.66" fill="#10AC84"></ellipse><ellipse cx="236.81" cy="248" rx="21.28" ry="14.66" fill="#10AC84"></ellipse><rect x="191" y="221.1" width="18" height="18" rx="6" fill="#F0D9C4"></rect><circle cx="200" cy="188" r="39.1" fill="#F0D9C4"></circle><ellipse cx="200" cy="198.95" rx="28.15" ry="16.42" fill="#2A2038" opacity="0.28"></ellipse><ellipse cx="186.71" cy="186.05" rx="4.6" ry="6.4" fill="#1B1426"></ellipse><ellipse cx="213.29" cy="186.05" rx="4.6" ry="6.4" fill="#1B1426"></ellipse></g>
+    <circle cx="166.77" cy="158.68" r="16.42" fill="#10AC84"></circle><circle cx="233.23" cy="158.68" r="16.42" fill="#10AC84"></circle><line x1="153.09" y1="152.81" x2="192.18" y2="168.45" stroke="#D7F79B" stroke-width="3" stroke-linecap="round"></line><line x1="246.91" y1="152.81" x2="207.82" y2="168.45" stroke="#D7F79B" stroke-width="3" stroke-linecap="round"></line>
+    <ellipse cx="185.28" cy="430" rx="17.03" ry="11.82" fill="#10AC84" opacity="0.9"></ellipse><ellipse cx="214.72" cy="430" rx="17.03" ry="11.82" fill="#10AC84" opacity="0.9"></ellipse><path d="M 166.87 266 L 233.13 302" stroke="#D7F79B" stroke-width="3" opacity="0.7" fill="none"></path>
+    <g class="va-weapon"><path d="M 276.81 306 Q 322.81 276 316.81 228 Q 294.81 266 272.81 300 Z" fill="#10AC84" stroke="#FFFFFF" stroke-width="1.4"></path><path d="M 276.81 306 Q 230.81 276 236.81 228 Q 258.81 266 280.81 300 Z" fill="#10AC84" stroke="#FFFFFF" stroke-width="1.4"></path></g>
+  </g>
+
+  <g filter="url(#va-glow-c084)"><ellipse cx="150" cy="330" rx="66" ry="86" fill="none" stroke="#D7F79B" stroke-width="4" opacity="0.55" class="va-aura"></ellipse><ellipse cx="150" cy="330" rx="46" ry="64" fill="#10AC84" opacity="0.22"></ellipse></g>
+
+  <rect x="8" y="8" width="384" height="544" rx="22" fill="none" stroke="#D7F79B" stroke-width="1.6" opacity="0.55"></rect><rect x="18" y="18" width="364" height="524" rx="16" fill="none" stroke="#D7F79B" stroke-width="1" opacity="0.28"></rect><path d="M 26 40 A 14 14 0 0 1 40 26" fill="none" stroke="#D7F79B" stroke-width="2.4" opacity="0.8"></path><path d="M 374 40 A 14 14 0 0 1 360 26" fill="none" stroke="#D7F79B" stroke-width="2.4" opacity="0.8"></path><path d="M 26 520 A 14 14 0 0 1 40 534" fill="none" stroke="#D7F79B" stroke-width="2.4" opacity="0.8"></path><path d="M 374 520 A 14 14 0 0 1 360 534" fill="none" stroke="#D7F79B" stroke-width="2.4" opacity="0.8"></path><text x="4" y="556" font-size="1" fill="none" data-va="c084"></text>
+
+  <rect x="0" y="0" width="400" height="560" fill="url(#va-vignette-c084)"></rect>
+</svg>

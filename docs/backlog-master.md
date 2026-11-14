@@ -93,3 +93,19 @@ Setiap baris mencantumkan pemilik tugas (`@arya`, `@yavin`, `@adrian`), priorita
 | **M5-06** | Docs | Finalisasi README.md: alamat kontrak Sepolia, link demo, dan disclaimer wajib | `@arya` | Must | Planned |
 | **M5-07** | QA | Dry-run formulir submission Zama Season 5 (cek kecocokan email API key) | `@arya` | Must | Planned |
 | **M5-08** | Submit | **Eksekusi Submission Resmi (Target: 12 Desember 2026)** | `@arya` | Must | Planned |
+
+---
+
+## 6. Session Log — 14 November 2026
+
+| ID | Modul | Pekerjaan | Pemilik | Status |
+| :--- | :--- | :--- | :---: | :---: |
+| **LOG-01** | Frontend/Art | Mesin ilustrasi karakter orisinal (`characterEngine.ts`) + 100 SVG unik per kartu | `@arya` | **Done** |
+| **LOG-02** | Frontend/Art | Komponen `CharacterArt` + `CharacterFigure` dengan animasi idle/serang/sakit/KO | `@arya` | **Done** |
+| **LOG-03** | Frontend | Integrasi karakter ke `CardView`, `S02Home`, `S07CardDetail`, `S15BattleBoard` | `@arya` | **Done** |
+| **LOG-04** | Frontend | Migrasi penuh Vite + react-router → **Next.js 15.5.29 + TypeScript** (App Router, 19 route) | `@arya` | **Done** |
+| **LOG-05** | Scripts | Generator `scripts/generate-character-art.mjs` + enrich metadata 20 kartu | `@arya` | **Done** |
+| **LOG-06** | Docs | `ASSETS.md`, `docs/evidence-pack.md` diperbarui; dependensi runtime 6 | `@arya` | **Done** |
+
+Verifikasi: `npx tsc --noEmit` 0 error · `npx next build` sukses · 100/100 SVG valid ·
+render `/`, `/archive`, `/card/c-008`, `/duel` diverifikasi di browser.

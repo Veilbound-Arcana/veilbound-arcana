@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Wildkin"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Aiming"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "mane & fangs"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "ironBastion"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-017.svg",
+  "character": {
+    "title": "Iron Wildkin",
+    "class": "beast",
+    "class_label": "Wildkin",
+    "pose": "aim",
+    "pose_label": "Aiming",
+    "weapon": "mane & fangs",
+    "scene": "ironBastion",
+    "palette": {
+      "primary": "#8C96A5",
+      "secondary": "#A5B1C2",
+      "accent": "#D9DEFF",
+      "glow": "#C3CCDA"
+    },
+    "crowned": false
+  }
 }

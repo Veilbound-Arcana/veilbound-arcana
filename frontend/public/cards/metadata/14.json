@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Ranger"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Channeling"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "recurve bow"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "lumenShrine"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-014.svg",
+  "character": {
+    "title": "Lumen Ranger",
+    "class": "ranger",
+    "class_label": "Ranger",
+    "pose": "cast",
+    "pose_label": "Channeling",
+    "weapon": "recurve bow",
+    "scene": "lumenShrine",
+    "palette": {
+      "primary": "#F4E7A1",
+      "secondary": "#FFF7D6",
+      "accent": "#FFFFFF",
+      "glow": "#FFF0B3"
+    },
+    "crowned": false
+  }
 }

@@ -53,3 +53,25 @@ npm run demo:replay
 npm run verify:thesis
 ```
 Semua artefak pengujian disimpan di folder `evidence/`.
+
+---
+
+## 4. Bukti Karakter & Animasi Battle (Frontend)
+
+| Pengujian | Perintah / Cara | Hasil |
+| :--- | :--- | :--- |
+| Type-check frontend | `npx tsc --noEmit` (folder `frontend/`) | **0 error** |
+| Build produksi Next.js | `npx next build` | **Sukses** — 21 route App Router terdaftar |
+| Validasi XML 100 SVG | parse XML per berkas `frontend/public/cards/art/c-*.svg` | **100 lolos / 0 error** |
+| Distribusi kelas karakter | `node scripts/generate-character-art.mjs` | beast 9, wyrm 11, guardian 13, ranger 11, vanguard 11, mystic 14, colossus 6, arcanist 6, assassin 13, dancer 6 |
+| Distribusi pose | idem | guard 14, ready 20, charge 28, cast 14, aim 24 |
+| Render beranda | `next start` + browser `/` | 3 ilustrasi karakter tampil di sampul pak, `scrollHeight == innerHeight` (tanpa luapan) |
+| Render arsip | browser `/archive` | ilustrasi karakter di setiap kartu, tidak ada gambar gagal |
+| Render detail kartu | browser `/card/c-008` | blok "Bound Character": Tide Wyrm · Ready · tail & wing · Tidepool |
+| Render duel | browser `/duel` | 2 sprite karakter penuh (130px / 153px), nama & HP terbaca |
+| Animasi serangan | klik slot aktif → "Strike" | kelas `va-figure--attack` (pemain) + `va-figure--hurt` (rival); elemen `.va-figure__impact` = 1, `.va-figure__hurt` = 1 |
+| CSS utilitas | hitung aturan stylesheet di browser | 677 aturan aktif (Tailwind v3.4.3, 43 KB) |
+
+Catatan: `next start` harus dijalankan ulang setiap kali `next build` selesai — server lama
+menyajikan manifest build lama yang mereferensikan berkas CSS tidak lagi ada, sehingga
+utilitas Tailwind tampak hilang (regresi semu, bukan bug kode).

@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Arcanist"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Charging"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "orb scepter"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "lumenShrine"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-010.svg",
+  "character": {
+    "title": "Lumen Arcanist",
+    "class": "arcanist",
+    "class_label": "Arcanist",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "orb scepter",
+    "scene": "lumenShrine",
+    "palette": {
+      "primary": "#F4E7A1",
+      "secondary": "#FFF7D6",
+      "accent": "#FFFFFF",
+      "glow": "#FFF0B3"
+    },
+    "crowned": false
+  }
 }

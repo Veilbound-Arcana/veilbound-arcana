@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { Swords, Bot, Trophy, Users, ShieldCheck, ShieldAlert, ArrowRight } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";
 import { validateDeck } from "@/game/engine";

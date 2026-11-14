@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Guardian"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Guarding"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "rammer"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "emberfield"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-012.svg",
+  "character": {
+    "title": "Ember Guardian",
+    "class": "guardian",
+    "class_label": "Guardian",
+    "pose": "guard",
+    "pose_label": "Guarding",
+    "weapon": "rammer",
+    "scene": "emberfield",
+    "palette": {
+      "primary": "#F26B3A",
+      "secondary": "#FF9F43",
+      "accent": "#F2C14E",
+      "glow": "#FF7A3D"
+    },
+    "crowned": true
+  }
 }

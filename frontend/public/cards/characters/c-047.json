@@ -1,0 +1,29 @@
+{
+  "card_id": "c-047",
+  "name": "Queen of Embers",
+  "aspect": "ember",
+  "rarity": "moon2",
+  "character": {
+    "title": "Ember Vanguard",
+    "class": "vanguard",
+    "class_label": "Vanguard",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "greatsword",
+    "scene": "emberfield",
+    "palette": {
+      "primary": "#F26B3A",
+      "secondary": "#FF9F43",
+      "accent": "#D9DEFF",
+      "glow": "#FF7A3D"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-047.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

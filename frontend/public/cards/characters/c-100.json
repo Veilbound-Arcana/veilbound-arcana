@@ -1,0 +1,29 @@
+{
+  "card_id": "c-100",
+  "name": "Aquila Thunderbolt",
+  "aspect": "volt",
+  "rarity": "veil",
+  "character": {
+    "title": "Volt Wildkin",
+    "class": "beast",
+    "class_label": "Wildkin",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "horns & claws",
+    "scene": "stormSpire",
+    "palette": {
+      "primary": "#F2C21B",
+      "secondary": "#FFF275",
+      "accent": "#F2C14E",
+      "glow": "#FFE45C"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-100.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

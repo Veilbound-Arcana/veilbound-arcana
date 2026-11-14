@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, ArrowRight, FastForward } from "lucide-react";
 import { Card } from "@/game/types";

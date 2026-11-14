@@ -1,0 +1,29 @@
+{
+  "card_id": "c-084",
+  "name": "Eight of Verdant",
+  "aspect": "verdant",
+  "rarity": "rune4",
+  "character": {
+    "title": "Verdant Blade Dancer",
+    "class": "dancer",
+    "class_label": "Blade Dancer",
+    "pose": "guard",
+    "pose_label": "Guarding",
+    "weapon": "ribbon glaives",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D7F79B",
+      "glow": "#7ED957"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-084.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "card_id": "c-035",
+  "name": "Ace of Embers",
+  "aspect": "ember",
+  "rarity": "rune1",
+  "character": {
+    "title": "Ember Wildkin",
+    "class": "beast",
+    "class_label": "Wildkin",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "mane & fangs",
+    "scene": "emberfield",
+    "palette": {
+      "primary": "#F26B3A",
+      "secondary": "#FF9F43",
+      "accent": "#FFD36E",
+      "glow": "#FF7A3D"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-035.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

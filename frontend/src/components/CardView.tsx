@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { Card } from "@/game/types";
-import { CONCEPT } from "@/app/concept.config";
+import { CONCEPT } from "@/config/concept.config";
 import { AspectGlyph } from "./AspectGlyph";
 import { RarityGlyph } from "./RarityGlyph";
-import { ProceduralArt } from "@/art/ProceduralArt";
+import { CharacterArt } from "@/art/character/CharacterArt";
 
 interface CardViewProps {
   card: Card;
@@ -128,12 +128,14 @@ export const CardView: React.FC<CardViewProps> = ({
 
       {/* Arched Art Window */}
       <div className="relative flex-1 mx-1.5 my-0.5 rounded-t-[28px] rounded-b-md overflow-hidden border border-white/20 bg-slate-900 shadow-inner">
-        <ProceduralArt
+        <CharacterArt
           cardId={card.id}
           name={card.name}
           aspect={card.aspect}
           rarity={card.rarity}
           tarotArchetype={card.tarotArchetype}
+          crowned={card.crowned}
+          crop
           className="w-full h-full"
         />
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { CurrencyBar } from "@/components/CurrencyBar";
 import { TabBar } from "@/components/TabBar";
 import { SETS } from "@/data/sets";
@@ -7,6 +7,7 @@ import { CARD_MAP } from "@/data/generateCards";
 import { useGameStore } from "@/store/useGameStore";
 import { useI18n } from "@/i18n/i18n";
 import { Flame, Sparkles, BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
+import { CharacterArt } from "@/art/character/CharacterArt";
 
 export const S02Home: React.FC = () => {
   const navigate = useNavigate();
@@ -90,14 +91,35 @@ export const S02Home: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Featured Beast Art Centerpiece */}
+                {/* Featured Character Centerpiece */}
                 <div className="flex-1 flex flex-col items-center justify-center my-2 text-center">
-                  <div className="w-20 h-20 rounded-full border border-amber-300/30 flex items-center justify-center mb-1 bg-violet/20">
-                    <Sparkles size={28} className="text-amber-300 animate-pulse" />
-                  </div>
-                  <span className="font-display font-bold text-xs text-white leading-tight">
+                  {feat && (
+                    <div
+                      className="w-[96px] h-[134px] rounded-xl overflow-hidden border shadow-lg mb-1.5 bg-slate-900"
+                      style={{
+                        borderColor: isCenter ? "#F2C14E" : "rgba(255,255,255,0.25)",
+                      }}
+                    >
+                      <CharacterArt
+                        cardId={feat.id}
+                        name={feat.name}
+                        aspect={feat.aspect}
+                        rarity={feat.rarity}
+                        tarotArchetype={feat.tarotArchetype}
+                        crowned={feat.crowned}
+                        crop
+                        className="w-full h-full"
+                      />
+                    </div>
+                  )}
+                  <span className="font-display font-bold text-[11px] text-white leading-tight line-clamp-2">
                     {feat?.name || "Ancient Veilborn"}
                   </span>
+                  {feat?.character && (
+                    <span className="text-[8px] text-amber-300/80 font-mono leading-tight mt-0.5">
+                      {feat.character.title}
+                    </span>
+                  )}
                 </div>
 
                 {/* Pack Bottom Title Plate */}
@@ -151,7 +173,7 @@ export const S02Home: React.FC = () => {
         {/* Primary Action Button: Open Pack */}
         <div className="flex flex-col items-center gap-2 mt-5 z-20 w-full max-w-[280px]">
           <button
-            onClick={() => navigate(`/open/${activeSet.id}`)}
+            onClick={() => navigate(`/open?set=${activeSet.id}`)}
             className="w-full h-12 rounded-pill bg-gradient-to-r from-violet to-indigo-600 text-white font-ui font-extrabold text-sm tracking-wider shadow-lg hover:shadow-violet/30 active:scale-95 transition-all flex items-center justify-center gap-2"
           >
             <Sparkles size={16} className="text-amber-300" />
@@ -196,7 +218,7 @@ export const S02Home: React.FC = () => {
 
         {/* Sets Progress Shortcut */}
         <button
-          onClick={() => navigate(`/sets/${activeSet.id}`)}
+          onClick={() => navigate(`/sets?set=${activeSet.id}`)}
           className="flex-1 py-2 px-3 rounded-2xl glass-panel flex items-center justify-center gap-1.5 active:scale-95 transition-all min-h-[44px]"
         >
           <span className="text-[11px] font-bold text-ink">

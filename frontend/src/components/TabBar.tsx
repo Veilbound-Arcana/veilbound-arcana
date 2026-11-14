@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "@/lib/router";
 import { Home, Layers, Users, Swords, Menu } from "lucide-react";
 import { useI18n } from "@/i18n/i18n";
 

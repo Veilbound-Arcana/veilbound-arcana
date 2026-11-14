@@ -1,0 +1,29 @@
+{
+  "card_id": "c-090",
+  "name": "King of Verdant",
+  "aspect": "verdant",
+  "rarity": "moon3",
+  "character": {
+    "title": "Verdant Vanguard",
+    "class": "vanguard",
+    "class_label": "Vanguard",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "cleaver",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D9DEFF",
+      "glow": "#7ED957"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-090.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

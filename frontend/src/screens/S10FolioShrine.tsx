@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "@/lib/router";
 import { BookOpen, Sparkles, Lock, Plus, X } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";
 import { ALL_CARDS, CARD_MAP } from "@/data/generateCards";

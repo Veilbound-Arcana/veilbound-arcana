@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Mystic"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Guarding"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "floating orbs"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "umbralCrypt"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-015.svg",
+  "character": {
+    "title": "Umbra Mystic",
+    "class": "mystic",
+    "class_label": "Mystic",
+    "pose": "guard",
+    "pose_label": "Guarding",
+    "weapon": "floating orbs",
+    "scene": "umbralCrypt",
+    "palette": {
+      "primary": "#6B4FA0",
+      "secondary": "#8854D0",
+      "accent": "#D9DEFF",
+      "glow": "#9B6DFF"
+    },
+    "crowned": false
+  }
 }

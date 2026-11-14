@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { useGameStore } from "@/store/useGameStore";
 import { useI18n } from "@/i18n/i18n";
 

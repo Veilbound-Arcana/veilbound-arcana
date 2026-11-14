@@ -1,6 +1,6 @@
 import React from "react";
 import { Aspect } from "@/game/types";
-import { CONCEPT } from "@/app/concept.config";
+import { CONCEPT } from "@/config/concept.config";
 
 interface AspectGlyphProps {
   aspect?: Aspect | "none";

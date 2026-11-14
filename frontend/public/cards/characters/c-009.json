@@ -1,0 +1,29 @@
+{
+  "card_id": "c-009",
+  "name": "Marrow Queen",
+  "aspect": "verdant",
+  "rarity": "moon3",
+  "character": {
+    "title": "Verdant Colossus",
+    "class": "colossus",
+    "class_label": "Colossus",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "stone fists",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D9DEFF",
+      "glow": "#7ED957"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-009.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

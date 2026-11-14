@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Arcanist"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Charging"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "rune staff"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "stormSpire"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-020.svg",
+  "character": {
+    "title": "Volt Arcanist",
+    "class": "arcanist",
+    "class_label": "Arcanist",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "rune staff",
+    "scene": "stormSpire",
+    "palette": {
+      "primary": "#F2C21B",
+      "secondary": "#FFF275",
+      "accent": "#D9DEFF",
+      "glow": "#FFE45C"
+    },
+    "crowned": false
+  }
 }

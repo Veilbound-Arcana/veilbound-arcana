@@ -1,0 +1,29 @@
+{
+  "card_id": "c-023",
+  "name": "Ouroboros Loom",
+  "aspect": "aether",
+  "rarity": "veil",
+  "character": {
+    "title": "Aether Vanguard",
+    "class": "vanguard",
+    "class_label": "Vanguard",
+    "pose": "aim",
+    "pose_label": "Aiming",
+    "weapon": "warblade",
+    "scene": "aetherRift",
+    "palette": {
+      "primary": "#5DD6C8",
+      "secondary": "#48DBFB",
+      "accent": "#F2C14E",
+      "glow": "#7AF0E0"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-023.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

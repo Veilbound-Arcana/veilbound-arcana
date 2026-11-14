@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "@/lib/router";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowLeft, FastForward } from "lucide-react";
 import { SETS, SET_MAP } from "@/data/sets";

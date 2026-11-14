@@ -8,7 +8,7 @@ This log records design, balance, architecture, and parity trade-offs made durin
 
 | ID | Topic | Decision | Justification |
 | :--- | :--- | :--- | :--- |
-| **D-01** | **Artwork Generation** | Full procedural SVG generation via `ProceduralArt.tsx` seeded by mulberry32 hash of card id. Optional WebP override at `/public/art/{cardId}.webp`. | Guarantees 100% original visuals with zero external copyright dependencies or network asset loads. |
+| **D-01** | **Artwork Generation** | Full procedural SVG character generation via `characterEngine.ts`, seeded by a hash of card id + name (10 silhouette classes, 5 poses, per-card proportions and accessories). Static SVGs are emitted to `frontend/public/cards/art/` by `scripts/generate-character-art.mjs`. | Guarantees 100% original visuals with zero external copyright dependencies or network asset loads. |
 | **D-02** | **Audio Synthesis** | Real-time WebAudio synthesis via `SoundEngine` (`src/fx/audio.ts`) without external mp3/wav samples. | Eliminates 3rd-party audio sample tracking and provides zero-latency parameterized sounds for flips, chimes, arpeggios, and choir swells. |
 | **D-03** | **Deterministic Randomness** | Seeded PRNG (`mulberry32` in `src/game/rng.ts`) injected into pack generation and duel matches. No direct `Math.random()`. | Ensures reproducible pack generation, match testing, daily seed replayability, and server verification without nondeterministic drift. |
 | **D-04** | **Deck Size & Rule Enforcement** | Strict 20-card deck requirement, max 2 duplicate copies per card, minimum 1 Basic Veilborn spirit. | Standard mobile collectible duel pacing: fast, high-density decision making, prevented infinite duplicate stalling. |

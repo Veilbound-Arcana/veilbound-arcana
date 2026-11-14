@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "@/lib/router";
 import { ArrowLeftRight, Check, Sparkles, AlertCircle } from "lucide-react";
 import { MOCK_FRIENDS } from "@/data/friends";
 import { ALL_CARDS, CARD_MAP } from "@/data/generateCards";

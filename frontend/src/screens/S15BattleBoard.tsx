@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swords, Shield, Zap, ArrowLeft, Sparkles } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";
@@ -9,6 +9,7 @@ import { MatchState } from "@/game/types";
 import { CARD_MAP } from "@/data/generateCards";
 import { AspectGlyph } from "@/components/AspectGlyph";
 import { playKoShatter, playWinMotif, playLossMotif } from "@/fx/audio";
+import { CharacterFigure, FigureState } from "@/art/character/CharacterFigure";
 
 export const S15BattleBoard: React.FC = () => {
   const navigate = useNavigate();
@@ -42,9 +43,50 @@ export const S15BattleBoard: React.FC = () => {
   const [showAbilityModal, setShowAbilityModal] = useState(false);
   const [battleLog, setBattleLog] = useState<string[]>(["Duel commenced. Wardens, begin."]);
 
+  // Character animation state for the two active slots
+  const [playerFx, setPlayerFx] = useState<FigureState>("idle");
+  const [rivalFx, setRivalFx] = useState<FigureState>("idle");
+  const [koSlot, setKoSlot] = useState<{ a: string | null; b: string | null }>({
+    a: null,
+    b: null,
+  });
+  const playerFxTimer = useRef<number | null>(null);
+  const rivalFxTimer = useRef<number | null>(null);
+
+  const flashPlayerFx = (next: FigureState, ms = 520) => {
+    setPlayerFx(next);
+    if (playerFxTimer.current) window.clearTimeout(playerFxTimer.current);
+    if (next !== "ko") {
+      playerFxTimer.current = window.setTimeout(() => setPlayerFx("idle"), ms);
+    }
+  };
+
+  const flashRivalFx = (next: FigureState, ms = 520) => {
+    setRivalFx(next);
+    if (rivalFxTimer.current) window.clearTimeout(rivalFxTimer.current);
+    if (next !== "ko") {
+      rivalFxTimer.current = window.setTimeout(() => setRivalFx("idle"), ms);
+    }
+  };
+
   const botThinkingRef = useRef(false);
 
   const matchWinner = match.over || match.winner;
+
+  const playerActiveId = match.a.active?.cardId;
+  const rivalActiveId = match.b.active?.cardId;
+
+  // A freshly played character clears any knockout ghost on that slot.
+  useEffect(() => {
+    if (playerActiveId) setKoSlot((prev) => (prev.a ? { ...prev, a: null } : prev));
+  }, [playerActiveId]);
+
+  useEffect(() => {
+    if (rivalActiveId) setKoSlot((prev) => (prev.b ? { ...prev, b: null } : prev));
+  }, [rivalActiveId]);
+
+  const reduceMotion =
+    save.settings.reducedMotion || save.settings.reduceMotion;
 
   // Bot Turn Automation
   useEffect(() => {
@@ -61,11 +103,16 @@ export const S15BattleBoard: React.FC = () => {
           if (ev.type === "damage") {
             setFloatingDamage({ target: "a", damage: ev.amount, weakness: false });
             setTimeout(() => setFloatingDamage(null), 1200);
+            flashPlayerFx("hurt");
           }
           if (ev.type === "ko") {
             playKoShatter();
+            setKoSlot((prev) => ({ ...prev, a: ev.target }));
+            flashPlayerFx("ko", 1400);
           }
         });
+
+        if (botAction.type === "Attack") flashRivalFx("attack");
 
         setBattleLog((prev) => [`Rival: ${botAction.type}`, ...prev.slice(0, 4)]);
         setMatch(nextState);
@@ -125,13 +172,18 @@ export const S15BattleBoard: React.FC = () => {
   const handleAttack = (abilityIndex: number) => {
     const { state: nextState, events } = applyAction(match, { type: "Attack", abilityIndex });
 
+    flashPlayerFx("attack");
+
     events.forEach((ev) => {
       if (ev.type === "damage") {
         setFloatingDamage({ target: "b", damage: ev.amount, weakness: false });
         setTimeout(() => setFloatingDamage(null), 1200);
+        flashRivalFx("hurt");
       }
       if (ev.type === "ko") {
         playKoShatter();
+        setKoSlot((prev) => ({ ...prev, b: ev.target }));
+        flashRivalFx("ko", 1400);
       }
     });
 
@@ -149,6 +201,8 @@ export const S15BattleBoard: React.FC = () => {
 
   const playerActiveCard = match.a.active ? CARD_MAP[match.a.active.cardId] : null;
   const oppActiveCard = match.b.active ? CARD_MAP[match.b.active.cardId] : null;
+  const koCardA = koSlot.a ? CARD_MAP[koSlot.a] : undefined;
+  const koCardB = koSlot.b ? CARD_MAP[koSlot.b] : undefined;
 
   return (
     <div className="flex-1 w-full h-full flex flex-col justify-between bg-slate-950 text-white relative select-none overflow-hidden">
@@ -216,36 +270,66 @@ export const S15BattleBoard: React.FC = () => {
           {/* Opponent Active Veilborn Slot */}
           <div className="relative">
             <div
-              className={`w-24 h-32 rounded-xl border-2 flex flex-col items-center justify-between p-2 shadow-xl transition-all ${
+              className={`relative w-24 h-[134px] rounded-xl border-2 overflow-hidden shadow-xl transition-all ${
                 oppActiveCard
                   ? "bg-gradient-to-b from-rose-950 to-slate-900 border-rose-500/70"
                   : "border-dashed border-rose-800/40 bg-slate-900/30"
               }`}
             >
-              {oppActiveCard && match.b.active ? (
+              {oppActiveCard ? (
                 <>
-                  <div className="w-full flex items-center justify-between">
-                    <AspectGlyph aspect={oppActiveCard.aspect} size={14} />
+                  <div className="absolute inset-0">
+                    <CharacterFigure
+                      cardId={oppActiveCard.id}
+                      name={oppActiveCard.name}
+                      aspect={oppActiveCard.aspect}
+                      rarity={oppActiveCard.rarity}
+                      tarotArchetype={oppActiveCard.tarotArchetype}
+                      crowned={oppActiveCard.crowned}
+                      state={rivalFx}
+                      side="rival"
+                      reduceMotion={reduceMotion}
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="absolute top-0 inset-x-0 z-10 flex items-center justify-between px-1.5 py-1 bg-gradient-to-b from-slate-950/85 to-transparent">
+                    <AspectGlyph aspect={oppActiveCard.aspect} size={13} />
                     <span className="text-[10px] font-mono font-bold text-rose-400">
-                      {match.b.active.vitality} HP
+                      {match.b.active?.vitality} HP
                     </span>
                   </div>
-                  <div className="text-center">
-                    <span className="font-display font-bold text-xs text-white block leading-tight">
+                  <div className="absolute bottom-0 inset-x-0 z-10 px-1.5 py-1 bg-gradient-to-t from-slate-950/90 to-transparent">
+                    <span className="font-display font-bold text-[11px] text-white block leading-tight truncate">
                       {oppActiveCard.name}
                     </span>
-                    <span className="text-[8px] text-slate-400 capitalize">
-                      {oppActiveCard.stage}
-                    </span>
-                  </div>
-                  <div className="flex gap-0.5">
-                    {match.b.active.attached.map((_, i) => (
-                      <div key={i} className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                    ))}
+                    <div className="flex items-center justify-between text-[8px] text-slate-300">
+                      <span className="capitalize">{oppActiveCard.stage}</span>
+                      <span className="flex gap-0.5">
+                        {(match.b.active?.attached ?? []).map((_, i) => (
+                          <span key={i} className="w-2 h-2 rounded-full bg-amber-400" />
+                        ))}
+                      </span>
+                    </div>
                   </div>
                 </>
+              ) : koCardB ? (
+                <CharacterFigure
+                  cardId={koCardB.id}
+                  name={koCardB.name}
+                  aspect={koCardB.aspect}
+                  rarity={koCardB.rarity}
+                  tarotArchetype={koCardB.tarotArchetype}
+                  crowned={koCardB.crowned}
+                  state="ko"
+                  side="rival"
+                  reduceMotion={reduceMotion}
+                  impact={false}
+                  className="w-full h-full"
+                />
               ) : (
-                <span className="text-[9px] text-slate-500 m-auto">Active Empty</span>
+                <span className="text-[9px] text-slate-500 m-auto block text-center px-1">
+                  Active Empty
+                </span>
               )}
             </div>
 
@@ -293,39 +377,62 @@ export const S15BattleBoard: React.FC = () => {
               onClick={() => {
                 if (match.current === "a" && playerActiveCard) setShowAbilityModal(true);
               }}
-              className={`w-28 h-36 rounded-xl border-2 flex flex-col items-center justify-between p-2 shadow-xl cursor-pointer transition-all ${
+              className={`relative w-28 h-[157px] rounded-xl border-2 overflow-hidden shadow-xl cursor-pointer transition-all ${
                 playerActiveCard
                   ? "bg-gradient-to-b from-teal-950 to-slate-900 border-teal-500/80 active:scale-95"
                   : "border-dashed border-teal-800/40 bg-slate-900/30"
               }`}
             >
-              {playerActiveCard && match.a.active ? (
+              {playerActiveCard ? (
                 <>
-                  <div className="w-full flex items-center justify-between">
-                    <AspectGlyph aspect={playerActiveCard.aspect} size={16} />
+                  <div className="absolute inset-0">
+                    <CharacterFigure
+                      cardId={playerActiveCard.id}
+                      name={playerActiveCard.name}
+                      aspect={playerActiveCard.aspect}
+                      rarity={playerActiveCard.rarity}
+                      tarotArchetype={playerActiveCard.tarotArchetype}
+                      crowned={playerActiveCard.crowned}
+                      state={playerFx}
+                      side="player"
+                      reduceMotion={reduceMotion}
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="absolute top-0 inset-x-0 z-10 flex items-center justify-between px-1.5 py-1 bg-gradient-to-b from-slate-950/85 to-transparent">
+                    <AspectGlyph aspect={playerActiveCard.aspect} size={15} />
                     <span className="text-[11px] font-mono font-bold text-emerald-400">
-                      {match.a.active.vitality} HP
+                      {match.a.active?.vitality} HP
                     </span>
                   </div>
-                  <div className="text-center">
-                    <span className="font-display font-bold text-sm text-white block leading-tight">
+                  <div className="absolute bottom-0 inset-x-0 z-10 px-1.5 py-1 bg-gradient-to-t from-slate-950/90 to-transparent">
+                    <span className="font-display font-bold text-xs text-white block leading-tight truncate">
                       {playerActiveCard.name}
                     </span>
-                    <span className="text-[9px] text-slate-400 capitalize">
-                      {playerActiveCard.stage} · Tap to Attack
-                    </span>
-                  </div>
-                  <div className="w-full flex items-center justify-between pt-1 border-t border-white/10 text-[9px]">
-                    <span className="text-amber-300 font-mono">
-                      Aether: {match.a.active.attached.length}
-                    </span>
-                    <span className="text-slate-400">
-                      Retreat: {playerActiveCard.retreat || 0}
-                    </span>
+                    <div className="flex items-center justify-between text-[8px] text-slate-300">
+                      <span className="text-amber-300 font-mono">
+                        Aether: {match.a.active?.attached.length ?? 0}
+                      </span>
+                      <span>Retreat: {playerActiveCard.retreat || 0}</span>
+                    </div>
                   </div>
                 </>
+              ) : koCardA ? (
+                <CharacterFigure
+                  cardId={koCardA.id}
+                  name={koCardA.name}
+                  aspect={koCardA.aspect}
+                  rarity={koCardA.rarity}
+                  tarotArchetype={koCardA.tarotArchetype}
+                  crowned={koCardA.crowned}
+                  state="ko"
+                  side="player"
+                  reduceMotion={reduceMotion}
+                  impact={false}
+                  className="w-full h-full"
+                />
               ) : (
-                <span className="text-[9px] text-slate-500 m-auto">
+                <span className="text-[9px] text-slate-500 m-auto block text-center px-2">
                   Play Basic from hand below
                 </span>
               )}

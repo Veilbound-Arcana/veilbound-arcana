@@ -1,0 +1,29 @@
+{
+  "card_id": "c-074",
+  "name": "Knight of Iron",
+  "aspect": "iron",
+  "rarity": "moon1",
+  "character": {
+    "title": "Iron Wyrm",
+    "class": "wyrm",
+    "class_label": "Wyrm",
+    "pose": "guard",
+    "pose_label": "Guarding",
+    "weapon": "storm crest",
+    "scene": "ironBastion",
+    "palette": {
+      "primary": "#8C96A5",
+      "secondary": "#A5B1C2",
+      "accent": "#D9DEFF",
+      "glow": "#C3CCDA"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-074.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

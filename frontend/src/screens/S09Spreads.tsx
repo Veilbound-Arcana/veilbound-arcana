@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { Plus, Minus, Check, Edit2, ShieldAlert, Layers } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";
 import { ALL_CARDS, CARD_MAP } from "@/data/generateCards";

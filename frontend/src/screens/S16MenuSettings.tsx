@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { Volume2, VolumeX, Globe, EyeOff, RotateCcw, AlertTriangle, ShieldCheck } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";
 import { Header } from "@/components/Header";
@@ -223,6 +223,17 @@ export const S16MenuSettings: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Legal / mandatory disclaimer */}
+      <div className="px-6 pb-3 pt-1 text-center">
+        <p className="text-[9px] leading-tight text-ink-3 font-ui">
+          This project is not audited, endorsed or operated by any third party.
+          Use at your own risk.
+        </p>
+        <p className="text-[8px] leading-tight text-ink-3/70 font-mono mt-0.5">
+          All character artwork is original and procedurally generated.
+        </p>
+      </div>
 
       <TabBar />
     </div>

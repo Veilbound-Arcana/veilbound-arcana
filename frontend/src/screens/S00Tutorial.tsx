@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, ArrowRight, Check, BookOpen, Swords, FastForward } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";

@@ -1,0 +1,29 @@
+{
+  "card_id": "c-012",
+  "name": "Veilhearth Sentinel",
+  "aspect": "ember",
+  "rarity": "veil",
+  "character": {
+    "title": "Ember Guardian",
+    "class": "guardian",
+    "class_label": "Guardian",
+    "pose": "guard",
+    "pose_label": "Guarding",
+    "weapon": "rammer",
+    "scene": "emberfield",
+    "palette": {
+      "primary": "#F26B3A",
+      "secondary": "#FF9F43",
+      "accent": "#F2C14E",
+      "glow": "#FF7A3D"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-012.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

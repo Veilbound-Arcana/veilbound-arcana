@@ -1,6 +1,6 @@
 import React from "react";
 import { Aspect, Rarity } from "@/game/types";
-import { CONCEPT } from "@/app/concept.config";
+import { CONCEPT } from "@/config/concept.config";
 import { mulberry32 } from "@/game/rng";
 
 interface ProceduralArtProps {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "@/lib/router";
 import { motion } from "framer-motion";
 import { X, Sparkles } from "lucide-react";
 import { playChoirSwell } from "@/fx/audio";

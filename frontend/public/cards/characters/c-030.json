@@ -1,0 +1,29 @@
+{
+  "card_id": "c-030",
+  "name": "Celestial Guide",
+  "aspect": "lumen",
+  "rarity": "moon2",
+  "character": {
+    "title": "Lumen Vanguard",
+    "class": "vanguard",
+    "class_label": "Vanguard",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "greatsword",
+    "scene": "lumenShrine",
+    "palette": {
+      "primary": "#F4E7A1",
+      "secondary": "#FFF7D6",
+      "accent": "#D9DEFF",
+      "glow": "#FFF0B3"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-030.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

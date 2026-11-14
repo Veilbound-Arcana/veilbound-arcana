@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Ranger"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Aiming"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "recurve bow"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "thornGrove"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-016.svg",
+  "character": {
+    "title": "Verdant Ranger",
+    "class": "ranger",
+    "class_label": "Ranger",
+    "pose": "aim",
+    "pose_label": "Aiming",
+    "weapon": "recurve bow",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D9DEFF",
+      "glow": "#7ED957"
+    },
+    "crowned": false
+  }
 }

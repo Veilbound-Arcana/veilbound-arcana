@@ -26,7 +26,7 @@
   - Every card features calibrated **HP** (50–240), **Power** (20–180), **Aspect affinities**, **Unique Skill Trees**, and **Expanded Lore**.
 - **Deterministic Math:** Every draw and combat event is driven by a seeded 32-bit PRNG (`mulberry32` in `src/game/rng.ts`).
 - **Zero Third-Party Assets:**
-  - 100% procedural SVG art via `ProceduralArt.tsx` (overridable via `/public/art/{cardId}.webp`).
+  - 100% original procedural SVG character art via `src/art/character/characterEngine.ts` (10 classes x 5 poses, seeded by card id; static files in `frontend/public/cards/art/`).
   - 100% procedural sound effects via WebAudio API (`SoundEngine` in `src/fx/audio.ts`).
 
 ---

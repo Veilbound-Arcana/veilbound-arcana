@@ -1,0 +1,29 @@
+{
+  "card_id": "c-086",
+  "name": "Ten of Verdant",
+  "aspect": "verdant",
+  "rarity": "moon2",
+  "character": {
+    "title": "Verdant Assassin",
+    "class": "assassin",
+    "class_label": "Assassin",
+    "pose": "cast",
+    "pose_label": "Channeling",
+    "weapon": "serrated fangs",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D9DEFF",
+      "glow": "#7ED957"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-086.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

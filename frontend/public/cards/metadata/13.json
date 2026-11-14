@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Vanguard"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Channeling"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "cleaver"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "aetherRift"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-013.svg",
+  "character": {
+    "title": "Aether Vanguard",
+    "class": "vanguard",
+    "class_label": "Vanguard",
+    "pose": "cast",
+    "pose_label": "Channeling",
+    "weapon": "cleaver",
+    "scene": "aetherRift",
+    "palette": {
+      "primary": "#5DD6C8",
+      "secondary": "#48DBFB",
+      "accent": "#E0FFFB",
+      "glow": "#7AF0E0"
+    },
+    "crowned": false
+  }
 }

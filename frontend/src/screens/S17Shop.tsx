@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { Sparkles, Flame, Coins, Check, HelpCircle } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";
 import { Header } from "@/components/Header";

@@ -1,0 +1,29 @@
+{
+  "card_id": "c-072",
+  "name": "Ten of Iron",
+  "aspect": "iron",
+  "rarity": "moon1",
+  "character": {
+    "title": "Iron Guardian",
+    "class": "guardian",
+    "class_label": "Guardian",
+    "pose": "aim",
+    "pose_label": "Aiming",
+    "weapon": "bastion shield",
+    "scene": "ironBastion",
+    "palette": {
+      "primary": "#8C96A5",
+      "secondary": "#A5B1C2",
+      "accent": "#D9DEFF",
+      "glow": "#C3CCDA"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-072.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

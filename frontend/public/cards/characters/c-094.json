@@ -1,0 +1,29 @@
+{
+  "card_id": "c-094",
+  "name": "Void Drake",
+  "aspect": "umbra",
+  "rarity": "veil",
+  "character": {
+    "title": "Umbra Blade Dancer",
+    "class": "dancer",
+    "class_label": "Blade Dancer",
+    "pose": "guard",
+    "pose_label": "Guarding",
+    "weapon": "ribbon glaives",
+    "scene": "umbralCrypt",
+    "palette": {
+      "primary": "#6B4FA0",
+      "secondary": "#8854D0",
+      "accent": "#F2C14E",
+      "glow": "#9B6DFF"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-094.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

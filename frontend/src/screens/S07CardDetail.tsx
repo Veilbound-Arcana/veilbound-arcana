@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "@/lib/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, Eye, Shield, Zap, X } from "lucide-react";
 import { CARD_MAP, ALL_CARDS } from "@/data/generateCards";
@@ -8,7 +10,7 @@ import { AspectGlyph } from "@/components/AspectGlyph";
 import { RarityGlyph } from "@/components/RarityGlyph";
 import { useGameStore } from "@/store/useGameStore";
 import { playChoirSwell } from "@/fx/audio";
-import { ProceduralArt } from "@/art/ProceduralArt";
+import { CharacterArt } from "@/art/character/CharacterArt";
 
 export const S07CardDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -143,6 +145,59 @@ export const S07CardDetail: React.FC = () => {
           </div>
         </div>
 
+        {/* Character Illustration Sheet */}
+        {card.character && (
+          <div className="bg-white/5 rounded-xl p-2.5 border border-white/5">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-amber-300/90 block mb-1.5">
+              Bound Character
+            </span>
+            <div className="flex items-center gap-2.5">
+              <div
+                className="w-10 h-14 rounded-md overflow-hidden border border-white/10 shrink-0"
+                style={{ borderColor: card.character.palette.primary }}
+              >
+                <CharacterArt
+                  cardId={card.id}
+                  name={card.name}
+                  aspect={card.aspect}
+                  rarity={card.rarity}
+                  tarotArchetype={card.tarotArchetype}
+                  crowned={card.crowned}
+                  animated={false}
+                  crop
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-[10px] min-w-0">
+                <span className="text-slate-400">
+                  Class{" "}
+                  <span className="text-white font-semibold">
+                    {card.character.title}
+                  </span>
+                </span>
+                <span className="text-slate-400">
+                  Pose{" "}
+                  <span className="text-white font-semibold capitalize">
+                    {card.character.pose}
+                  </span>
+                </span>
+                <span className="text-slate-400 col-span-2 truncate">
+                  Armament{" "}
+                  <span className="text-white font-semibold">
+                    {card.character.weapon}
+                  </span>
+                </span>
+                <span className="text-slate-400 col-span-2">
+                  Scene{" "}
+                  <span className="text-white font-semibold capitalize">
+                    {card.character.scene.replace(/([A-Z])/g, " $1").trim()}
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Narrative Lore & Description */}
         {card.description && (
           <div className="bg-white/5 rounded-xl p-2.5 border border-white/5 space-y-1">
@@ -242,7 +297,15 @@ export const S07CardDetail: React.FC = () => {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 className="w-[300px] h-[300px] rounded-3xl overflow-hidden shadow-2xl relative border-2 border-amber-300/40"
               >
-                <ProceduralArt cardId={card.id} name={card.name} aspect={card.aspect} />
+                <CharacterArt
+                  cardId={card.id}
+                  name={card.name}
+                  aspect={card.aspect}
+                  rarity={card.rarity}
+                  tarotArchetype={card.tarotArchetype}
+                  crowned={card.crowned}
+                  className="w-full h-full"
+                />
               </motion.div>
 
               <div className="mt-8 text-center max-w-xs">

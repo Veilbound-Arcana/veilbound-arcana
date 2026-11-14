@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Wildkin"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Combat Ready"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "tail blade"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "umbralCrypt"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-005.svg",
+  "character": {
+    "title": "Umbra Wildkin",
+    "class": "beast",
+    "class_label": "Wildkin",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "tail blade",
+    "scene": "umbralCrypt",
+    "palette": {
+      "primary": "#6B4FA0",
+      "secondary": "#8854D0",
+      "accent": "#D9DEFF",
+      "glow": "#9B6DFF"
+    },
+    "crowned": false
+  }
 }

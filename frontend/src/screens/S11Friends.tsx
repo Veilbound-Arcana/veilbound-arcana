@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { Copy, Check, UserPlus, ArrowRight, Shield } from "lucide-react";
 import { MOCK_FRIENDS } from "@/data/friends";
 import { Header } from "@/components/Header";

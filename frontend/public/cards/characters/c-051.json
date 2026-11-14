@@ -1,0 +1,29 @@
+{
+  "card_id": "c-051",
+  "name": "Three of Tides",
+  "aspect": "tide",
+  "rarity": "rune2",
+  "character": {
+    "title": "Tide Mystic",
+    "class": "mystic",
+    "class_label": "Mystic",
+    "pose": "aim",
+    "pose_label": "Aiming",
+    "weapon": "prayer beads",
+    "scene": "tidepool",
+    "palette": {
+      "primary": "#3B9DF2",
+      "secondary": "#00D2D3",
+      "accent": "#BFEFFF",
+      "glow": "#4FC3F7"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-051.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

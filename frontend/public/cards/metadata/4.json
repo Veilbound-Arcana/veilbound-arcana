@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Ranger"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Charging"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "twin shortbows"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "stormSpire"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-004.svg",
+  "character": {
+    "title": "Volt Ranger",
+    "class": "ranger",
+    "class_label": "Ranger",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "twin shortbows",
+    "scene": "stormSpire",
+    "palette": {
+      "primary": "#F2C21B",
+      "secondary": "#FFF275",
+      "accent": "#FFFFFF",
+      "glow": "#FFE45C"
+    },
+    "crowned": false
+  }
 }

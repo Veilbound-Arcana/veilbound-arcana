@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560" role="img" aria-label="Iron Wildkin">
+  <defs>
+    <linearGradient id="va-bg-c017" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#0A0714"></stop>
+      <stop offset="55%" stop-color="#150F28"></stop>
+      <stop offset="100%" stop-color="#8C96A5" stop-opacity="0.55"></stop>
+    </linearGradient>
+    <radialGradient id="va-halo-c017" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#C3CCDA" stop-opacity="0.55"></stop>
+      <stop offset="60%" stop-color="#C3CCDA" stop-opacity="0.12"></stop>
+      <stop offset="100%" stop-color="#C3CCDA" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="va-orb-c017" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="45%" stop-color="#D9DEFF"></stop>
+      <stop offset="100%" stop-color="#8C96A5"></stop>
+    </radialGradient>
+    <filter id="va-glow-c017" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"></feGaussianBlur>
+      <feComposite in="SourceGraphic" in2="b" operator="over"></feComposite>
+    </filter>
+    <radialGradient id="va-vignette-c017" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"></stop>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"></stop>
+    </radialGradient>
+    <style>
+        @keyframes vaBreathe { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes vaAura { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+        @keyframes vaSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes vaSlash { 0% { stroke-dashoffset: 260; opacity: 0; } 25% { opacity: .95; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+        .va-breathe { animation: vaBreathe 3.4s ease-in-out infinite; transform-origin: 200px 470px; }
+        .va-aura { animation: vaAura 2.8s ease-in-out infinite; }
+        .va-spin { animation: vaSpin 14s linear infinite; transform-origin: center; transform-box: fill-box; }
+        .va-slash { stroke-dasharray: 260; animation: vaSlash 2.6s ease-out infinite; }
+      </style>
+  </defs>
+
+  <rect x="0" y="0" width="400" height="560" fill="url(#va-bg-c017)"></rect><ellipse cx="200" cy="330" rx="210" ry="150" fill="url(#va-halo-c017)" class="va-aura"></ellipse><polygon points="0,560 0,330 60,330 60,280 130,280 130,350 200,350 200,260 270,260 270,350 340,350 340,300 400,300 400,560" fill="#171B24"></polygon><line x1="20" y1="300" x2="20" y2="560" stroke="#232936" stroke-width="6" stroke-linecap="round" opacity="0.8"></line><line x1="120" y1="300" x2="120" y2="560" stroke="#232936" stroke-width="6" stroke-linecap="round" opacity="0.8"></line><line x1="220" y1="300" x2="220" y2="560" stroke="#232936" stroke-width="6" stroke-linecap="round" opacity="0.8"></line><line x1="320" y1="300" x2="320" y2="560" stroke="#232936" stroke-width="6" stroke-linecap="round" opacity="0.8"></line><circle cx="114" cy="225" r="0.93" fill="#D9DEFF" opacity="0.79"></circle><circle cx="154" cy="370" r="0.94" fill="#D9DEFF" opacity="0.32"></circle><circle cx="341" cy="373" r="2.23" fill="#D9DEFF" opacity="0.49"></circle><circle cx="166" cy="541" r="2.64" fill="#D9DEFF" opacity="0.29"></circle><circle cx="366" cy="15" r="2.27" fill="#D9DEFF" opacity="0.40"></circle><circle cx="197" cy="262" r="1.41" fill="#D9DEFF" opacity="0.48"></circle><circle cx="168" cy="288" r="1.35" fill="#D9DEFF" opacity="0.25"></circle><circle cx="86" cy="292" r="1.65" fill="#D9DEFF" opacity="0.72"></circle><circle cx="156" cy="230" r="1.69" fill="#D9DEFF" opacity="0.36"></circle><circle cx="44" cy="302" r="2.69" fill="#D9DEFF" opacity="0.35"></circle><circle cx="4" cy="441" r="2.43" fill="#D9DEFF" opacity="0.62"></circle><circle cx="21" cy="269" r="2.25" fill="#D9DEFF" opacity="0.55"></circle><circle cx="156" cy="433" r="1.02" fill="#D9DEFF" opacity="0.71"></circle><circle cx="327" cy="11" r="2.62" fill="#D9DEFF" opacity="0.55"></circle><circle cx="284" cy="549" r="1.68" fill="#D9DEFF" opacity="0.51"></circle><circle cx="308" cy="454" r="0.81" fill="#D9DEFF" opacity="0.26"></circle><circle cx="322" cy="362" r="2.73" fill="#D9DEFF" opacity="0.26"></circle><circle cx="248" cy="105" r="1.25" fill="#D9DEFF" opacity="0.42"></circle><circle cx="20" cy="123" r="2.54" fill="#D9DEFF" opacity="0.77"></circle><circle cx="257" cy="286" r="0.97" fill="#D9DEFF" opacity="0.32"></circle><circle cx="151" cy="452" r="1.83" fill="#D9DEFF" opacity="0.63"></circle><circle cx="25" cy="310" r="2.25" fill="#D9DEFF" opacity="0.58"></circle><circle cx="118" cy="469" r="1.25" fill="#D9DEFF" opacity="0.29"></circle><circle cx="65" cy="544" r="1.69" fill="#D9DEFF" opacity="0.29"></circle><circle cx="181" cy="101" r="2.17" fill="#D9DEFF" opacity="0.70"></circle><circle cx="313" cy="462" r="1.88" fill="#D9DEFF" opacity="0.46"></circle>
+
+  <ellipse cx="200" cy="486" rx="122.78" ry="20" fill="#05030A" opacity="0.55"></ellipse>
+
+  <g class="va-breathe" transform="translate(200 470) scale(1.04) translate(-200 -470)">
+    <circle cx="200" cy="330" r="132" fill="#C3CCDA" opacity="0.12" class="va-aura"></circle>
+    
+    <g>
+      <ellipse cx="200" cy="360" rx="116" ry="62" fill="#8C96A5"></ellipse>
+      <ellipse cx="200" cy="382" rx="96" ry="34" fill="#A5B1C2" opacity="0.55"></ellipse>
+      <path d="M 118 342 Q 96 294 132 282 Q 150 320 146 352 Z" fill="#A5B1C2"></path>
+      <circle cx="128" cy="294" r="30" fill="#8C96A5"></circle>
+      <path d="M 112 272 q -12 -22 -2 -34 q 12 12 12 30 Z" fill="#D9DEFF"></path>
+      <path d="M 140 270 q 12 -22 2 -34 q -12 12 -12 30 Z" fill="#D9DEFF"></path>
+      <ellipse cx="120" cy="290" rx="5" ry="7" fill="#1B1426"></ellipse>
+      <path d="M 104 302 q 10 10 22 8"  stroke="#D9DEFF" stroke-width="3" fill="none"></path>
+      <line x1="150" y1="400" x2="146" y2="474" stroke="#8C96A5" stroke-width="26" stroke-linecap="round"></line>
+      <line x1="250" y1="400" x2="254" y2="474" stroke="#8C96A5" stroke-width="26" stroke-linecap="round"></line>
+      <line x1="182" y1="406" x2="180" y2="474" stroke="#A5B1C2" stroke-width="24" stroke-linecap="round"></line>
+      <line x1="222" y1="406" x2="224" y2="474" stroke="#A5B1C2" stroke-width="24" stroke-linecap="round"></line>
+      <ellipse cx="146" cy="478" rx="18" ry="10" fill="#2A2038"></ellipse>
+      <ellipse cx="254" cy="478" rx="18" ry="10" fill="#2A2038"></ellipse>
+      <path d="M 292 350 q 40 -8 46 -52 q -34 12 -44 40 Z" fill="#A5B1C2"></path>
+    </g><circle cx="190.9" cy="367.24" r="4.45" fill="#D9DEFF" opacity="0.35"></circle><circle cx="232.96" cy="354.64" r="7.48" fill="#D9DEFF" opacity="0.35"></circle><circle cx="267.71" cy="384.91" r="3.94" fill="#D9DEFF" opacity="0.35"></circle><circle cx="206.07" cy="352.58" r="4.02" fill="#D9DEFF" opacity="0.35"></circle><circle cx="203.26" cy="395.18" r="5.86" fill="#D9DEFF" opacity="0.35"></circle>
+    
+    
+    
+  </g>
+
+  <g filter="url(#va-glow-c017)"><circle cx="245.55" cy="454.14" r="3.44" fill="#D9DEFF" opacity="0.37"></circle><circle cx="153.74" cy="444.16" r="2.37" fill="#D9DEFF" opacity="0.55"></circle><circle cx="132.3" cy="449.35" r="4.39" fill="#D9DEFF" opacity="0.62"></circle><circle cx="269.87" cy="446.34" r="2.91" fill="#D9DEFF" opacity="0.46"></circle><circle cx="126.95" cy="424.57" r="3.02" fill="#D9DEFF" opacity="0.53"></circle><circle cx="165.52" cy="466.74" r="2.41" fill="#D9DEFF" opacity="0.57"></circle><circle cx="196.59" cy="458.38" r="2.13" fill="#D9DEFF" opacity="0.56"></circle><circle cx="165.71" cy="442.57" r="3.37" fill="#D9DEFF" opacity="0.63"></circle></g>
+
+  <rect x="8" y="8" width="384" height="544" rx="22" fill="none" stroke="#D9DEFF" stroke-width="3" opacity="0.55"></rect><rect x="18" y="18" width="364" height="524" rx="16" fill="none" stroke="#D9DEFF" stroke-width="1" opacity="0.28"></rect><path d="M 26 40 A 14 14 0 0 1 40 26" fill="none" stroke="#D9DEFF" stroke-width="2.4" opacity="0.8"></path><path d="M 374 40 A 14 14 0 0 1 360 26" fill="none" stroke="#D9DEFF" stroke-width="2.4" opacity="0.8"></path><path d="M 26 520 A 14 14 0 0 1 40 534" fill="none" stroke="#D9DEFF" stroke-width="2.4" opacity="0.8"></path><path d="M 374 520 A 14 14 0 0 1 360 534" fill="none" stroke="#D9DEFF" stroke-width="2.4" opacity="0.8"></path><circle cx="200" cy="20" r="4" fill="#D9DEFF"></circle><circle cx="200" cy="540" r="4" fill="#D9DEFF"></circle><g opacity="0.5"><line x1="34" y1="8" x2="34" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="48.6" y1="8" x2="48.6" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="63.2" y1="8" x2="63.2" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="77.8" y1="8" x2="77.8" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="92.4" y1="8" x2="92.4" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="107" y1="8" x2="107" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="121.6" y1="8" x2="121.6" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="136.2" y1="8" x2="136.2" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="150.8" y1="8" x2="150.8" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="165.4" y1="8" x2="165.4" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="180" y1="8" x2="180" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="194.6" y1="8" x2="194.6" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="209.2" y1="8" x2="209.2" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="223.8" y1="8" x2="223.8" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="238.4" y1="8" x2="238.4" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="253" y1="8" x2="253" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="267.6" y1="8" x2="267.6" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="282.2" y1="8" x2="282.2" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="296.8" y1="8" x2="296.8" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="311.4" y1="8" x2="311.4" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="326" y1="8" x2="326" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="340.6" y1="8" x2="340.6" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="355.2" y1="8" x2="355.2" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line><line x1="369.8" y1="8" x2="369.8" y2="14" stroke="#D9DEFF" stroke-width="1.2" stroke-linecap="round"></line></g><text x="4" y="556" font-size="1" fill="none" data-va="c017"></text>
+
+  <rect x="0" y="0" width="400" height="560" fill="url(#va-vignette-c017)"></rect>
+</svg>

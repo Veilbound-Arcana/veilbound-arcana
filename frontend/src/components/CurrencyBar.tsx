@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { Sparkles, CircleDot, Flame } from "lucide-react";
 import { useGameStore } from "@/store/useGameStore";
 

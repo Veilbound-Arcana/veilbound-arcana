@@ -1,0 +1,29 @@
+{
+  "card_id": "c-081",
+  "name": "Five of Verdant",
+  "aspect": "verdant",
+  "rarity": "rune2",
+  "character": {
+    "title": "Verdant Wyrm",
+    "class": "wyrm",
+    "class_label": "Wyrm",
+    "pose": "aim",
+    "pose_label": "Aiming",
+    "weapon": "fanged maw",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D7F79B",
+      "glow": "#7ED957"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-081.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

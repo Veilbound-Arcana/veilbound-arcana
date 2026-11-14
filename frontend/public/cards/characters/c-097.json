@@ -1,0 +1,29 @@
+{
+  "card_id": "c-097",
+  "name": "Cygnus Star-Swan",
+  "aspect": "lumen",
+  "rarity": "veil",
+  "character": {
+    "title": "Lumen Assassin",
+    "class": "assassin",
+    "class_label": "Assassin",
+    "pose": "cast",
+    "pose_label": "Channeling",
+    "weapon": "twin daggers",
+    "scene": "lumenShrine",
+    "palette": {
+      "primary": "#F4E7A1",
+      "secondary": "#FFF7D6",
+      "accent": "#F2C14E",
+      "glow": "#FFF0B3"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-097.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

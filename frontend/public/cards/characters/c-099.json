@@ -1,0 +1,29 @@
+{
+  "card_id": "c-099",
+  "name": "Ursa Behemoth",
+  "aspect": "verdant",
+  "rarity": "veil",
+  "character": {
+    "title": "Verdant Ranger",
+    "class": "ranger",
+    "class_label": "Ranger",
+    "pose": "cast",
+    "pose_label": "Channeling",
+    "weapon": "recurve bow",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#F2C14E",
+      "glow": "#7ED957"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-099.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

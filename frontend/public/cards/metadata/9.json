@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Colossus"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Combat Ready"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "stone fists"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "thornGrove"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-009.svg",
+  "character": {
+    "title": "Verdant Colossus",
+    "class": "colossus",
+    "class_label": "Colossus",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "stone fists",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D9DEFF",
+      "glow": "#7ED957"
+    },
+    "crowned": true
+  }
 }

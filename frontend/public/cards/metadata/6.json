@@ -35,6 +35,39 @@
     {
       "trait_type": "Disclaimer",
       "value": "Confidential protocol. Use at your own risk."
+    },
+    {
+      "trait_type": "Character Class",
+      "value": "Vanguard"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "Charging"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "warblade"
+    },
+    {
+      "trait_type": "Scene",
+      "value": "lumenShrine"
     }
-  ]
+  ],
+  "local_image": "/cards/art/c-006.svg",
+  "character": {
+    "title": "Lumen Vanguard",
+    "class": "vanguard",
+    "class_label": "Vanguard",
+    "pose": "charge",
+    "pose_label": "Charging",
+    "weapon": "warblade",
+    "scene": "lumenShrine",
+    "palette": {
+      "primary": "#F4E7A1",
+      "secondary": "#FFF7D6",
+      "accent": "#D9DEFF",
+      "glow": "#FFF0B3"
+    },
+    "crowned": false
+  }
 }

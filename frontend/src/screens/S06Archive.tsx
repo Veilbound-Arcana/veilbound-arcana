@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router";
 import { Search, Lock, BookOpen, Layers, ArrowUp, Sparkles } from "lucide-react";
 import { ALL_CARDS } from "@/data/generateCards";
 import { Aspect } from "@/game/types";
@@ -8,7 +8,7 @@ import { CardView } from "@/components/CardView";
 import { AspectGlyph } from "@/components/AspectGlyph";
 import { TabBar } from "@/components/TabBar";
 import { Header } from "@/components/Header";
-import { CONCEPT } from "@/app/concept.config";
+import { CONCEPT } from "@/config/concept.config";
 
 export const S06Archive: React.FC = () => {
   const navigate = useNavigate();

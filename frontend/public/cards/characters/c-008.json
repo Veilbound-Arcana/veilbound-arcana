@@ -1,0 +1,29 @@
+{
+  "card_id": "c-008",
+  "name": "Mourning Leviathan",
+  "aspect": "tide",
+  "rarity": "veil",
+  "character": {
+    "title": "Tide Wyrm",
+    "class": "wyrm",
+    "class_label": "Wyrm",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "tail & wing",
+    "scene": "tidepool",
+    "palette": {
+      "primary": "#3B9DF2",
+      "secondary": "#00D2D3",
+      "accent": "#F2C14E",
+      "glow": "#4FC3F7"
+    },
+    "crowned": true
+  },
+  "image": "/cards/art/c-008.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

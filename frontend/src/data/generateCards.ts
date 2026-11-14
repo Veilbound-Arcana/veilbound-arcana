@@ -1,11 +1,34 @@
-import { Card, Aspect, Rarity } from "@/game/types";
-import { CONCEPT } from "@/app/concept.config";
+import type { Card, Aspect, Rarity } from "../game/types";
+import { CONCEPT } from "../config/concept.config.ts";
+import {
+  characterProfileSummary,
+  profileForCard,
+} from "../art/character/characterEngine.ts";
+
+/** Binds the card's original character illustration descriptor. */
+function withCharacter(card: Card): Card {
+  if (card.character) return card;
+  return {
+    ...card,
+    character: characterProfileSummary(
+      profileForCard({
+        id: card.id,
+        name: card.name,
+        aspect: card.aspect,
+        rarity: card.rarity,
+        tarotArchetype: card.tarotArchetype,
+        number: card.number,
+        crowned: card.crowned,
+      })
+    ),
+  };
+}
 
 /**
  * 12 Canonical Showcase Cards (c-001 to c-012)
  * Strictly calibrated for engine rules tests, starter decks, and early tutorials.
  */
-export const SHOWCASE_CARDS: Card[] = [
+const SHOWCASE_CARDS_BASE: Card[] = [
   {
     id: "c-001",
     number: 1,
@@ -306,6 +329,8 @@ export const SHOWCASE_CARDS: Card[] = [
     artist: "C. Moros",
   },
 ];
+
+export const SHOWCASE_CARDS: Card[] = SHOWCASE_CARDS_BASE.map(withCharacter);
 
 /**
  * 22 Major Arcana Cards (c-013 through c-034)
@@ -823,7 +848,7 @@ export function generate100Cards(): Card[] {
     });
   });
 
-  return cards;
+  return cards.map(withCharacter);
 }
 
 export const ALL_CARDS: Card[] = generate100Cards();

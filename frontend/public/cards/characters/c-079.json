@@ -1,0 +1,29 @@
+{
+  "card_id": "c-079",
+  "name": "Three of Verdant",
+  "aspect": "verdant",
+  "rarity": "rune2",
+  "character": {
+    "title": "Verdant Assassin",
+    "class": "assassin",
+    "class_label": "Assassin",
+    "pose": "ready",
+    "pose_label": "Combat Ready",
+    "weapon": "weighted blades",
+    "scene": "thornGrove",
+    "palette": {
+      "primary": "#5CBF4A",
+      "secondary": "#10AC84",
+      "accent": "#D7F79B",
+      "glow": "#7ED957"
+    },
+    "crowned": false
+  },
+  "image": "/cards/art/c-079.svg",
+  "animation": {
+    "idle": "va-breathe",
+    "aura": "va-aura",
+    "spin": "va-spin",
+    "slash": "va-slash"
+  }
+}

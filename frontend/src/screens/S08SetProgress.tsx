@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "@/lib/router";
 import { Award, Gift, Sparkles, Check } from "lucide-react";
 import { SETS, SET_MAP } from "@/data/sets";
 import { ALL_CARDS } from "@/data/generateCards";
@@ -10,10 +10,16 @@ import { CardView } from "@/components/CardView";
 
 export const S08SetProgress: React.FC = () => {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
   const { save, addEchoes, addShards } = useGameStore();
 
-  const [activeSetId, setActiveSetId] = useState("V1");
+  const querySetId = params.get("set");
+  const [activeSetId, setActiveSetId] = useState(querySetId || "V1");
   const [claimedMilestones, setClaimedMilestones] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    if (querySetId && SET_MAP[querySetId]) setActiveSetId(querySetId);
+  }, [querySetId]);
 
   const activeSet = SET_MAP[activeSetId] || SETS[0];
   const setCards = ALL_CARDS.filter((c) => c.setId === activeSet.id);
